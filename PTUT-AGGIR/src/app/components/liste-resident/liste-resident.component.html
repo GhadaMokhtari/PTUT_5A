@@ -9,7 +9,7 @@
 <h1>Liste des patients</h1>
 
 <div class="container">
-<div class="liste" *ngFor="let resident of residents; let index = index">
+<div class="liste" *ngFor="let resident of residents; let index = index" routerLink="/historiquePatient">
   <div class="circle">{{index+1}}</div> <span>{{resident.nom}} {{resident.prenom}}</span> <span>Date de naissance : {{resident.dateNaiss}}</span> <span>Gir :</span>
 </div>
 </div>
