@@ -2,17 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ListeResidentComponent } from './liste-resident/liste-resident.component';
+import { AppComponent } from './components/app.component';
+import { ListeResidentComponent } from './components/liste-resident/liste-resident.component';
+import { NewPatientComponent } from './components/new-patient/new-patient.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListeResidentComponent
+    ListeResidentComponent,
+    NewPatientComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

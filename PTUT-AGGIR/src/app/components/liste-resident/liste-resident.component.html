@@ -1,0 +1,15 @@
+<div class="search">
+  <input type="search" id="site-search" aria-label="Rechercher un patient" placeholder="Rechercher un patient">
+  <button>Rechercher</button>
+</div>
+<div>
+  <button class="newpatient" routerLink="/newPatient">Créer un nouveau patient</button>
+</div>
+
+<h1>Liste des patients</h1>
+
+<div class="container">
+<div class="liste" *ngFor="let resident of residents; let index = index">
+  <div class="circle">{{index+1}}</div> <span>{{resident.nom}} {{resident.prenom}}</span> <span>Date de naissance : {{resident.dateNaiss}}</span> <span>Gir :</span>
+</div>
+</div>
