@@ -1,0 +1,28 @@
+@import '../../ressources/variables.scss';
+:host {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  h1{
+    align-self: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: black;
+    font-size: 40px;
+  }
+  mat-tab-group{
+    border: solid 2px black ;
+    margin: 50px;
+    padding-left: 50px;
+
+   .checkbox{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+  }
+
+}

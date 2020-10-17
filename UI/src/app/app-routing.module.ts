@@ -4,6 +4,8 @@ import {AppComponent} from './components/app.component';
 import {NewPatientComponent} from './components/new-patient/new-patient.component';
 import {ListeResidentComponent} from './components/liste-resident/liste-resident.component';
 import {HistoriquePatientComponent} from './components/historique-patient/historique-patient.component';
+import {RecapitulatifGrilleComponent} from './components/recapitulatif-grille/recapitulatif-grille.component';
+import {GrilleComponent} from './components/grille/grille.component';
 
 const routes: Routes = [
   {
@@ -17,6 +19,14 @@ const routes: Routes = [
   {
     path: 'historiquePatient',
     component: HistoriquePatientComponent
+  },
+  {
+    path: 'recapGrille',
+    component: RecapitulatifGrilleComponent
+  },
+  {
+    path: 'newGrille',
+    component: GrilleComponent
   }
 ];
 

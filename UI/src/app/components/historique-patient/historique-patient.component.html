@@ -1,1 +1,27 @@
-<p>historique-patient works!</p>
+<div class="search">
+  <input type="search" id="site-search" aria-label="Rechercher un patient" placeholder="Rechercher une évaluation">
+  <button>Rechercher</button>
+</div>
+<div>
+  <button class="newgrille" routerLink="/newGrille">Commencer une nouvelle évaluation</button>
+</div>
+
+
+<h1>Historique du patient</h1>
+
+<!--
+<div class="circle">{{index+1}}</div> <span>{{resident.nom}} {{resident.prenom}}</span> <span>Date de naissance : {{resident.dateNaiss}}</span> <span>Gir :</span>
+-->
+
+<mat-tab-group dynamicHeight>
+
+  <mat-tab label="Historique">
+    <div class="container">
+      <div class="liste" *ngFor="let eval of evaluations; let index = index" routerLink="/recapGrille">
+        <div class="circle">{{index+1}}</div> <span>Date : {{eval.date}}</span> <span> Gir : {{eval.gir}}</span>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Graphe d'évolution"> Content 2 </mat-tab>
+</mat-tab-group>
+
