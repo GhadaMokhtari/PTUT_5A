@@ -7,10 +7,12 @@ import { NewPatientComponent } from './components/new-patient/new-patient.compon
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatDialogModule} from '@angular/material/dialog';
 import { HistoriquePatientComponent } from './components/historique-patient/historique-patient.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RecapitulatifGrilleComponent } from './components/recapitulatif-grille/recapitulatif-grille.component';
 import { GrilleComponent } from './components/grille/grille.component';
+import { OrientationOuiComponent } from './components/grille/orientation-oui/orientation-oui.component';
 
 @NgModule({
   declarations: [
@@ -19,15 +21,18 @@ import { GrilleComponent } from './components/grille/grille.component';
     NewPatientComponent,
     HistoriquePatientComponent,
     RecapitulatifGrilleComponent,
-    GrilleComponent
+    GrilleComponent,
+    OrientationOuiComponent
   ],
+  entryComponents: [OrientationOuiComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
