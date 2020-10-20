@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from "@angular/material/dialog";
-import {OrientationOuiComponent} from "./orientation-oui/orientation-oui.component";
+import {MatDialog} from '@angular/material/dialog';
+import {CoherenceOuiComponent} from './coherence/coherence-oui/coherence-oui.component';
 
 @Component({
   selector: 'app-grille',
@@ -9,18 +9,21 @@ import {OrientationOuiComponent} from "./orientation-oui/orientation-oui.compone
 })
 export class GrilleComponent implements OnInit {
 
+  tabs = [{title: '', target: ''}];
+  selected = 0;
+
   constructor(public  dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  goToTab(tab: number): void {
+    this.selected = tab;
   }
 
   // tslint:disable-next-line:typedef
   onNativeChange(e) {
     if (e.target.checked){
     }
-  }
-  // tslint:disable-next-line:typedef
-  openDialog(){
-    this.dialog.open(OrientationOuiComponent);
   }
 }

@@ -7,12 +7,16 @@ import { NewPatientComponent } from './components/new-patient/new-patient.compon
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
 import { HistoriquePatientComponent } from './components/historique-patient/historique-patient.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RecapitulatifGrilleComponent } from './components/recapitulatif-grille/recapitulatif-grille.component';
 import { GrilleComponent } from './components/grille/grille.component';
-import { OrientationOuiComponent } from './components/grille/orientation-oui/orientation-oui.component';
+import { CoherenceOuiComponent } from './components/grille/coherence/coherence-oui/coherence-oui.component';
+import { CoherenceComponent } from './components/grille/coherence/coherence.component';
+import {MatButtonModule} from "@angular/material/button";
+import { OrientationComponent } from './components/grille/orientation/orientation.component';
+import { OrientationOuiComponent } from './components/grille/orientation/orientation-oui/orientation-oui.component';
 
 @NgModule({
   declarations: [
@@ -22,19 +26,23 @@ import { OrientationOuiComponent } from './components/grille/orientation-oui/ori
     HistoriquePatientComponent,
     RecapitulatifGrilleComponent,
     GrilleComponent,
+    CoherenceOuiComponent,
+    CoherenceComponent,
+    OrientationComponent,
     OrientationOuiComponent
   ],
-  entryComponents: [OrientationOuiComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    MatTabsModule,
-    MatDialogModule
-  ],
-  providers: [],
+  entryComponents: [CoherenceOuiComponent],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        MatTabsModule,
+        MatDialogModule,
+        MatButtonModule
+    ],
+  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

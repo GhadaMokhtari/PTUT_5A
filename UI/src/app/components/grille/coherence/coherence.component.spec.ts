@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OrientationOuiComponent } from './orientation-oui.component';
+import { CoherenceComponent } from './coherence.component';
 
-describe('OrientationOuiComponent', () => {
-  let component: OrientationOuiComponent;
-  let fixture: ComponentFixture<OrientationOuiComponent>;
+describe('CoherenceComponent', () => {
+  let component: CoherenceComponent;
+  let fixture: ComponentFixture<CoherenceComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrientationOuiComponent ]
+      declarations: [ CoherenceComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OrientationOuiComponent);
+    fixture = TestBed.createComponent(CoherenceComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
