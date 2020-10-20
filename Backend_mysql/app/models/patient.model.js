@@ -8,7 +8,7 @@ const Patient = function(patient) {
 };
 
 Patient.create = (newPatient, result) => {
-    sql.query("INSERT INTO customers SET ?", newPatient, (err, res) => {
+    sql.query("INSERT INTO patient SET ?", newPatient, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);
@@ -21,7 +21,7 @@ Patient.create = (newPatient, result) => {
 };
 
 Patient.findById = (patientId, result) => {
-    sql.query(`SELECT * FROM patients WHERE id = ${patientId}`, (err, res) => {
+    sql.query(`SELECT * FROM patient WHERE id = ${patientId}`, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);
@@ -40,21 +40,21 @@ Patient.findById = (patientId, result) => {
 };
 
 Patient.getAll = result => {
-    sql.query("SELECT * FROM patients", (err, res) => {
+    sql.query("SELECT * FROM patient", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
             return;
         }
 
-        console.log("patients: ", res);
+        console.log("patient: ", res);
         result(null, res);
     });
 };
 
 Patient.updateById = (id, patient, result) => {
     sql.query(
-        "UPDATE patients SET prenom = ?, nom = ?, date_naissance = ? WHERE id = ?",
+        "UPDATE patient SET prenom = ?, nom = ?, date_naissance = ? WHERE id = ?",
         [patient.prenom, patient.nom, patient.date_naissance, id],
         (err, res) => {
             if (err) {
@@ -76,7 +76,7 @@ Patient.updateById = (id, patient, result) => {
 };
 
 Patient.remove = (id, result) => {
-    sql.query("DELETE FROM patients WHERE id = ?", id, (err, res) => {
+    sql.query("DELETE FROM patient WHERE id = ?", id, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -95,7 +95,7 @@ Patient.remove = (id, result) => {
 };
 
 Patient.removeAll = result => {
-    sql.query("DELETE FROM patients", (err, res) => {
+    sql.query("DELETE FROM patient", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);

@@ -2,20 +2,20 @@ module.exports = app => {
     const patients = require("../controllers/patient.controller.js");
 
     // Create a new patient
-    app.post("/patients", patients.create);
+    app.post("/patient", patients.create);
 
     // Retrieve all patients
-    app.get("/patients", patients.findAll);
+    app.get("/patient", patients.findAll);
 
     // Retrieve a single Customer with customerId
-    app.get("/patients/:patientId", patients.findOne);
+    app.get("/patient/:patientId", patients.findOne);
 
     // Update a Customer with customerId
-    app.put("/patients/:patientId", patients.update);
+    app.put("/patient/:patientId", patients.update);
 
     // Delete a Customer with customerId
-    app.delete("/patients/:patientId", patients.delete);
+    app.delete("/patient/:patientId", patients.delete);
 
     // Create a new Customer
-    app.delete("/patients", patients.deleteAll);
+    app.delete("/patient", patients.deleteAll);
 };
