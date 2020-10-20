@@ -1,15 +1,9 @@
-<div class="container">
-  <h2>1. Communication</h2>
-  <span class="question">Est ce que la personne communique seule ?</span>
-  <div class="checkbox">
-    <div>
-      <input type="radio" id="oui" name="communication"  (change)="openDialog()">
-      <label for="oui">Oui</label>
-    </div>
-    <div>
-      <input type="radio" id="non" name="communication"  (change)="goToTabs()">
-      <label for="non">Non</label>
-    </div>
-  </div>
-</div>
-<app-coherence-oui *ngIf="coherence"></app-coherence-oui>
+<mat-tab-group class="groupe" [selectedIndex]="selected" (selectedIndexChange)="goToTab($event)" dynamicHeight>
+  <mat-tab label="Communication"  >
+    <app-communication (newItemEvent)="goToTab(1)"></app-communication>
+  </mat-tab>
+  <mat-tab label="Comportement">
+    <app-comportement (newItemEvent)="goToTab(1)"></app-comportement>
+  </mat-tab>
+
+</mat-tab-group>

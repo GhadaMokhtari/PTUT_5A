@@ -14,9 +14,9 @@ import { RecapitulatifGrilleComponent } from './components/recapitulatif-grille/
 import { GrilleComponent } from './components/grille/grille.component';
 import { CoherenceOuiComponent } from './components/grille/coherence/coherence-oui/coherence-oui.component';
 import { CoherenceComponent } from './components/grille/coherence/coherence.component';
-import {MatButtonModule} from "@angular/material/button";
-import { OrientationComponent } from './components/grille/orientation/orientation.component';
-import { OrientationOuiComponent } from './components/grille/orientation/orientation-oui/orientation-oui.component';
+import {MatButtonModule} from '@angular/material/button';
+import { ComportementComponent } from './components/grille/coherence/comportement/comportement.component';
+import { CommunicationComponent } from './components/grille/coherence/communication/communication.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,8 @@ import { OrientationOuiComponent } from './components/grille/orientation/orienta
     GrilleComponent,
     CoherenceOuiComponent,
     CoherenceComponent,
-    OrientationComponent,
-    OrientationOuiComponent
+    ComportementComponent,
+    CommunicationComponent,
   ],
   entryComponents: [CoherenceOuiComponent],
     imports: [
