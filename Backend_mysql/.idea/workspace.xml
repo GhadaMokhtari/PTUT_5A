@@ -1,32 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="573aed6e-0534-4137-b40a-d1d427944298" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/config/db.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/patient.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/db.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/patient.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/routes/patient.routes.js" afterDir="false" />
+    <list default="true" id="6073a9d8-b6ee-49ef-9a82-830296edb64d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../UI/src/app/utils/evaluation.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UI/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../UI/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UI/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../UI/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UI/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../UI/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UI/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../UI/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UI/src/app/components/historique-patient/historique-patient.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../UI/src/app/components/historique-patient/historique-patient.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UI/src/app/components/historique-patient/historique-patient.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../UI/src/app/components/historique-patient/historique-patient.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UI/src/app/components/historique-patient/historique-patient.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../UI/src/app/components/historique-patient/historique-patient.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UI/src/app/components/liste-resident/liste-resident.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../UI/src/app/components/liste-resident/liste-resident.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,43 +28,36 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1ixp8VwRDTt87bah0IMEP4jY242" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1iuNo0gIPbs8FFv5uSX0E3BedXp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="573aed6e-0534-4137-b40a-d1d427944298" name="Default Changelist" comment="" />
-      <created>1602858937943</created>
+      <changelist id="6073a9d8-b6ee-49ef-9a82-830296edb64d" name="Default Changelist" comment="" />
+      <created>1602753689994</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1602858937943</updated>
-      <workItem from="1602858939054" duration="61000" />
-      <workItem from="1603104670019" duration="2562000" />
+      <updated>1602753689994</updated>
+      <workItem from="1602753691959" duration="4136000" />
+      <workItem from="1602857411137" duration="654000" />
+      <workItem from="1602923360682" duration="6000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+    <option name="version" value="1" />
   </component>
 </project>

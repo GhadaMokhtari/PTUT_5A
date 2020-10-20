@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Resident } from '../../utils/resident'
+import { Resident } from '../../utils/resident';
 
 @Component({
   selector: 'app-liste-resident',
