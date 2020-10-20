@@ -7,15 +7,15 @@ module.exports = app => {
     // Retrieve all patients
     app.get("/patient", patients.findAll);
 
-    // Retrieve a single Customer with customerId
+    // Retrieve a single Patient with patientId
     app.get("/patient/:patientId", patients.findOne);
 
-    // Update a Customer with customerId
+    // Update a patient with patientid
     app.put("/patient/:patientId", patients.update);
 
-    // Delete a Customer with customerId
+    // Delete a patient with patientid
     app.delete("/patient/:patientId", patients.delete);
 
-    // Create a new Customer
+    // Create a new patient
     app.delete("/patient", patients.deleteAll);
 };

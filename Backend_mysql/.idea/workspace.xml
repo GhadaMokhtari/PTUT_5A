@@ -20,6 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6073a9d8-b6ee-49ef-9a82-830296edb64d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/db.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/db.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/patient.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/patient.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes/patient.routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/patient.routes.js" afterDir="false" />
     </list>

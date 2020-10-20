@@ -8,20 +8,20 @@ const Patient = function(patient) {
 };
 
 Patient.create = (newPatient, result) => {
-    sql.query("INSERT INTO patient SET ?", newPatient, (err, res) => {
+    sql.query("INSERT INTO patients SET ?", newPatient, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);
             return;
         }
 
-        console.log("created patient: ", { id: res.insertId, ...newPatient });
+        console.log("created patients: ", { id: res.insertId, ...newPatient });
         result(null, { id: res.insertId, ...newPatient });
     });
 };
 
 Patient.findById = (patientId, result) => {
-    sql.query(`SELECT * FROM patient WHERE id = ${patientId}`, (err, res) => {
+    sql.query(`SELECT * FROM patients WHERE id = ${patientId}`, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(err, null);
@@ -29,7 +29,7 @@ Patient.findById = (patientId, result) => {
         }
 
         if (res.length) {
-            console.log("found patient: ", res[0]);
+            console.log("found patients: ", res[0]);
             result(null, res[0]);
             return;
         }
@@ -40,7 +40,7 @@ Patient.findById = (patientId, result) => {
 };
 
 Patient.getAll = result => {
-    sql.query("SELECT * FROM patient", (err, res) => {
+    sql.query("SELECT * FROM patients", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -54,7 +54,7 @@ Patient.getAll = result => {
 
 Patient.updateById = (id, patient, result) => {
     sql.query(
-        "UPDATE patient SET prenom = ?, nom = ?, date_naissance = ? WHERE id = ?",
+        "UPDATE patients SET prenom = ?, nom = ?, date_naissance = ? WHERE id = ?",
         [patient.prenom, patient.nom, patient.date_naissance, id],
         (err, res) => {
             if (err) {
@@ -76,7 +76,7 @@ Patient.updateById = (id, patient, result) => {
 };
 
 Patient.remove = (id, result) => {
-    sql.query("DELETE FROM patient WHERE id = ?", id, (err, res) => {
+    sql.query("DELETE FROM patients WHERE id = ?", id, (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
@@ -95,7 +95,7 @@ Patient.remove = (id, result) => {
 };
 
 Patient.removeAll = result => {
-    sql.query("DELETE FROM patient", (err, res) => {
+    sql.query("DELETE FROM patients", (err, res) => {
         if (err) {
             console.log("error: ", err);
             result(null, err);
