@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoherenceOuiComponent } from './coherence-oui.component';
+import { HabBasComponent } from './hab-bas.component';
 
-describe('CoherenceOuiComponent', () => {
-  let component: CoherenceOuiComponent;
-  let fixture: ComponentFixture<CoherenceOuiComponent>;
+describe('HabBasComponent', () => {
+  let component: HabBasComponent;
+  let fixture: ComponentFixture<HabBasComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CoherenceOuiComponent ]
+      declarations: [ HabBasComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CoherenceOuiComponent);
+    fixture = TestBed.createComponent(HabBasComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

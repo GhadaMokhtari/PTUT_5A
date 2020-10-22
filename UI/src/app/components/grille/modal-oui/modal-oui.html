@@ -1,0 +1,72 @@
+<div class="modal">
+<span mat-dialog-title> Est ce qu'elle le fait ?</span>
+<div  mat-dialog-content>
+  <div>
+
+    <span>Seul ?</span>
+    <div class="checkbox">
+      <div>
+        <input type="radio" [(ngModel)]="A" value="true" id="Aoui" name="Aresponse" >
+        <label for="Aoui">Oui</label>
+      </div>
+      <div>
+        <input type="radio" id="Anon" [(ngModel)]="A" value="false" name="Aresponse">
+        <label for="Anon">Non</label>
+      </div>
+    </div>
+
+    <span>Spontanément ?</span>
+    <div class="checkbox">
+      <div>
+        <input type="radio" [(ngModel)]="S" value="true" id="Soui" name="Sresponse" >
+        <label for="Soui">Oui</label>
+      </div>
+      <div>
+        <input type="radio" id="Snon" [(ngModel)]="S" value="false" name="Sresponse">
+        <label for="Snon">Non</label>
+      </div>
+    </div>
+
+    <span>Habituellement ?</span>
+    <div class="checkbox">
+      <div>
+        <input type="radio" [(ngModel)]="H" value="true" id="Houi" name="Hresponse" >
+        <label for="Houi">Oui</label>
+      </div>
+      <div>
+        <input type="radio" [(ngModel)]="H" value="false" id="Hnon" name="Hresponse">
+        <label for="Hnon">Non</label>
+      </div>
+    </div>
+
+    <span>Totalement ?</span>
+    <div class="checkbox">
+      <div>
+        <input type="radio" [(ngModel)]="T" value="true" id="Toui" name="Tresponse" >
+        <label for="Toui">Oui</label>
+      </div>
+      <div>
+        <input type="radio" [(ngModel)]="T" value="false" id="Tnon" name="Tresponse">
+        <label for="Tnon">Non</label>
+      </div>
+    </div>
+
+    <span>Correctement ?</span>
+    <div class="checkbox">
+      <div>
+        <input type="radio" [(ngModel)]="C" value="true" id="Coui" name="Cresponse" >
+        <label for="Coui">Oui</label>
+      </div>
+      <div>
+        <input type="radio" [(ngModel)]="C" value="false" id="Cnon" name="Cresponse">
+        <label for="Cnon">Non</label>
+      </div>
+    </div>
+  </div>
+  <div class="bouton">
+    <button mat-button mat-dialog-close> Fermer </button>
+    <button mat-button (click)="onValidate()">Valider</button>
+  </div>
+
+</div>
+</div>

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {CoherenceOuiComponent} from '../coherence-oui/coherence-oui.component';
+import {ModalOui} from '../../modal-oui/modal-oui';
 
 @Component({
   selector: 'app-communication',
@@ -9,20 +9,25 @@ import {CoherenceOuiComponent} from '../coherence-oui/coherence-oui.component';
 })
 export class CommunicationComponent implements OnInit {
 
-  @Output() newItemEvent = new EventEmitter<boolean>();
+  @Output() communicationToCoherenceEvent = new EventEmitter<boolean>();
   coherence = true;
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
+
   openDialog(): void{
-    // this.dialog.open(CoherenceOuiComponent);
-    const dialogRef = this.dialog.open(CoherenceOuiComponent);
+    // this.dialog.open(ModalOui);
+    const dialogRef = this.dialog.open(ModalOui);
     this.coherence = true;
   }
   goToTabs(): void{
-    this.newItemEvent.emit(true);
+    this.communicationToCoherenceEvent.emit(true);
+  }
+
+  modality(modality: string): void{
+    console.log(modality);
   }
 
 }

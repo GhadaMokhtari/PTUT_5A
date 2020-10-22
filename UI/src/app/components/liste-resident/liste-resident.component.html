@@ -8,8 +8,8 @@
 
 <h1>Liste des patients</h1>
 
-<div class="container">
-<div class="liste" *ngFor="let resident of residents; let index = index" routerLink="/historiquePatient">
+<mat-card class="container">
+<mat-card class="liste" *ngFor="let resident of residents; let index = index" routerLink="/historiquePatient">
   <div class="circle">{{index+1}}</div> <span>{{resident.nom}} {{resident.prenom}}</span> <span>Date de naissance : {{resident.dateNaiss}}</span> <span>Gir :</span>
-</div>
-</div>
+</mat-card>
+</mat-card>

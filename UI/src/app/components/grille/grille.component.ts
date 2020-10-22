@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {CoherenceOuiComponent} from './coherence/coherence-oui/coherence-oui.component';
+import {ModalOui} from './modal-oui/modal-oui';
 
 @Component({
   selector: 'app-grille',
