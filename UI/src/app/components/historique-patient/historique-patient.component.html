@@ -3,22 +3,25 @@
   <button>Rechercher</button>
 </div>
 <div>
-  <button class="newgrille" routerLink="/newGrille">Commencer une nouvelle évaluation</button>
+  <button class="newgrille" (click)='createEvaluation()'>Commencer une nouvelle évaluation</button>
 </div>
 
 
 <h1>Historique du patient</h1>
+<h2>{{ patient.prenom }} {{ patient.nom }}</h2>
 
 <!--
 <div class="circle">{{index+1}}</div> <span>{{resident.nom}} {{resident.prenom}}</span> <span>Date de naissance : {{resident.dateNaiss}}</span> <span>Gir :</span>
 -->
 
+
 <mat-tab-group dynamicHeight>
 
   <mat-tab label="Historique">
+    <div *ngIf="!evaluations || !evaluations.length">Pas d'évaluations</div>
     <div class="container">
       <div class="liste" *ngFor="let eval of evaluations; let index = index" routerLink="/recapGrille">
-        <div class="circle">{{index+1}}</div> <span>Date : {{eval.date}}</span> <span> Gir : {{eval.gir}}</span>
+        <div class="circle">{{index+1}}</div> <span>Date : {{eval.date | date: 'dd/MM/yyyy HH:mm'}}</span> <span> Gir : {{eval.gir}}</span>
       </div>
     </div>
   </mat-tab>

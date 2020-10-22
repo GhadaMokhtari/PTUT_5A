@@ -1,11 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const dbConfig = require("./app/config/db.config.js");
+const mongoose = require("mongoose");
+const db = {};
 
 const app = express();
 
 var corsOptions = {
-    origin: "http://localhost:8081"
+    origin: "http://localhost:4200"
 };
 
 app.use(cors(corsOptions));
@@ -16,8 +19,15 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
+mongoose.Promise = global.Promise;
+db.mongoose = mongoose;
+db.url = dbConfig.url;
 
-const db = require("./app/models");
+db.patients = require("./app/models/patient.model.js")(mongoose);
+db.evaluation = require("./app/models/evaluation.model.js")(mongoose);
+
+module.exports = db;
+
 db.mongoose
     .connect(db.url, {
         useNewUrlParser: true,
@@ -37,11 +47,10 @@ app.get("/", (req, res) => {
 });
 
 require("./app/routes/patient.routes")(app);
-require("./app/routes/grille.routes")(app);
 require("./app/routes/evaluation.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });

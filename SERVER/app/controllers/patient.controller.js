@@ -1,9 +1,9 @@
-const db = require("../models");
+const db = require("../../server");
 const Patient = db.patients;
 
 exports.create = (req, res) => {
     // Validate request
-    if (!req.body.nom || !req.body.prenom || !req.body.age) {
+    if (!req.body.nom || !req.body.prenom || !req.body.dateNaissance) {
         res.status(400).send({ message: "Content can not be empty!" });
         return;
     }
@@ -12,7 +12,7 @@ exports.create = (req, res) => {
     const patient = new Patient({
         nom: req.body.nom,
         prenom: req.body.prenom,
-        age: req.body.age
+        dateNaissance: req.body.dateNaissance
     });
 
     // Save Patient in the database

@@ -1,5 +1,6 @@
+import { PatientService } from './../../services/patient.service';
 import { Component, OnInit } from '@angular/core';
-import { Resident } from '../../utils/resident';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-liste-resident',
@@ -9,12 +10,27 @@ import { Resident } from '../../utils/resident';
 export class ListeResidentComponent implements OnInit {
 
 
-   residents: Resident[] = [{nom: 'Mokhtari', prenom: 'Ghada', dateNaiss: '1999-07-12'},
-     {nom: 'Sarda', prenom: 'Hugo', dateNaiss: '1996-08-05'}];
+   patients;
 
-  constructor() { }
+  constructor(
+    public patientService: PatientService,
+    public router: Router
+    ) { }
 
   ngOnInit(): void {
+    this.getPatients();
+  }
+
+  getPatients(): any{
+     this.patientService.getAll().subscribe((data: any) => {
+      this.patients = data;
+    }, (err) => {
+      console.error(err);
+    });
+  }
+
+  goToHistoric(patient): any{
+    this.router.navigate(['/historiquePatient/', patient.id]);
   }
 
 }

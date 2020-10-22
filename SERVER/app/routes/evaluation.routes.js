@@ -12,6 +12,9 @@ module.exports = app => {
     // Retrieve a single Evaluation with id
     router.get("/:id", evaluation.findOne);
 
+    // Retrive all evaluation for a patient
+    router.get("/patient/:id", evaluation.findByPatient);
+
     // Update a Evaluation with id
     router.put("/:id", evaluation.update);
 
@@ -21,5 +24,5 @@ module.exports = app => {
     // Create a new Evaluation
     router.delete("/", evaluation.deleteAll);
 
-    app.use('/api/evaluation', router);
+    app.use('/api/evaluations', router);
 };

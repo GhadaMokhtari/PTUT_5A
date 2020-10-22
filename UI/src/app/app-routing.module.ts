@@ -17,7 +17,7 @@ const routes: Routes = [
     component: NewPatientComponent
   },
   {
-    path: 'historiquePatient',
+    path: 'historiquePatient/:id',
     component: HistoriquePatientComponent
   },
   {
@@ -25,7 +25,7 @@ const routes: Routes = [
     component: RecapitulatifGrilleComponent
   },
   {
-    path: 'newGrille',
+    path: 'newEvaluation/:id',
     component: GrilleComponent
   }
 ];

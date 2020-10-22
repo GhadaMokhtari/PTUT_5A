@@ -1,6 +1,7 @@
+import { EvaluationService } from './../../services/evaluation.service';
+import { PatientService } from './../../services/patient.service';
 import { Component, OnInit } from '@angular/core';
-import {Evaluation} from '../../utils/evaluation';
-import {Resident} from '../../utils/resident';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-historique-patient',
@@ -9,11 +10,40 @@ import {Resident} from '../../utils/resident';
 })
 export class HistoriquePatientComponent implements OnInit {
 
-  evaluations: Evaluation[] = [{date: '2020-10-16', gir: 6}];
-  resident = [{nom: 'Mokhtari', prenom: 'Ghada', dateNaiss: '1999-07-12'}];
-  constructor() { }
+  evaluations: any;
+  patient: any;
+
+  constructor(
+    public patientService: PatientService,
+    public evaluationService: EvaluationService,
+    public router: Router,
+    public route: ActivatedRoute,
+    ) { }
 
   ngOnInit(): void {
+    this.getPatient();
+  }
+
+  getPatient(): any{
+    // Récupération de l'id du patient à afficher
+    const id = this.route.snapshot.paramMap.get('id');
+
+    this.patientService.get(id).subscribe((data: any) => {
+      this.patient = data;
+    }, (err) => {
+      console.error(err);
+    });
+
+    // Récupérer les évaluations
+    this.evaluationService.getByPatient(id).subscribe((data: any) => {
+      this.evaluations = data;
+    }, (err) => {
+      console.error(err);
+    });
+  }
+
+  createEvaluation(): any{
+    this.router.navigate(['newEvaluation', this.patient.id]);
   }
 
 }

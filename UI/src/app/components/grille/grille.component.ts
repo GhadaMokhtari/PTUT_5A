@@ -1,6 +1,7 @@
+import { EvaluationService } from './../../services/evaluation.service';
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {ModalOui} from './modal-oui/modal-oui';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-grille',
@@ -12,7 +13,12 @@ export class GrilleComponent implements OnInit {
   tabs = [{title: '', target: ''}];
   selected = 0;
 
-  constructor(public  dialog: MatDialog) { }
+  constructor(
+    public  dialog: MatDialog,
+    public evaluationService: EvaluationService,
+    public router: Router,
+    public route: ActivatedRoute,
+    ) { }
 
   ngOnInit(): void {
   }
@@ -25,5 +31,23 @@ export class GrilleComponent implements OnInit {
   onNativeChange(e) {
     if (e.target.checked){
     }
+  }
+
+  createEvaluation(): any{
+    const patientId = this.route.snapshot.paramMap.get('id');
+
+    const evaluation = {
+      date: new Date(),
+      score: 4,
+      gir: 1,
+      rang: 3,
+      patient: patientId
+    };
+
+    this.evaluationService.create(evaluation).subscribe((data) => {
+      this.router.navigate(['historiquePatient', patientId]);
+    }, (err) => {
+      console.error(err);
+    });
   }
 }

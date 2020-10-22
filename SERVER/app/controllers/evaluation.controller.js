@@ -1,20 +1,20 @@
-const db = require("../models");
+const db = require("../../server");
 const Evaluation = db.evaluation;
 
 exports.create = (req, res) => {
     // Validate request
-    if (!req.body.eval_num || !req.body.score || !req.body.rang || !req.body.gir) {
+    if (!req.body.score || !req.body.rang || !req.body.gir || !req.body.patient) {
         res.status(400).send({ message: "Content can not be empty!" });
         return;
     }
 
     // Create a Evaluation
     const evaluation = new Evaluation({
-        eval_num: req.body.eval_num,
+        date: new Date(),
+        patient: req.body.patient,
         score: req.body.score,
         rang: req.body.rang,
-        gir: req.body.gir,
-        published: req.body.published ? req.body.published : false
+        gir: req.body.gir
     });
 
     // Save Evaluation in the database
@@ -28,6 +28,23 @@ exports.create = (req, res) => {
                 message:
                     err.message || "Some error occurred while creating the Tutorial."
             });
+        });
+};
+
+exports.findByPatient = (req, res) => {
+    const id = req.params.id;
+
+    Evaluation.find({ patient: req.params.id })
+        .sort({ date: -1 })
+        .then(data => {
+            if (!data)
+                res.status(404).send({ message: "Not found Evaluation for patient with id " + id });
+            else res.send(data);
+        })
+        .catch(err => {
+            res
+                .status(500)
+                .send({ message: "Error retrieving Evaluation from patient with id=" + id });
         });
 };
 
