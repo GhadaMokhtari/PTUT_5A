@@ -3,27 +3,28 @@ import {ModalOui} from '../../modal-oui/modal-oui';
 import {MatDialog} from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-comportement',
-  templateUrl: './comportement.component.html',
-  styleUrls: ['./comportement.component.scss']
+  selector: 'app-temps',
+  templateUrl: './temps.component.html',
+  styleUrls: ['./temps.component.scss']
 })
-export class ComportementComponent implements OnInit {
+export class TempsComponent implements OnInit {
 
-  @Output() comportementToCoherenceEvent = new EventEmitter<boolean>();
-  coherence = false;
+  orientation = false;
+  @Output() tempsToOrientationEvent = new EventEmitter <boolean>();
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  openDialog(): void{
+  openDialog(): void {
     // this.dialog.open(ModalOui);
     const dialogRef = this.dialog.open(ModalOui);
-    this.coherence = true;
+    this.orientation = true;
   }
+
   goToTabs(): void{
-    this.comportementToCoherenceEvent.emit(true);
+    this.tempsToOrientationEvent.emit(true);
   }
 
 }

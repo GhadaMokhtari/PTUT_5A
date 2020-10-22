@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {CoherenceOuiComponent} from './coherence-oui/coherence-oui.component';
+import {ModalOui} from '../modal-oui/modal-oui';
 import {MatDialog} from '@angular/material/dialog';
 
 @Component({
@@ -12,7 +12,7 @@ export class CoherenceComponent implements OnInit {
   tabs = [{title: '', target: ''}];
   selected = 0;
 
-  @Output() newItemEvent = new EventEmitter<boolean>();
+  @Output() coherenceToGrilleEvent = new EventEmitter<boolean>();
   coherence = false;
   constructor(public dialog: MatDialog) { }
 
@@ -20,14 +20,15 @@ export class CoherenceComponent implements OnInit {
   }
 
   openDialog(): void{
-    // this.dialog.open(CoherenceOuiComponent);
-    const dialogRef = this.dialog.open(CoherenceOuiComponent);
+    // this.dialog.open(ModalOui);
+    const dialogRef = this.dialog.open(ModalOui);
     this.coherence = true;
   }
-  goToTabs(): void{
-    this.newItemEvent.emit(true);
-  }
+
   goToTab(tab: number): void {
     this.selected = tab;
+  }
+  goToTabParent(): void {
+    this.coherenceToGrilleEvent.emit(true);
   }
 }
