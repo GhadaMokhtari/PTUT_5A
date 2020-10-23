@@ -1,0 +1,37 @@
+<h1>Evaluation AGGIR</h1>
+
+<mat-tab-group [selectedIndex]="selected" (selectedIndexChange)="goToTab($event)" dynamicHeight>
+  <mat-tab label="Cohérence">
+    <app-coherence (coherenceToGrilleEvent)="goToTab(1)"></app-coherence>
+  </mat-tab>
+  <mat-tab label="Orientation">
+    <app-orientation (orientationToGrilleEvent)="goToTab(2)"></app-orientation>
+  </mat-tab>
+  <mat-tab label="Toilette">
+    <app-toilette (toiletteToGrilleEvent)="goToTab(3)"></app-toilette>
+  </mat-tab>
+  <mat-tab label="Habillage">
+    <app-habillage (habillageToGrilleEvent)="goToTab(4)"></app-habillage>
+  </mat-tab>
+  <mat-tab label="Alimentation">
+    <app-alimentation (alimentationToGrilleEvent)="goToTab(5)"></app-alimentation>
+  </mat-tab>
+  <mat-tab label="Elimination">
+    <app-elimination (eliminationToGrilleEvent)="goToTab(6)"></app-elimination>
+  </mat-tab>
+  <mat-tab label="Transferts">
+    <app-transferts (transfertsToGrilleEvent)="goToTab(7)"></app-transferts>
+  </mat-tab>
+  <mat-tab label="Déplacements à l'intérieur">
+    <app-deplacements-interieurs (interieursTogrille)="goToTab(8)"></app-deplacements-interieurs>
+  </mat-tab>
+  <mat-tab label="Déplacements à l'extérieur">
+    <app-deplacements-exterieurs (exterieursToGrilleEvent)="goToTab(9)"></app-deplacements-exterieurs>
+  </mat-tab>
+  <mat-tab label="Communication à distance">
+    <app-communication-distance></app-communication-distance>
+  </mat-tab>
+</mat-tab-group>
+
+<button mat-raised-button color="primary" (click)="createEvaluation()">Créer evaluation</button>
+

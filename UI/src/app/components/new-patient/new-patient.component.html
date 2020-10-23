@@ -1,0 +1,22 @@
+<h1>Créer un patient</h1>
+
+<div class="englobe">
+  <div class="infos">
+    <div>
+      <label>Nom</label>
+      <input type="text" placeholder="Entrer le nom" [(ngModel)]="patient.nom">
+    </div>
+    <div>
+      <label>Prénom</label>
+      <input type="text" placeholder="Entrer le prénom" [(ngModel)]="patient.prenom">
+    </div>
+  </div>
+  <div class="dateNaiss">
+    <label>Date de naissance</label>
+    <input type="date" [(ngModel)]="patient.dateNaissance">
+  </div>
+  <div class="btnval">
+    <button (click)="create()">Valider</button>
+  </div>
+
+</div>

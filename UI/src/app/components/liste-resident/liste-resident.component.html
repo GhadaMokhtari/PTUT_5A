@@ -1,0 +1,15 @@
+<div class="search">
+  <input type="search" id="site-search" aria-label="Rechercher un patient" placeholder="Rechercher un patient">
+  <button>Rechercher</button>
+</div>
+<div>
+  <button class="newpatient" routerLink="/newPatient">Créer un nouveau patient</button>
+</div>
+
+<h1>Liste des patients</h1>
+
+<mat-card class="container">
+<mat-card class="liste" *ngFor="let patient of patients; let index = index" (click)="goToHistoric(patient)">
+  <div class="circle">{{index+1}}</div> <span>{{patient.nom}} {{patient.prenom}}</span> <span>Date de naissance : {{patient.dateNaissance | date: 'dd/MM/yyyy'}}</span> <span>Gir :</span>
+</mat-card>
+</mat-card>

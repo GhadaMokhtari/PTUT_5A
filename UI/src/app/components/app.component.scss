@@ -1,0 +1,43 @@
+@import '../ressources/variables.scss';
+
+:host{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  input{
+    border-radius: 20px;
+    height: 25px;
+    width: 170px;
+  }
+
+  button{
+    border-radius: 20px;
+    height: 25px;
+    width: 80px;
+    background: $blue;
+  }
+
+  .search{
+    align-self: flex-end;
+    margin-right: 80px;
+    padding-top: 50px;
+  }
+  h1{
+    align-self: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: black;
+    font-family: 'Lato', sans-serif;
+    font-size: 40px;
+  }
+  .newpatient{
+    margin-left: 30px;
+    background: $blue;
+    border: solid 2px black;
+    border-radius: 25px;
+    width: 160px;
+    height: 60px;
+    text-align: center;
+  }
+}

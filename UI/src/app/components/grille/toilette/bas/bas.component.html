@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>2. Toilette du bas</h2>
+  <span class="question">Est ce que la personne fait seule sa toilette du bas ?</span>
+  <div class="checkbox">
+    <div>
+      <input type="radio" id="oui" name="toiletteB"  (change)="openDialog()">
+      <label for="oui">Oui</label>
+    </div>
+    <div>
+      <input type="radio" id="non" name="toiletteB"  (change)="goToTabs()" >
+      <label for="non">Non</label>
+    </div>
+  </div>
+</div>
+<app-modal-oui *ngIf="toiletteBas"></app-modal-oui>

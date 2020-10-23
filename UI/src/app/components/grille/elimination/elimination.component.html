@@ -1,0 +1,9 @@
+<mat-tab-group class="groupe" [selectedIndex]="selected" (selectedIndexChange)="goToTab($event)" dynamicHeight>
+  <mat-tab label="Elimination urinaire"  >
+    <app-urinaire (urinaireToFecaleEvent)="goToTab(1)"></app-urinaire>
+  </mat-tab>
+  <mat-tab label="Elimination fécale">
+    <app-fecale (fecaleToEliminationEvent)="goToTabParent()"></app-fecale>
+  </mat-tab>
+
+</mat-tab-group>

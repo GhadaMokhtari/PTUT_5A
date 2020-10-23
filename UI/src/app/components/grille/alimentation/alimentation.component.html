@@ -1,0 +1,9 @@
+<mat-tab-group class="groupe" [selectedIndex]="selected" (selectedIndexChange)="goToTab($event)" dynamicHeight>
+  <mat-tab label="Se servir"  >
+    <app-servir (servirToMangerEvent)="goToTab(1)"></app-servir>
+  </mat-tab>
+  <mat-tab label="Manger">
+    <app-manger (mangerToAlimentationEvent)="goToTabParent()"></app-manger>
+  </mat-tab>
+
+</mat-tab-group>

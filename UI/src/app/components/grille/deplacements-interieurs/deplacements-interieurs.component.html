@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Déplacements à l'intérieur</h2>
+  <span class="question">Est ce que la personne se déplace seule intérieurement ?</span>
+  <div class="checkbox">
+    <div>
+      <input type="radio" id="oui" name="communication"  (change)="openDialog()">
+      <label for="oui">Oui</label>
+    </div>
+    <div>
+      <input type="radio" id="non" name="communication"  (change)="goToTabs()" >
+      <label for="non">Non</label>
+    </div>
+  </div>
+</div>
+<app-modal-oui *ngIf="interieur"></app-modal-oui>

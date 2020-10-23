@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>1. Habillage du haut</h2>
+  <span class="question">Est ce que la personne s'habille seule du haut ?</span>
+  <div class="checkbox">
+    <div>
+      <input type="radio" id="oui" name="toiletteB"  (change)="openDialog()">
+      <label for="oui">Oui</label>
+    </div>
+    <div>
+      <input type="radio" id="non" name="toiletteB"  (change)="goToTabs()" >
+      <label for="non">Non</label>
+    </div>
+  </div>
+</div>
+<app-modal-oui *ngIf="habillageDuHaut"></app-modal-oui>
