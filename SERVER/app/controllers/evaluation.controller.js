@@ -14,7 +14,8 @@ exports.create = (req, res) => {
         patient: req.body.patient,
         score: req.body.score,
         rang: req.body.rang,
-        gir: req.body.gir
+        gir: req.body.gir,
+        results : req.body.results,
     });
 
     // Save Evaluation in the database
