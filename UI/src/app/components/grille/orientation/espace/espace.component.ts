@@ -17,7 +17,12 @@ export class EspaceComponent implements OnInit {
   ngOnInit(): void {
   }
 
+<<<<<<< HEAD
   openDialog(): void {
+=======
+    openDialog(): void {
+    // this.dialog.open(ModalOui);
+>>>>>>> 4c4941bc96ff05a96a43854a7553bcc64b602c2b
     const dialogRef = this.dialog.open(ModalOui);
     this.orientation = true;
   }
