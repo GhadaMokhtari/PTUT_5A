@@ -27,8 +27,7 @@ import { HabillageComponent } from './components/grille/habillage/habillage.comp
 import { HabHautComponent } from './components/grille/habillage/hab-haut/hab-haut.component';
 import { HabBasComponent } from './components/grille/habillage/hab-bas/hab-bas.component';
 import { HabMoyenComponent } from './components/grille/habillage/hab-moyen/hab-moyen.component';
-import {MatCardModule} from "@angular/material/card";
-<<<<<<< HEAD
+import {MatCardModule} from '@angular/material/card';
 import { AlimentationComponent } from './components/grille/alimentation/alimentation.component';
 import { ServirComponent } from './components/grille/alimentation/servir/servir.component';
 import { MangerComponent } from './components/grille/alimentation/manger/manger.component';
@@ -39,8 +38,6 @@ import { TransfertsComponent } from './components/grille/transferts/transferts.c
 import { DeplacementsExterieursComponent } from './components/grille/deplacements-exterieurs/deplacements-exterieurs.component';
 import { DeplacementsInterieursComponent } from './components/grille/deplacements-interieurs/deplacements-interieurs.component';
 import { CommunicationDistanceComponent } from './components/grille/communication-distance/communication-distance.component';
-=======
->>>>>>> 4c4941bc96ff05a96a43854a7553bcc64b602c2b
 
 @NgModule({
   declarations: [
@@ -64,7 +61,6 @@ import { CommunicationDistanceComponent } from './components/grille/communicatio
     HabHautComponent,
     HabBasComponent,
     HabMoyenComponent,
-<<<<<<< HEAD
     AlimentationComponent,
     ServirComponent,
     MangerComponent,
@@ -75,8 +71,6 @@ import { CommunicationDistanceComponent } from './components/grille/communicatio
     DeplacementsExterieursComponent,
     DeplacementsInterieursComponent,
     CommunicationDistanceComponent,
-=======
->>>>>>> 4c4941bc96ff05a96a43854a7553bcc64b602c2b
   ],
   entryComponents: [ModalOui],
   imports: [

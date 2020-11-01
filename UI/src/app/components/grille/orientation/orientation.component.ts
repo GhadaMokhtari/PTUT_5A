@@ -1,6 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {MatDialog} from "@angular/material/dialog";
-import {ModalOui} from "../modal-oui/modal-oui";
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-orientation',
