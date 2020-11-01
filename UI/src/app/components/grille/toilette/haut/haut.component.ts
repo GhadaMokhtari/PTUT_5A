@@ -8,7 +8,6 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./haut.component.scss']
 })
 export class HautComponent implements OnInit {
-
   toiletteHaut = false;
   @Output() toiletteHautToBasEvent = new EventEmitter<boolean>();
 

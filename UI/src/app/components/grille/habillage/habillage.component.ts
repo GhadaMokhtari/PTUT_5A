@@ -1,6 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
-
 @Component({
   selector: 'app-habillage',
   templateUrl: './habillage.component.html',
