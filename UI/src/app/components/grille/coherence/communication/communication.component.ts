@@ -10,7 +10,10 @@ import {ModalOui} from '../../modal-oui/modal-oui';
 export class CommunicationComponent implements OnInit {
 
   @Output() communicationToCoherenceEvent = new EventEmitter<boolean>();
-  coherence = true;
+  @Output() resultEmitEvent = new EventEmitter<string>();
+
+  Non: boolean;
+  modalite: string;
 
   constructor(public dialog: MatDialog) { }
 
@@ -20,14 +23,22 @@ export class CommunicationComponent implements OnInit {
   openDialog(): void{
     // this.dialog.open(ModalOui);
     const dialogRef = this.dialog.open(ModalOui);
-    this.coherence = true;
+    const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
+      this.modalite = data;
+     // console.log('dialog data', data);
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });
   }
   goToTabs(): void{
+    // @ts-ignore
+    if (this.Non === 'true'){
+      this.modalite = 'C';
+    }
+    console.log('communication modalité', this.modalite);
+    this.resultEmitEvent.emit(this.modalite);
     this.communicationToCoherenceEvent.emit(true);
   }
-
-  modality(modality: string): void{
-    console.log(modality);
-  }
-
 }

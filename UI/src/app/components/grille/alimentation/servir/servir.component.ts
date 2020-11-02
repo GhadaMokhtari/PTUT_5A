@@ -9,8 +9,10 @@ import {ModalOui} from '../../modal-oui/modal-oui';
 })
 export class ServirComponent implements OnInit {
 
-  servir = false;
   @Output() servirToMangerEvent = new EventEmitter<boolean>();
+  @Output() resultEmitEvent = new EventEmitter<string>();
+  Non: boolean;
+  modalite: string;
 
   constructor(public dialog: MatDialog) { }
 
@@ -19,9 +21,22 @@ export class ServirComponent implements OnInit {
 
   openDialog(): void{
     const dialogRef = this.dialog.open(ModalOui);
-    this.servir = true;
+    const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
+      this.modalite = data;
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });
   }
+
   goToTabs(): void{
+    // @ts-ignore
+    if (this.Non === 'true'){
+      this.modalite = 'C';
+    }
+    console.log('servir modalité', this.modalite);
+    this.resultEmitEvent.emit(this.modalite);
     this.servirToMangerEvent.emit(true);
   }
 }

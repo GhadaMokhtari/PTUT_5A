@@ -9,7 +9,6 @@ import {ModalOui} from '../modal-oui/modal-oui';
 })
 export class CommunicationDistanceComponent implements OnInit {
 
-  commDist = true;
 
   constructor(public dialog: MatDialog) { }
 
@@ -18,6 +17,12 @@ export class CommunicationDistanceComponent implements OnInit {
 
   openDialog(): void{
     const dialogRef = this.dialog.open(ModalOui);
-    this.commDist = true;
+    const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
+      console.log('dialog data', data);
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });
   }
 }

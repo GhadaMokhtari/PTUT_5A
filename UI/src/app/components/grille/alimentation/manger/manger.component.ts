@@ -9,8 +9,10 @@ import {ModalOui} from '../../modal-oui/modal-oui';
 })
 export class MangerComponent implements OnInit {
 
-  manger = false;
   @Output() mangerToAlimentationEvent = new EventEmitter<boolean>();
+  @Output() resultEmitEvent = new EventEmitter<string>();
+  Non: boolean;
+  modalite: string;
 
   constructor(public dialog: MatDialog) { }
 
@@ -18,11 +20,22 @@ export class MangerComponent implements OnInit {
   }
 
   openDialog(): void{
-    // this.dialog.open(ModalOui);
     const dialogRef = this.dialog.open(ModalOui);
-    this.manger = true;
+    const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
+      this.modalite = data;
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });
   }
   goToTabs(): void{
+    // @ts-ignore
+    if (this.Non === 'true'){
+      this.modalite = 'C';
+    }
+    console.log('manger modalité', this.modalite);
+    this.resultEmitEvent.emit(this.modalite);
     this.mangerToAlimentationEvent.emit(true);
   }
 }

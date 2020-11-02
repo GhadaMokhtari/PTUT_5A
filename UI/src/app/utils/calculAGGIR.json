@@ -1,0 +1,254 @@
+  { "variables" : {
+    "variable" : {
+        "nom" : "coherence",
+        "modalite" : {
+            "C" : {
+                "groupeA" : 2000,
+                "groupeB" : 1500,
+                "groupeC" : 0,
+                "groupeD" : 400,
+                "groupeE" : 200,
+                "groupeF" : 200,
+                "groupeG" : 150,
+                "groupeH" : 0
+            },
+            "B":{
+                "groupeA" : 0,
+                "groupeB" : 320,
+                "groupeC" : 0,
+                "groupeD" : 0,
+                "groupeE" : 0,
+                "groupeF" : 100,
+                "groupeG" : 0,
+                "groupeH" : 0
+                }
+        }
+    },
+
+    "variable" :{
+        "nom" : "orientation",
+        "modalite" : {
+            "C" : {
+                "groupeA" : 1200,
+                "groupeB" : 1200,
+                "groupeC" : 0,
+                "groupeD" : 400,
+                "groupeE" : 200,
+                "groupeF" : 200,
+                "groupeG" : 150,
+                "groupeH" : 0
+            },
+            "B":{
+                "groupeA" : 0,
+                "groupeB" : 120,
+                "groupeC" : 0,
+                "groupeD" : 0,
+                "groupeE" : 0,
+                "groupeF" : 100,
+                "groupeG" : 0,
+                "groupeH" : 0
+                }
+        }
+    },
+    "variable" :{
+        "nom" : "toilette",
+        "modalite" : {
+            "C" : {
+                "groupeA" : 40,
+                "groupeB" : 40,
+                "groupeC" : 40,
+                "groupeD" : 400,
+                "groupeE" : 500,
+                "groupeF" : 500,
+                "groupeG" : 300,
+                "groupeH" : 3000
+            },
+            "B":{
+                "groupeA" : 16,
+                "groupeB" : 16,
+                "groupeC" : 16,
+                "groupeD" : 100,
+                "groupeE" : 100,
+                "groupeF" : 100,
+                "groupeG" : 200,
+                "groupeH" : 2000
+                }
+        }
+    },
+    "variable" :{
+        "nom" : "habillage",
+        "modalite" : {
+            "C" : {
+                "groupeA" : 40,
+                "groupeB" : 40,
+                "groupeC" : 40,
+                "groupeD" : 400,
+                "groupeE" : 500,
+                "groupeF" : 500,
+                "groupeG" : 300,
+                "groupeH" : 3000
+            },
+            "B":{
+                "groupeA" : 16,
+                "groupeB" : 16,
+                "groupeC" : 16,
+                "groupeD" : 100,
+                "groupeE" : 100,
+                "groupeF" : 100,
+                "groupeG" : 200,
+                "groupeH" : 2000
+                }
+        }
+    },
+    "variable" :{
+        "nom" : "alimentation",
+        "modalite" : {
+            "C" : {
+                "groupeA" : 60,
+                "groupeB" : 60,
+                "groupeC" : 60,
+                "groupeD" : 400,
+                "groupeE" : 500,
+                "groupeF" : 500,
+                "groupeG" : 500,
+                "groupeH" : 3000
+            },
+            "B":{
+                "groupeA" : 20,
+                "groupeB" : 0,
+                "groupeC" : 20,
+                "groupeD" : 100,
+                "groupeE" : 100,
+                "groupeF" : 100,
+                "groupeG" : 200,
+                "groupeH" : 2000
+                }
+        }
+    },
+    "variable" :{
+        "nom" : "elimination",
+        "modalite" : {
+            "C" : {
+                "groupeA" : 100,
+                "groupeB" : 100,
+                "groupeC" : 160,
+                "groupeD" : 800,
+                "groupeE" : 500,
+                "groupeF" : 500,
+                "groupeG" : 500,
+                "groupeH" : 3000
+            },
+            "B":{
+                "groupeA" : 16,
+                "groupeB" : 16,
+                "groupeC" : 20,
+                "groupeD" : 100,
+                "groupeE" : 100,
+                "groupeF" : 100,
+                "groupeG" : 200,
+                "groupeH" : 2000
+                }
+        }
+    },
+    "variable" :{
+        "nom" : "transfert",
+        "modalite" : {
+            "C" : {
+                "groupeA" : 800,
+                "groupeB" : 800,
+                "groupeC" : 1000,
+                "groupeD" : 800,
+                "groupeE" : 500,
+                "groupeF" : 500,
+                "groupeG" : 400,
+                "groupeH" : 1000
+            },
+            "B":{
+                "groupeA" : 120,
+                "groupeB" : 120,
+                "groupeC" : 200,
+                "groupeD" : 100,
+                "groupeE" : 100,
+                "groupeF" : 100,
+                "groupeG" : 200,
+                "groupeH" : 2000
+                }
+        }
+    },
+    "variable" :{
+        "nom" : "deplacement interieur",
+        "modalite" : {
+            "C" : {
+                "groupeA" : 200,
+                "groupeB" : -80,
+                "groupeC" : 400,
+                "groupeD" : 200,
+                "groupeE" : 200,
+                "groupeF" : 200,
+                "groupeG" : 200,
+                "groupeH" : 1000
+            },
+            "B":{
+                "groupeA" : 32,
+                "groupeB" : -40,
+                "groupeC" : 40,
+                "groupeD" : 0,
+                "groupeE" : 0,
+                "groupeF" : 0,
+                "groupeG" : 100,
+                "groupeH" : 1000
+                }
+        }
+    },
+    "variable" :{
+        "nom" : "deplacement exterieur",
+        "modalite" : {
+            "C" : {
+                "groupeA" : 0,
+                "groupeB" : 0,
+                "groupeC" : 0,
+                "groupeD" : 0,
+                "groupeE" : 0,
+                "groupeF" : 0,
+                "groupeG" : 0,
+                "groupeH" : 0
+            },
+            "B":{
+                "groupeA" : 0,
+                "groupeB" : 0,
+                "groupeC" : 0,
+                "groupeD" : 0,
+                "groupeE" : 0,
+                "groupeF" : 0,
+                "groupeG" : 0,
+                "groupeH" : 0
+                }
+        }
+    },
+    "variable" :{
+        "nom" : "communication",
+        "modalite" : {
+            "C" : {
+                "groupeA" : 0,
+                "groupeB" : 0,
+                "groupeC" : 0,
+                "groupeD" : 0,
+                "groupeE" : 0,
+                "groupeF" : 0,
+                "groupeG" : 0,
+                "groupeH" : 0
+            },
+            "B":{
+                "groupeA" : 0,
+                "groupeB" : 0,
+                "groupeC" : 0,
+                "groupeD" : 0,
+                "groupeE" : 0,
+                "groupeF" : 0,
+                "groupeG" : 0,
+                "groupeH" : 0
+                }
+        }
+    }
+}
+}

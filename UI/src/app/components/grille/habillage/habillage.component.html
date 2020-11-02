@@ -1,12 +1,12 @@
 <mat-tab-group class="groupe" [selectedIndex]="selected" (selectedIndexChange)="goToTab($event)" dynamicHeight>
   <mat-tab label="Habillage du haut"  >
-    <app-hab-haut (habillageHautToMoyenEvent)="goToTab(1)"></app-hab-haut>
+    <app-hab-haut (resultEmitEvent)="habHautResult($event)" (habillageHautToMoyenEvent)="goToTab(1)"></app-hab-haut>
   </mat-tab>
   <mat-tab label="Habillage moyen">
-    <app-hab-moyen (habillageMoyenToBasEvent)="goToTab(2)"></app-hab-moyen>
+    <app-hab-moyen (resultEmitEvent)="habMoyenResult($event)" (habillageMoyenToBasEvent)="goToTab(2)"></app-hab-moyen>
   </mat-tab>
   <mat-tab label="Habillage du bas">
-    <app-hab-bas (habillageBasToHabillageEvent)="goToTabParent()"></app-hab-bas>
+    <app-hab-bas (resultEmitEvent)="habBasResult($event)" (habillageBasToHabillageEvent)="goToTabParent()"></app-hab-bas>
   </mat-tab>
 
 </mat-tab-group>

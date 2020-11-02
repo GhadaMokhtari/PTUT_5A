@@ -8,8 +8,12 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./haut.component.scss']
 })
 export class HautComponent implements OnInit {
-  toiletteHaut = false;
+
   @Output() toiletteHautToBasEvent = new EventEmitter<boolean>();
+  @Output() resultEmitEvent = new EventEmitter<string>();
+
+  modalite: string;
+  Non: boolean;
 
   constructor(public dialog: MatDialog) { }
 
@@ -18,9 +22,21 @@ export class HautComponent implements OnInit {
 
   openDialog(): void{
     const dialogRef = this.dialog.open(ModalOui);
-    this.toiletteHaut = true;
-  }
+    const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
+      this.modalite = data;
+      console.log('dialog data', this.modalite);
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });  }
   goToTabs(): void{
+    // @ts-ignore
+    if (this.Non === 'true'){
+      this.modalite = 'C';
+    }
+    console.log('toilette haut modalité', this.modalite);
+    this.resultEmitEvent.emit(this.modalite);
     this.toiletteHautToBasEvent.emit(true);
   }
 }

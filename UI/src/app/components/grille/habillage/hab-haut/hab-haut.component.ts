@@ -9,17 +9,33 @@ import {ModalOui} from '../../modal-oui/modal-oui';
 })
 export class HabHautComponent implements OnInit {
 
-  habillageDuHaut = false;
   @Output() habillageHautToMoyenEvent = new EventEmitter<boolean>();
+  @Output() resultEmitEvent = new EventEmitter<string>();
+
+  Non: boolean;
+  modalite: string;
+
+
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
   openDialog(): void{
     const dialogRef = this.dialog.open(ModalOui);
-    this.habillageDuHaut = true;
-  }
+    const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
+      this.modalite = data;
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });  }
   goToTabs(): void{
+    // @ts-ignore
+    if (this.Non === 'true'){
+      this.modalite = 'C';
+    }
+    console.log('habHaut modalité', this.modalite);
+    this.resultEmitEvent.emit(this.modalite);
     this.habillageHautToMoyenEvent.emit(true);
   }
 }

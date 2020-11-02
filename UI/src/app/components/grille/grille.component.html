@@ -2,7 +2,7 @@
 
 <mat-tab-group [selectedIndex]="selected" (selectedIndexChange)="goToTab($event)" dynamicHeight>
   <mat-tab label="Cohérence">
-    <app-coherence (coherenceToGrilleEvent)="goToTab(1)"></app-coherence>
+    <app-coherence (finalResultEvent)="recupResultCoherence($event)" (coherenceToGrilleEvent)="goToTab(1)"></app-coherence>
   </mat-tab>
   <mat-tab label="Orientation">
     <app-orientation (orientationToGrilleEvent)="goToTab(2)"></app-orientation>

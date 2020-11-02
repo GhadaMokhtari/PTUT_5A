@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
 import { MatDialogRef} from '@angular/material/dialog';
 import {CoherenceComponent} from '../coherence/coherence.component';
+import {CommunicationComponent} from '../coherence/communication/communication.component';
 
 @Component({
   selector: 'app-modal-oui',
@@ -12,27 +13,35 @@ export class ModalOui implements OnInit {
 
 
   @Output() modaliteEvent: EventEmitter<string> = new EventEmitter();
+  @Output() tabsChangeEvent = new EventEmitter<boolean>();
 
-  A = false;
-  S = false;
-  H = false;
-  T = false;
-  C = false;
+  S: boolean;
+  H: boolean;
+  T: boolean;
+  C: boolean;
 
-  constructor(public dialogRef: MatDialogRef<CoherenceComponent>) { }
+  constructor(public dialogRef: MatDialogRef<CommunicationComponent>) { }
 
   ngOnInit(): void {
   }
   onValidate(): void{
-    console.log(this.S);
-    console.log({a: this.A, s: this.S, h: this.H, t: this.T, c: this.C});
+    // console.log(typeof this.A);
+    // console.log({a: this.A, s: this.S, h: this.H, t: this.T, c: this.C});
 
-    if (!this.A  && !this.S && !this.H && !this.T && !this.C){
+
+    // @ts-ignore
+    if (this.S === 'true' && this.H === 'true' && this.T === 'true' && this.C === 'true' ){
       this.modaliteEvent.emit('A');
-      console.log('A');
-    } else {
+      // console.log('A');
+    } /*// @ts-ignore
+    if (this.S === 'true' && this.H === 'false' && this.T === 'false' && this.C === 'false'){
+      this.modaliteEvent.emit('C');
+    }*/
+    else {
       this.modaliteEvent.emit('B');
-      console.log('B');
+     // console.log('B');
     }
+    this.tabsChangeEvent.emit(true);
+    this.dialogRef.close();
   }
 }

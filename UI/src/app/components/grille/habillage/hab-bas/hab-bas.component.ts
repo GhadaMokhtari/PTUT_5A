@@ -10,7 +10,10 @@ import {ModalOui} from '../../modal-oui/modal-oui';
 export class HabBasComponent implements OnInit {
 
   @Output() habillageBasToHabillageEvent = new EventEmitter<boolean>();
-  habillageBas = false;
+  @Output() resultEmitEvent = new EventEmitter<string>();
+
+  Non: boolean;
+  modalite: string;
 
   constructor(public dialog: MatDialog) { }
 
@@ -19,9 +22,21 @@ export class HabBasComponent implements OnInit {
 
   openDialog(): void{
     const dialogRef = this.dialog.open(ModalOui);
-    this.habillageBas = true;
+    const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
+      this.modalite = data;
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });
   }
   goToTabs(): void{
+    // @ts-ignore
+    if (this.Non === 'true'){
+      this.modalite = 'C';
+    }
+    console.log('habBas modalité', this.modalite);
+    this.resultEmitEvent.emit(this.modalite);
     this.habillageBasToHabillageEvent.emit(true);
   }
 }

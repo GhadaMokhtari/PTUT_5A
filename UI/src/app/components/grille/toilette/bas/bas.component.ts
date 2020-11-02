@@ -9,8 +9,11 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class BasComponent implements OnInit {
 
-  toiletteBas = false;
   @Output() toiletteBasToToiletteEvent = new EventEmitter<boolean>();
+  @Output() resultEmitEvent = new EventEmitter<string>();
+
+  modalite: string;
+  Non: boolean;
 
   constructor(public dialog: MatDialog) { }
 
@@ -19,9 +22,21 @@ export class BasComponent implements OnInit {
 
   openDialog(): void{
     const dialogRef = this.dialog.open(ModalOui);
-    this.toiletteBas = true;
-  }
+    const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
+      this.modalite = data;
+      console.log('dialog data', this.modalite);
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });  }
   goToTabs(): void{
+    // @ts-ignore
+    if (this.Non === 'true'){
+      this.modalite = 'C';
+    }
+    console.log('toiletteBas modalité', this.modalite);
+    this.resultEmitEvent.emit(this.modalite);
     this.toiletteBasToToiletteEvent.emit(true);
   }
 }

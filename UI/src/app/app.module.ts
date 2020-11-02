@@ -11,7 +11,6 @@ import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dia
 import { HistoriquePatientComponent } from './components/historique-patient/historique-patient.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RecapitulatifGrilleComponent } from './components/recapitulatif-grille/recapitulatif-grille.component';
-import { GrilleComponent } from './components/grille/grille.component';
 import { ModalOui } from './components/grille/modal-oui/modal-oui';
 import { CoherenceComponent } from './components/grille/coherence/coherence.component';
 import {MatButtonModule} from '@angular/material/button';
@@ -38,6 +37,8 @@ import { TransfertsComponent } from './components/grille/transferts/transferts.c
 import { DeplacementsExterieursComponent } from './components/grille/deplacements-exterieurs/deplacements-exterieurs.component';
 import { DeplacementsInterieursComponent } from './components/grille/deplacements-interieurs/deplacements-interieurs.component';
 import { CommunicationDistanceComponent } from './components/grille/communication-distance/communication-distance.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {GrilleComponent} from './components/grille/grille.component';
 
 @NgModule({
   declarations: [
@@ -82,9 +83,10 @@ import { CommunicationDistanceComponent } from './components/grille/communicatio
     MatTabsModule,
     MatDialogModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonToggleModule
   ],
-  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

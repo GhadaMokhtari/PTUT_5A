@@ -9,8 +9,12 @@ import {ModalOui} from '../../modal-oui/modal-oui';
 })
 export class TempsComponent implements OnInit {
 
-  orientation = false;
   @Output() tempsToOrientationEvent = new EventEmitter <boolean>();
+  @Output() resultEmitEvent = new EventEmitter<string>();
+
+  Non: boolean;
+  modalite: string;
+
 
   constructor(public dialog: MatDialog) { }
 
@@ -18,12 +22,23 @@ export class TempsComponent implements OnInit {
   }
 
   openDialog(): void {
-    // this.dialog.open(ModalOui);
     const dialogRef = this.dialog.open(ModalOui);
-    this.orientation = true;
+    const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
+      this.modalite = data;
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });
   }
 
   goToTabs(): void{
+    // @ts-ignore
+    if (this.Non === 'true'){
+      this.modalite = 'C';
+    }
+    console.log('communication modalité', this.modalite);
+    this.resultEmitEvent.emit(this.modalite);
     this.tempsToOrientationEvent.emit(true);
   }
 

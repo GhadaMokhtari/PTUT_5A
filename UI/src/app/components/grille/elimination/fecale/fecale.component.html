@@ -7,9 +7,9 @@
       <label for="oui">Oui</label>
     </div>
     <div>
-      <input type="radio" id="non" name="communication"  (change)="goToTabs()" >
+      <input type="radio" id="non" name="communication"  [(ngModel)]="Non" value="true" >
       <label for="non">Non</label>
     </div>
   </div>
+  <button mat-button color="primary" (click)="goToTabs()"> Suivant </button>
 </div>
-<app-modal-oui *ngIf="fecale"></app-modal-oui>

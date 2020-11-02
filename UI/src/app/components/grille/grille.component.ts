@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-grille',
   templateUrl: './grille.component.html',
@@ -13,12 +15,15 @@ export class GrilleComponent implements OnInit {
   tabs = [{title: '', target: ''}];
   selected = 0;
 
+
+  coherenceModality: string;
+
   constructor(
     public  dialog: MatDialog,
     public evaluationService: EvaluationService,
     public router: Router,
     public route: ActivatedRoute,
-    ) { }
+    ) {}
 
   ngOnInit(): void {
   }
@@ -27,10 +32,9 @@ export class GrilleComponent implements OnInit {
     this.selected = tab;
   }
 
-  // tslint:disable-next-line:typedef
-  onNativeChange(e) {
-    if (e.target.checked){
-    }
+  recupResultCoherence(event: string): void {
+    this.coherenceModality = event;
+    console.log('grille coherence', this.coherenceModality);
   }
 
   createEvaluation(): any{

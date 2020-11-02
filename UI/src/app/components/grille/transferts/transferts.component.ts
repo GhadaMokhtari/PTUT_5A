@@ -10,7 +10,9 @@ import {ModalOui} from '../modal-oui/modal-oui';
 export class TransfertsComponent implements OnInit {
 
   @Output() transfertsToGrilleEvent = new EventEmitter<boolean>();
-  transfert = true;
+  @Output() finalResultEvent = new EventEmitter<string>();
+  modalite: string;
+  Non: boolean;
 
   constructor(public dialog: MatDialog) { }
 
@@ -19,9 +21,21 @@ export class TransfertsComponent implements OnInit {
 
   openDialog(): void{
     const dialogRef = this.dialog.open(ModalOui);
-    this.transfert = true;
+    const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
+      this.modalite = data;
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });
   }
   goToTabs(): void{
+    // @ts-ignore
+    if (this.Non === 'true'){
+      this.modalite = 'C';
+    }
+    console.log('communication modalité', this.modalite);
+    this.finalResultEvent.emit(this.modalite);
     this.transfertsToGrilleEvent.emit(true);
   }
 

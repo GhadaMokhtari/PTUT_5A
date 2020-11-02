@@ -10,7 +10,9 @@ import {ModalOui} from '../../modal-oui/modal-oui';
 export class FecaleComponent implements OnInit {
 
   @Output() fecaleToEliminationEvent = new EventEmitter<boolean>();
-  fecale = true;
+  @Output() resultEmitEvent = new EventEmitter<string>();
+  Non: boolean;
+  modalite: string;
 
   constructor(public dialog: MatDialog) { }
 
@@ -19,9 +21,20 @@ export class FecaleComponent implements OnInit {
 
   openDialog(): void{
     const dialogRef = this.dialog.open(ModalOui);
-    this.fecale = true;
-  }
+    const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
+      this.modalite = data;
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });  }
   goToTabs(): void{
+    // @ts-ignore
+    if (this.Non === 'true'){
+      this.modalite = 'C';
+    }
+    console.log('communication modalité', this.modalite);
+    this.resultEmitEvent.emit(this.modalite);
     this.fecaleToEliminationEvent.emit(true);
   }
 

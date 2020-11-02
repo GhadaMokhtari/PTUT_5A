@@ -10,7 +10,9 @@ import {ModalOui} from '../modal-oui/modal-oui';
 export class DeplacementsExterieursComponent implements OnInit {
 
   @Output() exterieursToGrilleEvent = new EventEmitter<boolean>();
-  exterieur = true;
+  @Output() finalResultEvent = new EventEmitter<string>();
+  Non: boolean;
+  modalite: string;
 
   constructor(public dialog: MatDialog) { }
 
@@ -19,9 +21,21 @@ export class DeplacementsExterieursComponent implements OnInit {
 
   openDialog(): void{
     const dialogRef = this.dialog.open(ModalOui);
-    this.exterieur = true;
+    const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
+      this.modalite = data;
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      subscribeDialog.unsubscribe();
+    });
   }
   goToTabs(): void{
+    // @ts-ignore
+    if (this.Non === 'true'){
+      this.modalite = 'C';
+    }
+    console.log('deplacements externes modalité', this.modalite);
+    this.finalResultEvent.emit(this.modalite);
     this.exterieursToGrilleEvent.emit(true);
   }
 }
