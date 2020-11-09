@@ -37,7 +37,7 @@ export class EspaceComponent implements OnInit {
     if (this.Non === 'true'){
       this.modalite = 'C';
     }
-    console.log('communication modalité', this.modalite);
+    console.log('orientation espace modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
     this.espaceToOrientationEvent.emit(true);
   }

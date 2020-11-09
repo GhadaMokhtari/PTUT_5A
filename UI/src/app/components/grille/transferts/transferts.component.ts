@@ -34,7 +34,7 @@ export class TransfertsComponent implements OnInit {
     if (this.Non === 'true'){
       this.modalite = 'C';
     }
-    console.log('communication modalité', this.modalite);
+    console.log('transferts modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
     this.transfertsToGrilleEvent.emit(true);
   }

@@ -33,7 +33,7 @@ export class UrinaireComponent implements OnInit {
     if (this.Non === 'true'){
       this.modalite = 'C';
     }
-    console.log('communication modalité', this.modalite);
+    console.log('elimi urinaire modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
     this.urinaireToFecaleEvent.emit(true);
   }

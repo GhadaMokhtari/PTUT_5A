@@ -33,7 +33,7 @@ export class FecaleComponent implements OnInit {
     if (this.Non === 'true'){
       this.modalite = 'C';
     }
-    console.log('communication modalité', this.modalite);
+    console.log('elimi fecale modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
     this.fecaleToEliminationEvent.emit(true);
   }

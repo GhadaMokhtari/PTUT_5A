@@ -46,4 +46,7 @@ export class HistoriquePatientComponent implements OnInit {
     this.router.navigate(['newEvaluation', this.patient.id]);
   }
 
+  goToBack(): void {
+    this.router.navigate(['']);
+  }
 }

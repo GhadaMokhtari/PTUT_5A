@@ -17,6 +17,22 @@ export class GrilleComponent implements OnInit {
 
 
   coherenceModality: string;
+  orientationModality: string;
+  toiletteModality: string;
+  habillageModality: string;
+  alimentationModality: string;
+  eliminationModality: string;
+  transfertsModality: string;
+  deplacementsInterieursModality: string;
+  deplacementsExterieursModality: string;
+  communicationDistanceModality: string;
+  gestionModality: string;
+  menageModality: string;
+  cuisineModality: string;
+  transportsModality: string;
+  achatsModality: string;
+  suiviMedModality: string;
+  activitesLibresModality: string;
 
   constructor(
     public  dialog: MatDialog,
@@ -36,7 +52,54 @@ export class GrilleComponent implements OnInit {
     this.coherenceModality = event;
     console.log('grille coherence', this.coherenceModality);
   }
-
+  recupResultOrientation(event: string): void {
+    this.orientationModality = event;
+  }
+  recupResultToilette(event: string): void {
+    this.toiletteModality = event;
+  }
+  recupResultHabillage(event: string): void {
+    this.habillageModality = event;
+  }
+  recupResultAlimentation(event: string): void {
+    this.alimentationModality = event;
+  }
+  recupResultElimination(event: string): void {
+    this.eliminationModality = event;
+  }
+  recupResultTransfets(event: string): void {
+    this.transfertsModality = event;
+  }
+  recupResultDeplInter(event: string): void {
+    this.deplacementsInterieursModality = event;
+  }
+  recupResultDepExter(event: string): void {
+    this.deplacementsExterieursModality = event;
+  }
+  recupResultCommDistance(event: string): void {
+    this.communicationDistanceModality = event;
+  }
+  recupResultGestion(event: string): void {
+    this.gestionModality = event;
+  }
+  recupResultCuisine(event: string): void {
+    this.cuisineModality = event;
+  }
+  recupResultMenage(event: string): void {
+    this.menageModality = event;
+  }
+  recupResultTransports(event: string): void {
+    this.transportsModality = event;
+  }
+  recupResultAchat(event: string): void {
+    this.achatsModality = event;
+  }
+  recupResultSuiviMed(event: string): void {
+    this.suiviMedModality = event;
+  }
+  recupResultActivitesLibres(event: string): void {
+    this.activitesLibresModality = event;
+  }
   createEvaluation(): any{
     const patientId = this.route.snapshot.paramMap.get('id');
 
@@ -53,5 +116,10 @@ export class GrilleComponent implements OnInit {
     }, (err) => {
       console.error(err);
     });
+  }
+
+  goBackToHistoric(): void {
+    const patientId = this.route.snapshot.paramMap.get('id');
+    this.router.navigate(['historiquePatient', patientId]);
   }
 }

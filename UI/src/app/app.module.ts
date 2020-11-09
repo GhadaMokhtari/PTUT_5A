@@ -39,6 +39,15 @@ import { DeplacementsInterieursComponent } from './components/grille/deplacement
 import { CommunicationDistanceComponent } from './components/grille/communication-distance/communication-distance.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {GrilleComponent} from './components/grille/grille.component';
+import { GestionComponent } from './components/grille/variables-illustratives/gestion/gestion.component';
+import { CuisineComponent } from './components/grille/variables-illustratives/cuisine/cuisine.component';
+import { MenageComponent } from './components/grille/variables-illustratives/menage/menage.component';
+import { TransportComponent } from './components/grille/variables-illustratives/transport/transport.component';
+import { AchatComponent } from './components/grille/variables-illustratives/achat/achat.component';
+import { SuiviTraitementComponent } from './components/grille/variables-illustratives/suivi-traitement/suivi-traitement.component';
+import { ActivitesLibresComponent } from './components/grille/variables-illustratives/activites-libres/activites-libres.component';
+import {ChartsModule} from 'ng2-charts';
+import { GrapheComponent } from './components/historique-patient/graphe/graphe.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +81,14 @@ import {GrilleComponent} from './components/grille/grille.component';
     DeplacementsExterieursComponent,
     DeplacementsInterieursComponent,
     CommunicationDistanceComponent,
+    GestionComponent,
+    CuisineComponent,
+    MenageComponent,
+    TransportComponent,
+    AchatComponent,
+    SuiviTraitementComponent,
+    ActivitesLibresComponent,
+    GrapheComponent,
   ],
   entryComponents: [ModalOui],
   imports: [
@@ -84,7 +101,8 @@ import {GrilleComponent} from './components/grille/grille.component';
     MatDialogModule,
     MatButtonModule,
     MatCardModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    ChartsModule,
   ],
   providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}],
   bootstrap: [AppComponent]

@@ -37,7 +37,7 @@ export class TempsComponent implements OnInit {
     if (this.Non === 'true'){
       this.modalite = 'C';
     }
-    console.log('communication modalité', this.modalite);
+    console.log('orientation temps modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
     this.tempsToOrientationEvent.emit(true);
   }

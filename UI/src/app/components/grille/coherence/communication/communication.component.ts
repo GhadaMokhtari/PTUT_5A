@@ -25,7 +25,6 @@ export class CommunicationComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalOui);
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
       this.modalite = data;
-     // console.log('dialog data', data);
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Suivi du traitement</h2>
+  <span class="question">Est ce que la personne sait respecter l'ordonnance du médecin et gérer seule son traitement ?</span> <br>
+  <div class="checkbox">
+    <div>
+      <input type="radio" id="oui" name="suivi"  (change)="openDialog()">
+      <label for="oui">Oui</label>
+    </div>
+    <div>
+      <input type="radio" id="non" name="suivi"  [(ngModel)]="Non" value="true" >
+      <label for="non">Non</label>
+    </div>
+  </div>
+  <button mat-button color="primary" (click)="goToTabs()"> Suivant </button>
+</div>

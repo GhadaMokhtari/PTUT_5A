@@ -20,7 +20,7 @@ export class ModalOui implements OnInit {
   T: boolean;
   C: boolean;
 
-  constructor(public dialogRef: MatDialogRef<CommunicationComponent>) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -42,6 +42,6 @@ export class ModalOui implements OnInit {
      // console.log('B');
     }
     this.tabsChangeEvent.emit(true);
-    this.dialogRef.close();
+    // this.dialogRef.close();
   }
 }

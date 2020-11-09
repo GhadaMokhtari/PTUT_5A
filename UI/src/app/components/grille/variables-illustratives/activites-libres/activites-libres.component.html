@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Activités de temps libres</h2>
+  <span class="question">Est ce que la personne occupe seule son temps libre en pratiquant volentairement diverses activités ?</span>
+  <div class="checkbox">
+    <div>
+      <input type="radio" id="oui" name="actLibres"  (change)="openDialog()">
+      <label for="oui">Oui</label>
+    </div>
+    <div>
+      <input type="radio" id="non" name="actLibres"  (change)="goToTabs()" value="true" >
+      <label for="non">Non</label>
+    </div>
+  </div>
+</div>

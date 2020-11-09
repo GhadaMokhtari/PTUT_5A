@@ -9,6 +9,10 @@ import {ModalOui} from '../modal-oui/modal-oui';
 })
 export class CommunicationDistanceComponent implements OnInit {
 
+  @Output() finalResultEvent = new EventEmitter<string>();
+  @Output() commDistToGrilleEvent = new EventEmitter<boolean>();
+  Non: boolean;
+  modalite: string;
 
   constructor(public dialog: MatDialog) { }
 
@@ -18,11 +22,20 @@ export class CommunicationDistanceComponent implements OnInit {
   openDialog(): void{
     const dialogRef = this.dialog.open(ModalOui);
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
-      console.log('dialog data', data);
+      this.modalite = data;
     });
 
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
     });
+  }
+  goToTabs(): void{
+    // @ts-ignore
+    if (this.Non === 'true'){
+      this.modalite = 'C';
+    }
+    console.log('comm dist modalité', this.modalite);
+    this.finalResultEvent.emit(this.modalite);
+    this.commDistToGrilleEvent.emit(true);
   }
 }

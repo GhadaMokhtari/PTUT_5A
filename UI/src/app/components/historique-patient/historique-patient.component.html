@@ -5,7 +5,9 @@
 <div>
   <button class="newgrille" (click)='createEvaluation()'>Commencer une nouvelle évaluation</button>
 </div>
-
+<div>
+  <button mat-raised-button color="primary" (click)="goToBack()">Retour</button>
+</div>
 
 <h1>Historique du patient</h1>
 <h2>{{ patient.prenom }} {{ patient.nom }}</h2>
@@ -25,6 +27,7 @@
       </div>
     </div>
   </mat-tab>
-  <mat-tab label="Graphe d'évolution"> Content 2 </mat-tab>
+  <mat-tab label="Graphe d'évolution">
+    <app-graphe></app-graphe>
+  </mat-tab>
 </mat-tab-group>
-

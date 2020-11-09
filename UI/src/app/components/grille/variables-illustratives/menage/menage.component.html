@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Gestion</h2>
+  <p> Cette variable regroupe trois types d'activités</p>
+  <span class="question">Est ce que la personne effectue seule l'ensemble des travaux ménagers courants ?</span>
+  <div class="checkbox">
+    <div>
+      <input type="radio" id="oui" name="menage"  (change)="openDialog()">
+      <label for="oui">Oui</label>
+    </div>
+    <div>
+      <input type="radio" id="non" name="menage"  [(ngModel)]="Non" value="true" >
+      <label for="non">Non</label>
+    </div>
+  </div>
+  <button mat-button color="primary" (click)="goToTabs()"> Suivant </button>
+</div>
