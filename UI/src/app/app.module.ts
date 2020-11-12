@@ -48,7 +48,8 @@ import { SuiviTraitementComponent } from './components/grille/variables-illustra
 import { ActivitesLibresComponent } from './components/grille/variables-illustratives/activites-libres/activites-libres.component';
 import {ChartsModule} from 'ng2-charts';
 import { GrapheComponent } from './components/historique-patient/graphe/graphe.component';
-import { GoogleChartsModule } from 'angular-google-charts';
+import {GoogleChartsModule} from 'angular-google-charts';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -106,6 +107,7 @@ import { GoogleChartsModule } from 'angular-google-charts';
     MatButtonToggleModule,
     ChartsModule,
     GoogleChartsModule,
+    MatToolbarModule,
   ],
   providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}],
   bootstrap: [AppComponent]

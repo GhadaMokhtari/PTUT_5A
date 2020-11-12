@@ -12,9 +12,11 @@
 <h1>Historique du patient</h1>
 <h2>{{ patient.prenom }} {{ patient.nom }}</h2>
 
-<!--
-<div class="circle">{{index+1}}</div> <span>{{resident.nom}} {{resident.prenom}}</span> <span>Date de naissance : {{resident.dateNaiss}}</span> <span>Gir :</span>
--->
+<mat-toolbar color="primary">
+  <div class="bandeau">
+    <span>{{patient.nom}} {{patient.prenom}}</span> <span>Date de naissance : {{patient.dateNaissance | date: 'dd-MM-yyyy'}}</span> <span>Gir :</span>
+  </div>
+</mat-toolbar>
 
 
 <mat-tab-group dynamicHeight>

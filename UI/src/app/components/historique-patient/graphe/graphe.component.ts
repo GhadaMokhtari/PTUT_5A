@@ -28,7 +28,7 @@ export class GrapheComponent implements OnInit {
     ['Dec',  9.6,  2.5,  1.0, 4.8]
   ];
   columnNames = ['Month', 'Tokyo', 'New York', 'Berlin', 'Paris'];
-  options = {
+  optons = {
     hAxis: {
       title: 'Month'
     },

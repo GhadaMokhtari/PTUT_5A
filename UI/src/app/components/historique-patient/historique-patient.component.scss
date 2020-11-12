@@ -12,6 +12,11 @@
     color: black;
     font-size: 40px;
   }
+  .bandeau{
+    display: flex;
+    justify-content: space-around ;
+    margin: 20px;
+  }
   .search{
     align-self: flex-end;
     margin-right: 80px;
