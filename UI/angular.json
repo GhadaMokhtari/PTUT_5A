@@ -16,6 +16,7 @@
             "allowedCommonJsDependencies": [
               "lodash"
             ],
+            "preserveSymlinks": true,
             "outputPath": "dist/PTUT-AGGIR",
             "index": "src/index.html",
             "main": "src/main.ts",

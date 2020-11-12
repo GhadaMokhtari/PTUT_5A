@@ -2,6 +2,7 @@ import { EvaluationService } from './../../services/evaluation.service';
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import calculAGGIR from '../../utils/calculAGGIR.json';
 
 
 
@@ -42,6 +43,7 @@ export class GrilleComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
+    this.calculGir();
   }
 
   goToTab(tab: number): void {
@@ -121,5 +123,10 @@ export class GrilleComponent implements OnInit {
   goBackToHistoric(): void {
     const patientId = this.route.snapshot.paramMap.get('id');
     this.router.navigate(['historiquePatient', patientId]);
+  }
+
+  calculGir(): void {
+    const a = calculAGGIR[0];
+    console.log('test', a);
   }
 }
