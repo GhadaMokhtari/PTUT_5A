@@ -11,9 +11,11 @@ export class CommunicationComponent implements OnInit {
 
   @Output() communicationToCoherenceEvent = new EventEmitter<boolean>();
   @Output() resultEmitEvent = new EventEmitter<string>();
+  @Output() adverbesEmitEvent = new EventEmitter<any>();
 
   Non: boolean;
   modalite: string;
+  commAdverbes: any;
 
   constructor(public dialog: MatDialog) { }
 
@@ -25,18 +27,24 @@ export class CommunicationComponent implements OnInit {
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
       this.modalite = data;
     });
+    const adverbesSubscribe = dialogRef.componentInstance.adverbesEmitEvent.subscribe((data) => {
+      this.commAdverbes = data;
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
+      adverbesSubscribe.unsubscribe();
     });
   }
   goToTabs(): void{
+    console.log(this.commAdverbes);
     // @ts-ignore
     if (this.Non === 'true'){
       this.modalite = 'C';
     }
     console.log('communication modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
+    this.adverbesEmitEvent.emit(this.commAdverbes);
     this.communicationToCoherenceEvent.emit(true);
   }
 }

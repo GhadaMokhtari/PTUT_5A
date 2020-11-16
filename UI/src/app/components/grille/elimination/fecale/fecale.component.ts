@@ -11,8 +11,11 @@ export class FecaleComponent implements OnInit {
 
   @Output() fecaleToEliminationEvent = new EventEmitter<boolean>();
   @Output() resultEmitEvent = new EventEmitter<string>();
+  @Output() adverbesEmitEvent = new EventEmitter<any>();
+
   Non: boolean;
   modalite: string;
+  fecaleAdverbes: any;
 
   constructor(public dialog: MatDialog) { }
 
@@ -24,10 +27,15 @@ export class FecaleComponent implements OnInit {
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
       this.modalite = data;
     });
+    const adverbesSubscribe = dialogRef.componentInstance.adverbesEmitEvent.subscribe((data) => {
+      this.fecaleAdverbes = data;
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
-    });  }
+      adverbesSubscribe.unsubscribe();
+    });
+  }
   goToTabs(): void{
     // @ts-ignore
     if (this.Non === 'true'){
@@ -35,6 +43,7 @@ export class FecaleComponent implements OnInit {
     }
     console.log('elimi fecale modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
+    this.adverbesEmitEvent.emit(this.fecaleAdverbes);
     this.fecaleToEliminationEvent.emit(true);
   }
 

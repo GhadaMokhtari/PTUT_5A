@@ -11,24 +11,29 @@ export class TempsComponent implements OnInit {
 
   @Output() tempsToOrientationEvent = new EventEmitter <boolean>();
   @Output() resultEmitEvent = new EventEmitter<string>();
+  @Output() adverbesEmitEvent = new EventEmitter<any>();
 
   Non: boolean;
   modalite: string;
-
+  tempsAdverbes: any;
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  openDialog(): void {
+  openDialog(): void{
     const dialogRef = this.dialog.open(ModalOui);
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
       this.modalite = data;
     });
+    const adverbesSubscribe = dialogRef.componentInstance.adverbesEmitEvent.subscribe((data) => {
+      this.tempsAdverbes = data;
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
+      adverbesSubscribe.unsubscribe();
     });
   }
 
@@ -39,6 +44,7 @@ export class TempsComponent implements OnInit {
     }
     console.log('orientation temps modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
+    this.adverbesEmitEvent.emit(this.tempsAdverbes);
     this.tempsToOrientationEvent.emit(true);
   }
 

@@ -11,9 +11,11 @@ export class BasComponent implements OnInit {
 
   @Output() toiletteBasToToiletteEvent = new EventEmitter<boolean>();
   @Output() resultEmitEvent = new EventEmitter<string>();
+  @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  modalite: string;
   Non: boolean;
+  modalite: string;
+  tBasAdverbes: any;
 
   constructor(public dialog: MatDialog) { }
 
@@ -24,12 +26,16 @@ export class BasComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalOui);
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
       this.modalite = data;
-      console.log('dialog data', this.modalite);
+    });
+    const adverbesSubscribe = dialogRef.componentInstance.adverbesEmitEvent.subscribe((data) => {
+      this.tBasAdverbes = data;
     });
 
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
-    });  }
+      adverbesSubscribe.unsubscribe();
+    });
+  }
   goToTabs(): void{
     // @ts-ignore
     if (this.Non === 'true'){
@@ -37,6 +43,7 @@ export class BasComponent implements OnInit {
     }
     console.log('toiletteBas modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
+    this.adverbesEmitEvent.emit(this.tBasAdverbes);
     this.toiletteBasToToiletteEvent.emit(true);
   }
 }

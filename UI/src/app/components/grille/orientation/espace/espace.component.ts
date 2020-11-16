@@ -11,27 +11,31 @@ export class EspaceComponent implements OnInit {
 
   @Output() espaceToOrientationEvent = new EventEmitter<boolean>();
   @Output() resultEmitEvent = new EventEmitter<string>();
+  @Output() adverbesEmitEvent = new EventEmitter<any>();
 
   Non: boolean;
   modalite: string;
-
+  espaceAdverbes: any;
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-
-  openDialog(): void {
+  openDialog(): void{
     const dialogRef = this.dialog.open(ModalOui);
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
       this.modalite = data;
     });
+    const adverbesSubscribe = dialogRef.componentInstance.adverbesEmitEvent.subscribe((data) => {
+      this.espaceAdverbes = data;
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
-    });  }
-
+      adverbesSubscribe.unsubscribe();
+    });
+  }
   goToTabs(): void{
     // @ts-ignore
     if (this.Non === 'true'){
@@ -39,6 +43,7 @@ export class EspaceComponent implements OnInit {
     }
     console.log('orientation espace modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
+    this.adverbesEmitEvent.emit(this.espaceAdverbes);
     this.espaceToOrientationEvent.emit(true);
   }
 }

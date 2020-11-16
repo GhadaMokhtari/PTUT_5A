@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import {ModalOui} from '../modal-oui/modal-oui';
 import {MatDialog} from '@angular/material/dialog';
 
 @Component({
@@ -9,14 +8,18 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class CoherenceComponent implements OnInit {
 
-  tabs = [{title: '', target: ''}];
   selected = 0;
-  resultCommunication: string;
-  resultComportment: string;
   finalModalite: string;
+  coherenceValeurs = {
+    resultCommunication: '',
+    resultComportment: '',
+    resultAdverbesComm: '',
+    resultAdverbesComp: ''
+  };
 
   @Output() coherenceToGrilleEvent = new EventEmitter<boolean>();
   @Output() finalResultEvent = new EventEmitter<string>();
+  @Output() coherenceValeursToGrille = new EventEmitter<any>();
 
   constructor(public dialog: MatDialog) { }
 
@@ -24,54 +27,61 @@ export class CoherenceComponent implements OnInit {
   }
 
   commResult(event: string): void {
-    this.resultCommunication = event;
-    console.log('cohérence comm', this.resultCommunication);
+    this.coherenceValeurs.resultCommunication = event;
   }
   comportResult(event: string): void {
-    this.resultComportment = event;
-    console.log('Cohérence comport', this.resultComportment);
+    this.coherenceValeurs.resultComportment = event;
+  }
+  adverbesCommResults(event: any): void{
+    this.coherenceValeurs.resultAdverbesComm = event;
+  }
+  adverbesCompResults(event: any): void{
+    this.coherenceValeurs.resultAdverbesComp = event;
   }
   goToTab(tab: number): void {
     this.selected = tab;
   }
   goToTabParent(): void {
-    if (this.resultCommunication === 'A' && this.resultComportment === 'A'){
+    console.log(typeof this.coherenceValeurs.resultComportment);
+    if (this.coherenceValeurs.resultCommunication === 'A' && this.coherenceValeurs.resultComportment === 'A'){
       this.finalModalite = 'A';
       console.log('cohérence modalité', this.finalModalite);
     }
-    if (this.resultCommunication === 'A' && this.resultComportment === 'B'){
+    if (this.coherenceValeurs.resultCommunication === 'A' && this.coherenceValeurs.resultComportment === 'B'){
       this.finalModalite = 'B';
       console.log('cohérence modalité', this.finalModalite);
     }
-    if (this.resultCommunication === 'B' && this.resultComportment === 'A'){
+    if (this.coherenceValeurs.resultCommunication === 'B' && this.coherenceValeurs.resultComportment === 'A'){
       this.finalModalite = 'B';
       console.log('cohérence modalité', this.finalModalite);
     }
-    if (this.resultCommunication === 'B' && this.resultComportment === 'B'){
+    if (this.coherenceValeurs.resultCommunication === 'B' && this.coherenceValeurs.resultComportment === 'B'){
       this.finalModalite = 'B';
       console.log('cohérence modalité', this.finalModalite);
     }
-    if (this.resultCommunication === 'C' && this.resultComportment === 'C'){
+    if (this.coherenceValeurs.resultCommunication === 'C' && this.coherenceValeurs.resultComportment === 'C'){
       this.finalModalite = 'C';
       console.log('cohérence modalité', this.finalModalite);
     }
-    if (this.resultCommunication === 'B' && this.resultComportment === 'C'){
+    if (this.coherenceValeurs.resultCommunication === 'B' && this.coherenceValeurs.resultComportment === 'C'){
       this.finalModalite = 'C';
       console.log('cohérence modalité', this.finalModalite);
     }
-    if (this.resultCommunication === 'C' && this.resultComportment === 'B'){
+    if (this.coherenceValeurs.resultCommunication === 'C' && this.coherenceValeurs.resultComportment === 'B'){
       this.finalModalite = 'C';
       console.log('cohérence modalité', this.finalModalite);
     }
-    if (this.resultCommunication === 'A' && this.resultComportment === 'C'){
+    if (this.coherenceValeurs.resultCommunication === 'A' && this.coherenceValeurs.resultComportment === 'C'){
       this.finalModalite = 'C';
       console.log('cohérence modalité', this.finalModalite);
     }
-    if (this.resultCommunication === 'C' && this.resultComportment === 'A'){
+    if (this.coherenceValeurs.resultCommunication === 'C' && this.coherenceValeurs.resultComportment === 'A'){
       this.finalModalite = 'C';
       console.log('cohérence modalité', this.finalModalite);
     }
+
     this.finalResultEvent.emit(this.finalModalite);
+    this.coherenceValeursToGrille.emit(this.coherenceValeurs);
     this.coherenceToGrilleEvent.emit(true);
   }
 }

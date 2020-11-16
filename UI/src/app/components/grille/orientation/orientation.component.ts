@@ -8,14 +8,19 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class OrientationComponent implements OnInit {
 
-  tabs = [{title: '', target: ''}];
   selected = 0;
-  resultEspace: string;
-  resultTemps: string;
+  orientationValeurs = {
+    resultEspace: '',
+    resultTemps: '',
+    resultAdverbesEspace: '',
+    resultAdverbesTemps: ''
+  };
   finalResult: string;
 
   @Output() orientationToGrilleEvent = new EventEmitter<boolean>();
   @Output() finalResultEvent = new EventEmitter<string>();
+  @Output() orientationValeursToGrille = new EventEmitter<any>();
+
 
 
   constructor(public dialog: MatDialog) { }
@@ -24,43 +29,50 @@ export class OrientationComponent implements OnInit {
   }
 
   espaceResult(event: string): void {
-    this.resultEspace = event;
+    this.orientationValeurs.resultEspace = event;
   }
   tempsResult(event: string): void {
-    this.resultTemps = event;
+    this.orientationValeurs.resultTemps = event;
+  }
+  adverbesEspaceResult(event: string): void {
+    this.orientationValeurs.resultAdverbesEspace = event;
+  }
+  adverbesTempsResult(event: string): void {
+    this.orientationValeurs.resultAdverbesTemps = event;
   }
   goToTab(tab: number): void {
     this.selected = tab;
   }
   goToTabParent(): void {
-    if (this.resultTemps === 'A' && this.resultEspace === 'A'){
+    if (this.orientationValeurs.resultTemps === 'A' && this.orientationValeurs.resultEspace === 'A'){
       this.finalResult = 'A';
     }
-    if (this.resultTemps === 'A' && this.resultEspace === 'B'){
+    if (this.orientationValeurs.resultTemps === 'A' && this.orientationValeurs.resultEspace === 'B'){
       this.finalResult = 'B';
     }
-    if (this.resultTemps === 'B' && this.resultEspace === 'A'){
+    if (this.orientationValeurs.resultTemps === 'B' && this.orientationValeurs.resultEspace === 'A'){
       this.finalResult = 'B';
     }
-    if (this.resultTemps === 'B' && this.resultEspace === 'B'){
+    if (this.orientationValeurs.resultTemps === 'B' && this.orientationValeurs.resultEspace === 'B'){
       this.finalResult = 'B';
     }
-    if (this.resultEspace === 'C' && this.resultTemps === 'C'){
+    if (this.orientationValeurs.resultEspace === 'C' && this.orientationValeurs.resultTemps === 'C'){
       this.finalResult = 'C';
     }
-    if (this.resultTemps === 'B' && this.resultEspace === 'C'){
+    if (this.orientationValeurs.resultTemps === 'B' && this.orientationValeurs.resultEspace === 'C'){
       this.finalResult = 'C';
     }
-    if (this.resultTemps === 'C' && this.resultEspace === 'B'){
+    if (this.orientationValeurs.resultTemps === 'C' && this.orientationValeurs.resultEspace === 'B'){
       this.finalResult = 'C';
     }
-    if (this.resultEspace === 'A' && this.resultTemps === 'C'){
+    if (this.orientationValeurs.resultEspace === 'A' && this.orientationValeurs.resultTemps === 'C'){
       this.finalResult = 'C';
     }
-    if (this.resultTemps === 'C' && this.resultEspace === 'A'){
+    if (this.orientationValeurs.resultTemps === 'C' && this.orientationValeurs.resultEspace === 'A'){
       this.finalResult = 'C';
     }
     this.finalResultEvent.emit(this.finalResult);
+    this.orientationValeursToGrille.emit(this.orientationValeurs);
     this.orientationToGrilleEvent.emit(true);
   }
 

@@ -12,9 +12,14 @@ export class EliminationComponent implements OnInit {
 
   @Output() eliminationToGrilleEvent = new EventEmitter<boolean>();
   @Output() finalResultEvent = new EventEmitter<string>();
-  resultFecale: string;
-  resultUrine: string;
+  @Output() eliminationValeursToGrille = new EventEmitter();
   finalResult: string;
+  eliminationValeurs = {
+    resultFecale: '',
+    resultUrine: '',
+    resultAdverbesFecale: '',
+    resultAdverbesUrinaire: ''
+  };
 
 
   constructor() { }
@@ -23,36 +28,43 @@ export class EliminationComponent implements OnInit {
   }
 
   fecaleResult(event: string): void {
-   this.resultFecale = event;
+   this.eliminationValeurs.resultFecale = event;
   }
   urineResult(event: string): void {
-    this.resultUrine = event;
+    this.eliminationValeurs.resultUrine = event;
+  }
+  adverbesResultFecale(event: any): void{
+    this.eliminationValeurs.resultAdverbesFecale = event;
+  }
+  adverbesResultUrinaire(event: any): void{
+    this.eliminationValeurs.resultAdverbesUrinaire = event;
   }
   goToTab(tab: number): void {
     this.selected = tab;
   }
   goToTabParent(): void {
-    if (this.resultUrine === 'A' && this.resultFecale === 'A'){
+    if (this.eliminationValeurs.resultUrine === 'A' && this.eliminationValeurs.resultFecale === 'A'){
       this.finalResult = 'A';
     }
-    if (this.resultUrine === 'C' && this.resultFecale === 'C'){
+    if (this.eliminationValeurs.resultUrine === 'C' && this.eliminationValeurs.resultFecale === 'C'){
       this.finalResult = 'C';
     }
-    if (this.resultUrine === 'A' && this.resultFecale === 'C'){
+    if (this.eliminationValeurs.resultUrine === 'A' && this.eliminationValeurs.resultFecale === 'C'){
       this.finalResult = 'C';
     }
-    if (this.resultUrine === 'C' && this.resultFecale === 'A'){
+    if (this.eliminationValeurs.resultUrine === 'C' && this.eliminationValeurs.resultFecale === 'A'){
       this.finalResult = 'C';
     }
-    if (this.resultUrine === 'C' && this.resultFecale === 'B'){
+    if (this.eliminationValeurs.resultUrine === 'C' && this.eliminationValeurs.resultFecale === 'B'){
       this.finalResult = 'C';
     }
-    if (this.resultUrine === 'B' && this.resultFecale === 'C'){
+    if (this.eliminationValeurs.resultUrine === 'B' && this.eliminationValeurs.resultFecale === 'C'){
       this.finalResult = 'C';
     } else {
       this.finalResult = 'B';
     }
     this.finalResultEvent.emit(this.finalResult);
+    this.eliminationValeursToGrille.emit(this.eliminationValeurs);
     this.eliminationToGrilleEvent.emit(true);
   }
 }

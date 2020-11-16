@@ -9,12 +9,17 @@ export class AlimentationComponent implements OnInit {
 
   tabs = [{title: '', target: ''}];
   selected = 0;
-  resultServir: string;
-  resultManger: string;
   finalModality: string;
+  alimentationValeurs = {
+    resultServir: '',
+    resultManger: '',
+    resultAdverbesServir: '',
+    resultAdverbesManger: ''
+  };
 
   @Output() alimentationToGrilleEvent = new EventEmitter<boolean>();
   @Output() finalResultEvent = new EventEmitter<string>();
+  @Output() alimentationValeursToGrille = new EventEmitter<any>();
 
 
   constructor() { }
@@ -23,30 +28,37 @@ export class AlimentationComponent implements OnInit {
   }
 
   servirResult(event: string): void {
-    this.resultServir = event;
+    this.alimentationValeurs.resultServir = event;
   }
   mangerResult(event: string): void {
-    this.resultManger = event;
+    this.alimentationValeurs.resultManger = event;
+  }
+  adverbesServirResult(event: any): void{
+    this.alimentationValeurs.resultAdverbesServir = event;
+  }
+  adverbesMangerResult(event: any): void{
+    this.alimentationValeurs.resultAdverbesManger = event;
   }
   goToTab(tab: number): void {
     this.selected = tab;
   }
   goToTabParent(): void {
-    if (this.resultServir === 'A' && this.resultManger === 'A'){
+    if (this.alimentationValeurs.resultServir === 'A' && this.alimentationValeurs.resultManger === 'A'){
       this.finalModality = 'A';
     }
-    if (this.resultServir === 'C' && this.resultManger === 'C'){
+    if (this.alimentationValeurs.resultServir === 'C' && this.alimentationValeurs.resultManger === 'C'){
       this.finalModality = 'C';
     }
-    if (this.resultServir === 'B' && this.resultManger === 'C'){
+    if (this.alimentationValeurs.resultServir === 'B' && this.alimentationValeurs.resultManger === 'C'){
       this.finalModality = 'C';
     }
-    if (this.resultServir === 'C' && this.resultManger === 'B'){
+    if (this.alimentationValeurs.resultServir === 'C' && this.alimentationValeurs.resultManger === 'B'){
       this.finalModality = 'C';
     } else {
       this.finalModality = 'B';
     }
     this.finalResultEvent.emit(this.finalModality);
+    this.alimentationValeursToGrille.emit(this.alimentationValeurs)
     this.alimentationToGrilleEvent.emit(true);
   }
 

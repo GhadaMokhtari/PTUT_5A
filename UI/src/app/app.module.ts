@@ -50,6 +50,7 @@ import {ChartsModule} from 'ng2-charts';
 import { GrapheComponent } from './components/historique-patient/graphe/graphe.component';
 import {GoogleChartsModule} from 'angular-google-charts';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 
 @NgModule({
   declarations: [
@@ -108,6 +109,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     ChartsModule,
     GoogleChartsModule,
     MatToolbarModule,
+    MatSlideToggleModule,
   ],
   providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}],
   bootstrap: [AppComponent]

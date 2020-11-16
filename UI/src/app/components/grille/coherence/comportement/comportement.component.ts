@@ -11,8 +11,11 @@ export class ComportementComponent implements OnInit {
 
   @Output() comportementToCoherenceEvent = new EventEmitter<boolean>();
   @Output() resultEventEmitter = new EventEmitter<string>();
+  @Output() adverbesEmitEvent = new EventEmitter<any>();
+
   Non: boolean;
   modalite: string;
+  compAdverbes: any;
 
   constructor(public dialog: MatDialog) { }
 
@@ -23,11 +26,14 @@ export class ComportementComponent implements OnInit {
     const dialogRef = this.dialog.open(ModalOui);
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
       this.modalite = data;
-      // console.log('dialog comportement', this.modalite);
+    });
+    const adverbesSubscribe = dialogRef.componentInstance.adverbesEmitEvent.subscribe((data) => {
+      this.compAdverbes = data;
     });
 
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
+      adverbesSubscribe.unsubscribe();
     });
   }
   goToTabs(): void{
@@ -37,6 +43,7 @@ export class ComportementComponent implements OnInit {
     }
     console.log('comportement modalité', this.modalite);
     this.resultEventEmitter.emit(this.modalite);
+    this.adverbesEmitEvent.emit(this.compAdverbes);
     this.comportementToCoherenceEvent.emit(true);
   }
 

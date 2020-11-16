@@ -10,8 +10,11 @@ import {ModalOui} from '../../modal-oui/modal-oui';
 export class ActivitesLibresComponent implements OnInit {
 
   @Output() finalResultEvent = new EventEmitter<string>();
+  @Output() adverbesEmitEvent = new EventEmitter<any>();
+
   Non: boolean;
   modalite: string;
+  actLibAdverbes: any;
 
   constructor(public dialog: MatDialog) { }
 
@@ -23,14 +26,19 @@ export class ActivitesLibresComponent implements OnInit {
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
       this.modalite = data;
     });
+    const adverbesSubscribe = dialogRef.componentInstance.adverbesEmitEvent.subscribe((data) => {
+      this.actLibAdverbes = data;
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
+      adverbesSubscribe.unsubscribe();
     });
   }
   goToTabs(): void{
     this.modalite = 'C';
     console.log('actLibres modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
+    this.adverbesEmitEvent.emit(this.actLibAdverbes);
   }
 }

@@ -11,8 +11,11 @@ export class MangerComponent implements OnInit {
 
   @Output() mangerToAlimentationEvent = new EventEmitter<boolean>();
   @Output() resultEmitEvent = new EventEmitter<string>();
+  @Output() adverbesEmitEvent = new EventEmitter<any>();
+
   Non: boolean;
   modalite: string;
+  mangerAdverbes: any;
 
   constructor(public dialog: MatDialog) { }
 
@@ -24,9 +27,13 @@ export class MangerComponent implements OnInit {
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
       this.modalite = data;
     });
+    const adverbesSubscribe = dialogRef.componentInstance.adverbesEmitEvent.subscribe((data) => {
+      this.mangerAdverbes = data;
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
+      adverbesSubscribe.unsubscribe();
     });
   }
   goToTabs(): void{
@@ -36,6 +43,7 @@ export class MangerComponent implements OnInit {
     }
     console.log('manger modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
+    this.adverbesEmitEvent.emit(this.mangerAdverbes);
     this.mangerToAlimentationEvent.emit(true);
   }
 }

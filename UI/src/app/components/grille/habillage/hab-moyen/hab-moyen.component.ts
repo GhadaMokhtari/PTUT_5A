@@ -11,10 +11,11 @@ export class HabMoyenComponent implements OnInit {
 
   @Output() habillageMoyenToBasEvent = new EventEmitter<boolean>();
   @Output() resultEmitEvent = new EventEmitter<string>();
+  @Output() adverbesEmitEvent = new EventEmitter<any>();
 
   Non: boolean;
   modalite: string;
-
+  habMoyenAdverbes: any;
 
   constructor(public dialog: MatDialog) { }
 
@@ -26,9 +27,13 @@ export class HabMoyenComponent implements OnInit {
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
       this.modalite = data;
     });
+    const adverbesSubscribe = dialogRef.componentInstance.adverbesEmitEvent.subscribe((data) => {
+      this.habMoyenAdverbes = data;
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
+      adverbesSubscribe.unsubscribe();
     });
   }
   goToTabs(): void{
@@ -38,6 +43,7 @@ export class HabMoyenComponent implements OnInit {
     }
     console.log('habMoyen modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
+    this.adverbesEmitEvent.emit(this.habMoyenAdverbes);
     this.habillageMoyenToBasEvent.emit(true);
   }
 }

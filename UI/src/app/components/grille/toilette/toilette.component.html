@@ -1,9 +1,9 @@
 <mat-tab-group class="groupe" [selectedIndex]="selected" (selectedIndexChange)="goToTab($event)" dynamicHeight>
   <mat-tab label="Toilette du haut"  >
-    <app-haut (resultEmitEvent)="hautResult($event)" (toiletteHautToBasEvent)="goToTab(1)"></app-haut>
+    <app-haut (adverbesEmitEvent)="adverbesHautResult($event)" (resultEmitEvent)="hautResult($event)" (toiletteHautToBasEvent)="goToTab(1)"></app-haut>
   </mat-tab>
   <mat-tab label="Toilette du bas">
-    <app-bas (resultEmitEvent)="basResult($event)" (toiletteBasToToiletteEvent)="goToTabParent()"></app-bas>
+    <app-bas (adverbesEmitEvent)="adverbesBasResult($event)" (resultEmitEvent)="basResult($event)" (toiletteBasToToiletteEvent)="goToTabParent()"></app-bas>
   </mat-tab>
 
 </mat-tab-group>

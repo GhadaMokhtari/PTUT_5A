@@ -11,9 +11,11 @@ export class HabBasComponent implements OnInit {
 
   @Output() habillageBasToHabillageEvent = new EventEmitter<boolean>();
   @Output() resultEmitEvent = new EventEmitter<string>();
+  @Output() adverbesEmitEvent = new EventEmitter<any>();
 
   Non: boolean;
   modalite: string;
+  habBasAdverbes: any;
 
   constructor(public dialog: MatDialog) { }
 
@@ -25,9 +27,13 @@ export class HabBasComponent implements OnInit {
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
       this.modalite = data;
     });
+    const adverbesSubscribe = dialogRef.componentInstance.adverbesEmitEvent.subscribe((data) => {
+      this.habBasAdverbes = data;
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
+      adverbesSubscribe.unsubscribe();
     });
   }
   goToTabs(): void{

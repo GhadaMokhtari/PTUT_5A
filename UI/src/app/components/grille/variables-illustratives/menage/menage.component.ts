@@ -11,8 +11,11 @@ export class MenageComponent implements OnInit {
 
   @Output() menageToGrilleEvent = new EventEmitter<boolean>();
   @Output() finalResultEvent = new EventEmitter<string>();
+  @Output() adverbesEmitEvent = new EventEmitter<any>();
+
   Non: boolean;
   modalite: string;
+  menageAdverbes: any;
 
   constructor(public dialog: MatDialog) { }
 
@@ -24,9 +27,13 @@ export class MenageComponent implements OnInit {
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
       this.modalite = data;
     });
+    const adverbesSubscribe = dialogRef.componentInstance.adverbesEmitEvent.subscribe((data) => {
+      this.menageAdverbes = data;
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
+      adverbesSubscribe.unsubscribe();
     });
   }
   goToTabs(): void{
@@ -36,6 +43,7 @@ export class MenageComponent implements OnInit {
     }
     console.log('menage modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
+    this.adverbesEmitEvent.emit(this.menageAdverbes);
     this.menageToGrilleEvent.emit(true);
   }
 

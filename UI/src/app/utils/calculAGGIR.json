@@ -1,5 +1,5 @@
   { "variables" : {
-    "variable" : {
+    "coherence" : {
         "nom" : "coherence",
         "modalite" : {
             "C" : {
@@ -25,7 +25,7 @@
         }
     },
 
-    "variable" :{
+    "orientation" :{
         "nom" : "orientation",
         "modalite" : {
             "C" : {
@@ -50,7 +50,7 @@
                 }
         }
     },
-    "variable" :{
+    "toilette" :{
         "nom" : "toilette",
         "modalite" : {
             "C" : {
@@ -75,7 +75,7 @@
                 }
         }
     },
-    "variable" :{
+    "habillage" :{
         "nom" : "habillage",
         "modalite" : {
             "C" : {
@@ -100,7 +100,7 @@
                 }
         }
     },
-    "variable" :{
+    "alimentation" :{
         "nom" : "alimentation",
         "modalite" : {
             "C" : {
@@ -125,7 +125,7 @@
                 }
         }
     },
-    "variable" :{
+    "elimination" :{
         "nom" : "elimination",
         "modalite" : {
             "C" : {
@@ -150,7 +150,7 @@
                 }
         }
     },
-    "variable" :{
+    "transfert" :{
         "nom" : "transfert",
         "modalite" : {
             "C" : {
@@ -175,7 +175,7 @@
                 }
         }
     },
-    "variable" :{
+    "deplacementInterieur" :{
         "nom" : "deplacement interieur",
         "modalite" : {
             "C" : {
@@ -200,7 +200,7 @@
                 }
         }
     },
-    "variable" :{
+    "deplacementExterieur" :{
         "nom" : "deplacement exterieur",
         "modalite" : {
             "C" : {
@@ -225,8 +225,8 @@
                 }
         }
     },
-    "variable" :{
-        "nom" : "communication",
+    "communicationDistance" :{
+        "nom" : "communication à distance",
         "modalite" : {
             "C" : {
                 "groupeA" : 0,

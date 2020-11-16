@@ -8,38 +8,49 @@ import {MatDialog} from '@angular/material/dialog';
 })
 export class ToiletteComponent implements OnInit {
 
-  toilette = false;
-  tabs = [{title: '', target: ''}];
   selected = 0;
-  resultHaut: string;
-  resultBas: string;
+  toiletteValeurs = {
+    resultHaut: '',
+    resultBas: '',
+    resultAdverbesHaut: '',
+    resultAdverbesBas: ''
+  };
   finalResult: string;
 
   @Output() toiletteToGrilleEvent = new EventEmitter<boolean>();
   @Output() finalResultEvent = new EventEmitter<string>();
+  @Output() toiletteValeursToGrille = new EventEmitter();
 
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
   hautResult(event: string): void {
-    this.resultHaut = event;
+    this.toiletteValeurs.resultHaut = event;
   }
   basResult(event: string): void {
-    this.resultBas = event;
+    this.toiletteValeurs.resultBas = event;
+  }
+  adverbesBasResult(event: string): void {
+    this.toiletteValeurs.resultAdverbesBas = event;
+  }
+  adverbesHautResult(event: string): void {
+    this.toiletteValeurs.resultAdverbesHaut = event;
   }
   goToTab(tab: number): void {
     this.selected = tab;
   }
   goToTabParent(): void {
-    if (this.resultHaut === 'A' && this.resultBas === 'A'){
+    if (this.toiletteValeurs.resultHaut === 'A' && this.toiletteValeurs.resultBas === 'A'){
       this.finalResult = 'A';
     }
-    if (this.resultHaut === 'C' && this.resultBas === 'C'){
+    if (this.toiletteValeurs.resultHaut === 'C' && this.toiletteValeurs.resultBas === 'C'){
       this.finalResult = 'C';
     } else {
       this.finalResult = 'B';
     }
+    this.finalResultEvent.emit(this.finalResult);
+    this.toiletteValeursToGrille.emit(this.toiletteValeurs);
     this.toiletteToGrilleEvent.emit(true);
   }
 }

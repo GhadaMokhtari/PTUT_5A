@@ -11,8 +11,11 @@ export class SuiviTraitementComponent implements OnInit {
 
   @Output() suiviToGrilleEvent = new EventEmitter<boolean>();
   @Output() finalResultEvent = new EventEmitter<string>();
+  @Output() adverbesEmitEvent = new EventEmitter<any>();
+
   Non: boolean;
   modalite: string;
+  suiviTraitAdverbes: any;
 
   constructor(public dialog: MatDialog) { }
 
@@ -24,9 +27,13 @@ export class SuiviTraitementComponent implements OnInit {
     const subscribeDialog = dialogRef.componentInstance.modaliteEvent.subscribe((data) => {
       this.modalite = data;
     });
+    const adverbesSubscribe = dialogRef.componentInstance.adverbesEmitEvent.subscribe((data) => {
+      this.suiviTraitAdverbes = data;
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
+      adverbesSubscribe.unsubscribe();
     });
   }
   goToTabs(): void{
@@ -36,6 +43,7 @@ export class SuiviTraitementComponent implements OnInit {
     }
     console.log('suivi traitement modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
+    this.adverbesEmitEvent.emit(this.suiviTraitAdverbes);
     this.suiviToGrilleEvent.emit(true);
   }
 

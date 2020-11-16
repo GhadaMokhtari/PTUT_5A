@@ -7,14 +7,20 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class HabillageComponent implements OnInit {
 
-  tabs = [{title: '', target: ''}];
   selected = 0;
-  resultHabHaut: string;
-  resultHabBas: string;
-  resultHabMoyen: string;
+  habillageValeurs = {
+    resultHabHaut: '',
+    resultHabBas: '',
+    resultHabMoyen: '',
+    resultAdverbesHaut : '',
+    resultAdverbesMoyen : '',
+    resultAdverbesBas : ''
+  };
   finalResult: string;
   @Output() habillageToGrilleEvent = new EventEmitter<boolean>();
   @Output() finalResultEvent = new EventEmitter<string>();
+  @Output() habillageValeursToGrille = new EventEmitter<any>();
+
 
 
   constructor() { }
@@ -23,26 +29,39 @@ export class HabillageComponent implements OnInit {
   }
 
   habHautResult(event: string): void {
-    this.resultHabHaut = event;
+    this.habillageValeurs.resultHabHaut = event;
   }
   habBasResult(event: string): void {
-    this.resultHabBas = event;
+    this.habillageValeurs.resultHabBas = event;
   }
   habMoyenResult(event: string): void {
-    this.resultHabMoyen = event;
+    this.habillageValeurs.resultHabMoyen = event;
+  }
+  adverbesHautresult(event: string): void{
+    this.habillageValeurs.resultAdverbesHaut = event;
+  }
+  adverbesMoyenresult(event: string): void{
+    this.habillageValeurs.resultAdverbesMoyen = event;
+  }
+  adverbesBasresult(event: string): void{
+    this.habillageValeurs.resultAdverbesBas = event;
   }
   goToTab(tab: number): void {
     this.selected = tab;
   }
   goToTabParent(): void {
-    if (this.resultHabHaut === 'A' && this.resultHabMoyen === 'A' && this.resultHabBas === 'A'){
+    // tslint:disable-next-line:max-line-length
+    if (this.habillageValeurs.resultHabHaut === 'A' && this.habillageValeurs.resultHabMoyen === 'A' && this.habillageValeurs.resultHabBas === 'A'){
       this.finalResult = 'A';
     }
-    if (this.resultHabHaut === 'C' && this.resultHabMoyen === 'C' && this.resultHabBas === 'C'){
+    // tslint:disable-next-line:max-line-length
+    if (this.habillageValeurs.resultHabHaut === 'C' && this.habillageValeurs.resultHabMoyen === 'C' && this.habillageValeurs.resultHabBas === 'C'){
       this.finalResult = 'C';
     } else {
       this.finalResult = 'B';
     }
+    this.finalResultEvent.emit(this.finalResult);
+    this.habillageValeursToGrille.emit(this.habillageValeurs);
     this.habillageToGrilleEvent.emit(true);
   }
 }

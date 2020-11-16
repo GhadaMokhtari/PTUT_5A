@@ -34,6 +34,9 @@ export class GrilleComponent implements OnInit {
   achatsModality: string;
   suiviMedModality: string;
   activitesLibresModality: string;
+  coherenceValeurs: any;
+  valeurCoherence: number;
+
 
   constructor(
     public  dialog: MatDialog,
@@ -50,6 +53,11 @@ export class GrilleComponent implements OnInit {
     this.selected = tab;
   }
 
+  recupCoherenceValeurs(event: string): void{
+    this.coherenceValeurs = event;
+    console.log('Cohérence valeurs', this.coherenceValeurs);
+    console.log(typeof this.coherenceValeurs);
+  }
   recupResultCoherence(event: string): void {
     this.coherenceModality = event;
     console.log('grille coherence', this.coherenceModality);
@@ -62,6 +70,8 @@ export class GrilleComponent implements OnInit {
   }
   recupResultHabillage(event: string): void {
     this.habillageModality = event;
+    console.log('grille habillage', this.habillageModality);
+
   }
   recupResultAlimentation(event: string): void {
     this.alimentationModality = event;
@@ -126,7 +136,6 @@ export class GrilleComponent implements OnInit {
   }
 
   calculGir(): void {
-    const a = calculAGGIR[0];
-    console.log('test', a);
+    console.log(calculAGGIR.variables);
   }
 }
