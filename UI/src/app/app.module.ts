@@ -4,16 +4,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
 import { ListeResidentComponent } from './components/liste-resident/liste-resident.component';
 import { NewPatientComponent } from './components/new-patient/new-patient.component';
-import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material/dialog';
 import { HistoriquePatientComponent } from './components/historique-patient/historique-patient.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecapitulatifGrilleComponent } from './components/recapitulatif-grille/recapitulatif-grille.component';
 import { ModalOui } from './components/grille/modal-oui/modal-oui';
 import { CoherenceComponent } from './components/grille/coherence/coherence.component';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
 import { ComportementComponent } from './components/grille/coherence/comportement/comportement.component';
 import { CommunicationComponent } from './components/grille/coherence/communication/communication.component';
 import { OrientationComponent } from './components/grille/orientation/orientation.component';
@@ -26,7 +26,7 @@ import { HabillageComponent } from './components/grille/habillage/habillage.comp
 import { HabHautComponent } from './components/grille/habillage/hab-haut/hab-haut.component';
 import { HabBasComponent } from './components/grille/habillage/hab-bas/hab-bas.component';
 import { HabMoyenComponent } from './components/grille/habillage/hab-moyen/hab-moyen.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { AlimentationComponent } from './components/grille/alimentation/alimentation.component';
 import { ServirComponent } from './components/grille/alimentation/servir/servir.component';
 import { MangerComponent } from './components/grille/alimentation/manger/manger.component';
@@ -37,8 +37,8 @@ import { TransfertsComponent } from './components/grille/transferts/transferts.c
 import { DeplacementsExterieursComponent } from './components/grille/deplacements-exterieurs/deplacements-exterieurs.component';
 import { DeplacementsInterieursComponent } from './components/grille/deplacements-interieurs/deplacements-interieurs.component';
 import { CommunicationDistanceComponent } from './components/grille/communication-distance/communication-distance.component';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import {GrilleComponent} from './components/grille/grille.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { GrilleComponent } from './components/grille/grille.component';
 import { GestionComponent } from './components/grille/variables-illustratives/gestion/gestion.component';
 import { CuisineComponent } from './components/grille/variables-illustratives/cuisine/cuisine.component';
 import { MenageComponent } from './components/grille/variables-illustratives/menage/menage.component';
@@ -47,11 +47,15 @@ import { AchatComponent } from './components/grille/variables-illustratives/acha
 import { SuiviTraitementComponent } from './components/grille/variables-illustratives/suivi-traitement/suivi-traitement.component';
 import { ActivitesLibresComponent } from './components/grille/variables-illustratives/activites-libres/activites-libres.component';
 import { GrapheComponent } from './components/historique-patient/graphe/graphe.component';
-import {GoogleChartsModule} from 'angular-google-charts';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { GoogleChartsModule } from 'angular-google-charts';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -112,8 +116,15 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatIconModule,
     MatSlideToggleModule,
     MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
-  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}],
+  providers: [
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true }},
+    MatDatepickerModule,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
