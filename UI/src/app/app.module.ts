@@ -49,6 +49,8 @@ import { ActivitesLibresComponent } from './components/grille/variables-illustra
 import { GrapheComponent } from './components/historique-patient/graphe/graphe.component';
 import {GoogleChartsModule} from 'angular-google-charts';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
@@ -107,7 +109,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatButtonToggleModule,
     GoogleChartsModule,
     MatToolbarModule,
+    MatIconModule,
     MatSlideToggleModule,
+    MatListModule,
   ],
   providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}],
   bootstrap: [AppComponent]

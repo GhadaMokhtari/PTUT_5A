@@ -1,26 +1,15 @@
-<div class="search">
-  <input type="search" id="site-search" aria-label="Rechercher un patient" placeholder="Rechercher une évaluation">
-  <button>Rechercher</button>
-</div>
-<div>
-  <button class="newgrille" (click)='createEvaluation()'>Commencer une nouvelle évaluation</button>
-</div>
-<div>
-  <button mat-raised-button color="primary" (click)="goToBack()">Retour</button>
-</div>
-
-<h1>Historique du patient</h1>
-<h2>{{ patient.prenom }} {{ patient.nom }}</h2>
-
-<mat-toolbar color="primary">
-  <div class="bandeau">
-    <span>{{patient.nom}} {{patient.prenom}}</span> <span>Date de naissance : {{patient.dateNaissance | date: 'dd-MM-yyyy'}}</span> <span>Gir :</span>
-  </div>
+<mat-toolbar color="accent">
+  <span routerLink="/" class="pointer">Liste des résidents</span>
+  <span class="separator"> > </span> 
+  <span>{{ patient.prenom }} {{ patient.nom }}</span>
+  <span class="spacer"></span>
+  <button (click)='createEvaluation()' mat-stroked-button>
+    <mat-icon>add</mat-icon> CREER EVALUATION
+  </button>
 </mat-toolbar>
 
 
 <mat-tab-group dynamicHeight>
-
   <mat-tab label="Historique">
     <div *ngIf="!evaluations || !evaluations.length">Pas d'évaluations</div>
     <div class="container">
