@@ -35,8 +35,11 @@ export class ActivitesLibresComponent implements OnInit {
       adverbesSubscribe.unsubscribe();
     });
   }
-  goToTabs(): void{
-    this.modalite = 'C';
+  emitValeur(): void{
+    // @ts-ignore
+    if (this.Non === 'true'){
+      this.modalite = 'C';
+    }
     console.log('actLibres modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.actLibAdverbes);

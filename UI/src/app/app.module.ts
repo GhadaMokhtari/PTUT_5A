@@ -46,11 +46,10 @@ import { TransportComponent } from './components/grille/variables-illustratives/
 import { AchatComponent } from './components/grille/variables-illustratives/achat/achat.component';
 import { SuiviTraitementComponent } from './components/grille/variables-illustratives/suivi-traitement/suivi-traitement.component';
 import { ActivitesLibresComponent } from './components/grille/variables-illustratives/activites-libres/activites-libres.component';
-import {ChartsModule} from 'ng2-charts';
 import { GrapheComponent } from './components/historique-patient/graphe/graphe.component';
 import {GoogleChartsModule} from 'angular-google-charts';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -106,7 +105,6 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
     MatButtonModule,
     MatCardModule,
     MatButtonToggleModule,
-    ChartsModule,
     GoogleChartsModule,
     MatToolbarModule,
     MatSlideToggleModule,

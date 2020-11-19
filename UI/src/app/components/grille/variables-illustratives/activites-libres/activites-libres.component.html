@@ -7,7 +7,7 @@
       <label for="oui">Oui</label>
     </div>
     <div>
-      <input type="radio" id="non" name="actLibres"  (change)="goToTabs()" value="true" >
+      <input type="radio" id="non" name="actLibres" [(ngModel)]="Non" (change)="emitValeur()" value="true" >
       <label for="non">Non</label>
     </div>
   </div>

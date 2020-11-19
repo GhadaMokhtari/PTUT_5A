@@ -5,52 +5,52 @@
     <app-coherence (coherenceValeursToGrille)="recupCoherenceValeurs($event)" (finalResultEvent)="recupResultCoherence($event)" (coherenceToGrilleEvent)="goToTab(1)"></app-coherence>
   </mat-tab>
   <mat-tab label="Orientation">
-    <app-orientation (finalResultEvent)="recupResultOrientation($event)" (orientationToGrilleEvent)="goToTab(2)"></app-orientation>
+    <app-orientation (orientationValeursToGrille)="recuOrientationValeurs($event)" (finalResultEvent)="recupResultOrientation($event)" (orientationToGrilleEvent)="goToTab(2)"></app-orientation>
   </mat-tab>
   <mat-tab label="Toilette">
-    <app-toilette (finalResultEvent)="recupResultToilette($event)" (toiletteToGrilleEvent)="goToTab(3)"></app-toilette>
+    <app-toilette (toiletteValeursToGrille)="recupToiletteValeurs($event)" (finalResultEvent)="recupResultToilette($event)" (toiletteToGrilleEvent)="goToTab(3)"></app-toilette>
   </mat-tab>
   <mat-tab label="Habillage">
-    <app-habillage (finalResultEvent)="recupResultHabillage($event)" (habillageToGrilleEvent)="goToTab(4)"></app-habillage>
+    <app-habillage (habillageValeursToGrille)="recupHabillageValeurs($event)" (finalResultEvent)="recupResultHabillage($event)" (habillageToGrilleEvent)="goToTab(4)"></app-habillage>
   </mat-tab>
   <mat-tab label="Alimentation">
-    <app-alimentation (finalResultEvent)="recupResultAlimentation($event)" (alimentationToGrilleEvent)="goToTab(5)"></app-alimentation>
+    <app-alimentation (alimentationValeursToGrille)="recupAlimentationValeurs($event)" (finalResultEvent)="recupResultAlimentation($event)" (alimentationToGrilleEvent)="goToTab(5)"></app-alimentation>
   </mat-tab>
   <mat-tab label="Elimination">
-    <app-elimination (finalResultEvent)="recupResultElimination($event)" (eliminationToGrilleEvent)="goToTab(6)"></app-elimination>
+    <app-elimination (eliminationValeursToGrille)="recupEliminationValeurs($event)" (finalResultEvent)="recupResultElimination($event)" (eliminationToGrilleEvent)="goToTab(6)"></app-elimination>
   </mat-tab>
   <mat-tab label="Transferts">
-    <app-transferts (finalResultEvent)="recupResultTransfets($event)" (transfertsToGrilleEvent)="goToTab(7)"></app-transferts>
+    <app-transferts (adverbesEmitEvent)="recupTransfertsValeurs($event)" (finalResultEvent)="recupResultTransfets($event)" (transfertsToGrilleEvent)="goToTab(7)"></app-transferts>
   </mat-tab>
   <mat-tab label="Déplacements à l'intérieur">
-    <app-deplacements-interieurs (finalResultEvent)="recupResultDeplInter($event)" (interieursTogrille)="goToTab(8)"></app-deplacements-interieurs>
+    <app-deplacements-interieurs (adverbesEmitEvent)="recupDepInterValeurs($event)" (finalResultEvent)="recupResultDeplInter($event)" (interieursTogrille)="goToTab(8)"></app-deplacements-interieurs>
   </mat-tab>
   <mat-tab label="Déplacements à l'extérieur">
-    <app-deplacements-exterieurs (finalResultEvent)="recupResultDepExter($event)" (exterieursToGrilleEvent)="goToTab(9)"></app-deplacements-exterieurs>
+    <app-deplacements-exterieurs (adverbesEmitEvent)="recupDepExtValeurs($event)" (finalResultEvent)="recupResultDepExter($event)" (exterieursToGrilleEvent)="goToTab(9)"></app-deplacements-exterieurs>
   </mat-tab>
   <mat-tab label="Communication à distance">
-    <app-communication-distance (finalResultEvent)="recupResultCommDistance($event)" (commDistToGrilleEvent)="goToTab(10)" ></app-communication-distance>
+    <app-communication-distance (adverbesEmitEvent)="recupCommDistValeurs($event)" (finalResultEvent)="recupResultCommDistance($event)" (commDistToGrilleEvent)="goToTab(10)" ></app-communication-distance>
   </mat-tab>
   <mat-tab label="Gestion">
-    <app-gestion (finalResultEvent)="recupResultGestion($event)" (gestionToGrilleEvent)="goToTab(11)" ></app-gestion>
+    <app-gestion (adverbesEmitEvent)="recupGestionValeurs($event)" (finalResultEvent)="recupResultGestion($event)" (gestionToGrilleEvent)="goToTab(11)" ></app-gestion>
   </mat-tab>
   <mat-tab label="Cuisine">
-    <app-cuisine (finalResultEvent)="recupResultCuisine($event)" (cuisineToGrilleEvent)="goToTab(12)"></app-cuisine>
+    <app-cuisine (adverbesEmitEvent)="recupCuisineValeurs($event)" (finalResultEvent)="recupResultCuisine($event)" (cuisineToGrilleEvent)="goToTab(12)"></app-cuisine>
   </mat-tab>
   <mat-tab label="Ménage">
-    <app-menage (finalResultEvent)="recupResultMenage($event)" (menageToGrilleEvent)="goToTab(13)"></app-menage>
+    <app-menage (adverbesEmitEvent)="recupMenageValeurs($event)" (finalResultEvent)="recupResultMenage($event)" (menageToGrilleEvent)="goToTab(13)"></app-menage>
   </mat-tab>
   <mat-tab label="Transport">
-    <app-transport (finalResultEvent)="recupResultTransports($event)" (transportToGrilleEvent)="goToTab(14)"></app-transport>
+    <app-transport (adverbesEmitEvent)="recupTransportsValeurs($event)" (finalResultEvent)="recupResultTransports($event)" (transportToGrilleEvent)="goToTab(14)"></app-transport>
   </mat-tab>
   <mat-tab label="Achat">
-    <app-achat (finalResultEvent)="recupResultAchat($event)" (achatToGrilleEvent)="goToTab(15)"></app-achat>
+    <app-achat (adverbesEmitEvent)="recupAchatsValeurs($event)" (finalResultEvent)="recupResultAchat($event)" (achatToGrilleEvent)="goToTab(15)"></app-achat>
   </mat-tab>
   <mat-tab label="Suivi du traitement">
-    <app-suivi-traitement (finalResultEvent)="recupResultSuiviMed($event)" (suiviToGrilleEvent)="goToTab(16)"></app-suivi-traitement>
+    <app-suivi-traitement (adverbesEmitEvent)="recupSuiviMedValeurs($event)" (finalResultEvent)="recupResultSuiviMed($event)" (suiviToGrilleEvent)="goToTab(16)"></app-suivi-traitement>
   </mat-tab>
   <mat-tab label="Activités de temps libre">
-    <app-activites-libres (finalResultEvent)="recupResultActivitesLibres($event)"></app-activites-libres>
+    <app-activites-libres (adverbesEmitEvent)="recupActLibresValeurs($event)" (finalResultEvent)="recupResultActivitesLibres($event)"></app-activites-libres>
   </mat-tab>
 </mat-tab-group>
 
