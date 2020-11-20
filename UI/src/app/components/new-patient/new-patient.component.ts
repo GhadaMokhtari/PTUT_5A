@@ -14,6 +14,7 @@ export class NewPatientComponent implements OnInit {
     public router: Router,
     ) { }
 
+    currentDate = new Date();
   patient = {
     nom : '',
     prenom: '',
@@ -29,6 +30,8 @@ export class NewPatientComponent implements OnInit {
     }, (err) => {
       console.error(err);
     });
+    console.log('nom', this.patient.nom);
+    console.log('datenaiss', this.patient.dateNaissance);
   }
 
 }

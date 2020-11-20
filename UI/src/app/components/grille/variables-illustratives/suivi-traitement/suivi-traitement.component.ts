@@ -36,6 +36,7 @@ export class SuiviTraitementComponent implements OnInit {
       adverbesSubscribe.unsubscribe();
     });
   }
+
   goToTabs(): void{
     // @ts-ignore
     if (this.Non === 'true'){

@@ -15,6 +15,7 @@ export class ModalOui implements OnInit {
 
   @Output() modaliteEvent: EventEmitter<string> = new EventEmitter();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
+  @Output() tabsChangeEvent = new EventEmitter<boolean>();
 
   S: boolean;
   H: boolean;
@@ -69,6 +70,7 @@ export class ModalOui implements OnInit {
     else {
       this.modaliteEvent.emit('B');
     }
+    this.tabsChangeEvent.emit(true);
     this.dialogRef.close();
   }
 }

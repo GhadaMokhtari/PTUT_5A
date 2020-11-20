@@ -1,6 +1,29 @@
-<h1>Créer un patient</h1>
+<mat-toolbar color="accent">
+  <span>Créer un nouveau résident</span>
+  <span class="spacer"></span>
+</mat-toolbar>
 
-<div class="englobe">
+<mat-card  class="container d-flex h-100">
+  <mat-form-field appearance="fill">
+    <mat-label>Nom</mat-label>
+    <input matInput [(ngModel)]="patient.nom"/>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Prénom</mat-label>
+    <input matInput [(ngModel)]="patient.prenom"/>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Date de naissance</mat-label>
+    <input matInput [value]="currentDate | date: 'dd-MM-yyyy'" [(ngModel)]="patient.dateNaissance" [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <br>
+  <button (click)="create()" mat-raised-button color="primary">Créer</button>
+</mat-card>
+<!--<div class="englobe">
   <div class="infos">
     <div>
       <label>Nom</label>
@@ -14,9 +37,5 @@
   <div class="dateNaiss">
     <label>Date de naissance</label>
     <input type="date" [(ngModel)]="patient.dateNaissance">
-  </div>
-  <div class="btnval">
-    <button (click)="create()">Valider</button>
-  </div>
+  </div>-->
 
-</div>

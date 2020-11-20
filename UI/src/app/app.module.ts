@@ -47,11 +47,15 @@ import { AchatComponent } from './components/grille/variables-illustratives/acha
 import { SuiviTraitementComponent } from './components/grille/variables-illustratives/suivi-traitement/suivi-traitement.component';
 import { ActivitesLibresComponent } from './components/grille/variables-illustratives/activites-libres/activites-libres.component';
 import { GrapheComponent } from './components/historique-patient/graphe/graphe.component';
-import {GoogleChartsModule} from 'angular-google-charts';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatInputModule} from '@angular/material/input';
+import {ChartsModule} from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -105,13 +109,17 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatTabsModule,
     MatDialogModule,
     MatButtonModule,
+    MatNativeDateModule,
+    MatInputModule,
     MatCardModule,
     MatButtonToggleModule,
-    GoogleChartsModule,
+    ChartsModule,
     MatToolbarModule,
     MatIconModule,
     MatSlideToggleModule,
     MatListModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
   ],
   providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}],
   bootstrap: [AppComponent]
