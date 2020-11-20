@@ -1,6 +1,6 @@
 <mat-toolbar color="accent">
   <span routerLink="/" class="pointer">Liste des résidents</span>
-  <span class="separator"> > </span> 
+  <span class="separator"> > </span>
   <span>{{ patient.prenom }} {{ patient.nom }}</span>
   <span class="spacer"></span>
   <button (click)='createEvaluation()' mat-stroked-button>
@@ -9,14 +9,19 @@
 </mat-toolbar>
 
 
+
 <mat-tab-group dynamicHeight>
   <mat-tab label="Historique">
-    <div *ngIf="!evaluations || !evaluations.length">Pas d'évaluations</div>
-    <div class="container">
-      <div class="liste" *ngFor="let eval of evaluations; let index = index" routerLink="/recapGrille">
-        <div class="circle">{{index+1}}</div> <span>Date : {{eval.date | date: 'dd/MM/yyyy HH:mm'}}</span> <span> Gir : {{eval.gir}}</span>
-      </div>
+    <div class="content" *ngIf="!evaluations || !evaluations.length">
+      Pas d'évaluations
     </div>
+    <mat-list role="list">
+      <mat-list-item *ngFor="let eval of evaluations; let index = index" routerLink="/recapGrille" role="listitem">
+        <mat-icon mat-list-icon>report</mat-icon>
+        <div mat-line>Date : {{eval.date | date: 'dd/MM/yyyy HH:mm'}}</div>
+        <div mat-line>GIR : xx </div>
+      </mat-list-item>
+    </mat-list>
   </mat-tab>
   <mat-tab label="Graphe d'évolution">
     <app-graphe></app-graphe>
