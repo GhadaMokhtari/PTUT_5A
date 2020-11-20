@@ -1,9 +1,21 @@
 <div class="container">
   <h2>Gestion</h2>
-  <p> Cette variable regroupe trois types d'activités</p>
-  <span class="question">Est ce que la personne gére, seule, ses affaires, son buget et ses biens ?</span> <br>
-  <span class="question">Est ce que la personne reconnait la valeur monétaire des pièces et des billets, se servir de l'argent et connaître la valeur des choses ?</span><br>
-  <span class="question">Est ce que la personne effectue seule les démarches administratives et remplir les formulaires ?</span>
+  <mat-list>
+    <div mat-subheader>Cette variable regroupe trois types d'activités</div>
+    <mat-list-item >
+      <mat-icon mat-list-icon>add</mat-icon>
+      <div mat-line>Est ce que la personne gére, seule, ses affaires, son buget et ses biens ?</div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>add</mat-icon>
+      <div mat-line>Est ce que la personne reconnait la valeur monétaire des pièces et des billets, se servir de l'argent et connaître la valeur des choses ?</div>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-icon mat-list-icon>add</mat-icon>
+      <div mat-line>Est ce que la personne effectue seule les démarches administratives et remplir les formulaires ?</div>
+    </mat-list-item>
+  </mat-list>
+
   <div class="checkbox">
     <div>
       <input type="radio" id="oui" name="gestion"  (change)="openDialog()">

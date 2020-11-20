@@ -1,0 +1,20 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  h2{
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  mat-list{
+    margin-left: 50px;
+  }
+  .checkbox{
+    display: flex;
+    margin-top: 50px;
+    justify-content: space-around;
+  }
+  button {
+    margin-top: 20px;
+    align-self: flex-end;
+  }
+}

@@ -11,6 +11,7 @@ export class ActivitesLibresComponent implements OnInit {
 
   @Output() finalResultEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
+  @Output() actLibToGrilleEvent = new EventEmitter<any>();
 
   Non: boolean;
   modalite: string;
@@ -35,7 +36,7 @@ export class ActivitesLibresComponent implements OnInit {
       adverbesSubscribe.unsubscribe();
     });
   }
-  emitValeur(): void{
+  emitValeurs(): void{
     // @ts-ignore
     if (this.Non === 'true'){
       this.modalite = 'C';
@@ -43,5 +44,6 @@ export class ActivitesLibresComponent implements OnInit {
     console.log('actLibres modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.actLibAdverbes);
+    this.actLibToGrilleEvent.emit(true);
   }
 }

@@ -1,8 +1,6 @@
 import {Component, EventEmitter, Inject, OnInit, Output} from '@angular/core';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
-import {CoherenceComponent} from '../coherence/coherence.component';
-import {CommunicationComponent} from '../coherence/communication/communication.component';
-import {EventHandlerVars} from "@angular/compiler/src/compiler_util/expression_converter";
+
 
 @Component({
   selector: 'app-modal-oui',
@@ -33,6 +31,7 @@ export class ModalOui implements OnInit {
 
   ngOnInit(): void {
   }
+
   onValidate(): void{
     if (this.S === true){
       this.valeur.spontanement = 'Oui';

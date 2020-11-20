@@ -1,4 +1,8 @@
-<h1>Evaluation AGGIR</h1>
+<mat-toolbar color="accent">
+  <span (click)="goBackToHistoric()" class="pointer">Historique du patient</span>
+  <span class="separator">></span>
+  <span>Nouvelle evaluation AGGIR</span>
+</mat-toolbar>
 
 <mat-tab-group [selectedIndex]="selected" (selectedIndexChange)="goToTab($event)" dynamicHeight>
   <mat-tab label="Cohérence">
@@ -53,6 +57,4 @@
     <app-activites-libres (adverbesEmitEvent)="recupActLibresValeurs($event)" (finalResultEvent)="recupResultActivitesLibres($event)"></app-activites-libres>
   </mat-tab>
 </mat-tab-group>
-
-<button mat-raised-button color="primary" (click)="createEvaluation()">Créer evaluation</button><br>
-<button mat-raised-button color="primary" (click)="goBackToHistoric()">Retour</button>
+<button mat-raised-button color="primary" (click)="createEvaluation()">Créer l'évaluation</button>
