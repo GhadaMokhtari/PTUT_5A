@@ -11,6 +11,7 @@ export class GrapheComponent implements OnInit {
 
   data = [];
   evaluations = [];
+
   chart = {
     title : 'Evolution de la dépendance du résident',
     type : 'LineChart',
@@ -29,17 +30,19 @@ export class GrapheComponent implements OnInit {
 
 
   ngOnInit(): void {
-
-    this.evaluationService.getAll().then(res => {
+    this.evaluationService.getAll().subscribe((res: any) => {
       this.evaluations = res;
-
-      // tslint:disable-next-line:no-shadowed-variable
+      console.log('evaluations', res);
+       // tslint:disable-next-line:no-shadowed-variable
       res.forEach(element => {
         const date = new Date();
         const dd = date.getDay() + '-' + date.getMonth() + '-' + date.getFullYear();
-        this.data.push([dd, element.gir]);
+        this.data.push([date, element.gir]);
       });
-      this.chart.data = this.data;
+      console.log('data', this.data);
+      this.chart.data = [this.data];
+    }, (err) => {
+      console.error(err);
     });
   }
 }

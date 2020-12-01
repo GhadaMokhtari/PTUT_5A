@@ -1,6 +1,6 @@
 import { EvaluationService } from './../../services/evaluation.service';
 import { Component, OnInit } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import calculAGGIR from '../../utils/calculAGGIR.json';
 
@@ -100,11 +100,11 @@ export class GrilleComponent implements OnInit {
 
 
   constructor(
-    public  dialog: MatDialog,
+    public dialog: MatDialog,
     public evaluationService: EvaluationService,
     public router: Router,
     public route: ActivatedRoute,
-    ) {}
+  ) { }
 
   ngOnInit(): void {
   }
@@ -169,56 +169,56 @@ export class GrilleComponent implements OnInit {
     console.log('actLibres', this.resultats.activitesLibres.activitesLibresModality);
   }
 
-  recupCoherenceValeurs(event: string): void{
+  recupCoherenceValeurs(event: string): void {
     this.resultats.coherence.coherenceValeurs = event;
     console.log('Cohérence valeurs', this.resultats.coherence.coherenceValeurs);
   }
-  recuOrientationValeurs(event: string): void{
+  recuOrientationValeurs(event: string): void {
     this.resultats.orientationV.orientationValeurs = event;
   }
-  recupToiletteValeurs(event: string): void{
+  recupToiletteValeurs(event: string): void {
     this.resultats.toilette.toiletteValeurs = event;
   }
-  recupHabillageValeurs(event: string): void{
+  recupHabillageValeurs(event: string): void {
     this.resultats.habillage.habillageValeurs = event;
   }
-  recupAlimentationValeurs(event: string): void{
+  recupAlimentationValeurs(event: string): void {
     this.resultats.alimentation.alimentationValeurs = event;
   }
-  recupEliminationValeurs(event: string): void{
+  recupEliminationValeurs(event: string): void {
     this.resultats.elimination.eliminationValeurs = event;
   }
-  recupTransfertsValeurs(event: string): void{
+  recupTransfertsValeurs(event: string): void {
     this.resultats.tranferts.transfertsValeurs = event;
   }
-  recupDepExtValeurs(event: string): void{
+  recupDepExtValeurs(event: string): void {
     this.resultats.deplacementsExterieurs.depExtValeurs = event;
   }
-  recupDepInterValeurs(event: string): void{
+  recupDepInterValeurs(event: string): void {
     this.resultats.deplacementsInterieurs.depInterValeurs = event;
   }
-  recupCommDistValeurs(event: string): void{
+  recupCommDistValeurs(event: string): void {
     this.resultats.communicationDistance.commDistValeurs = event;
   }
-  recupGestionValeurs(event: string): void{
+  recupGestionValeurs(event: string): void {
     this.resultats.gestion.gestionValeurs = event;
   }
-  recupMenageValeurs(event: string): void{
+  recupMenageValeurs(event: string): void {
     this.resultats.menage.menageValeurs = event;
   }
-  recupCuisineValeurs(event: string): void{
+  recupCuisineValeurs(event: string): void {
     this.resultats.cuisine.cuisineValeurs = event;
   }
-  recupTransportsValeurs(event: string): void{
+  recupTransportsValeurs(event: string): void {
     this.resultats.transportsV.transportsValeurs = event;
   }
-  recupAchatsValeurs(event: string): void{
+  recupAchatsValeurs(event: string): void {
     this.resultats.achats.achatsValeurs = event;
   }
-  recupSuiviMedValeurs(event: string): void{
+  recupSuiviMedValeurs(event: string): void {
     this.resultats.suiviTraitement.suiviMedValeurs = event;
   }
-  recupActLibresValeurs(event: string): void{
+  recupActLibresValeurs(event: string): void {
     this.resultats.activitesLibres.actLibValeurs = event;
   }
 
@@ -229,68 +229,78 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGA(): number {
-    if (this.resultats.coherence.coherenceModality === 'C'){
+    // Cohérence
+    if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 2000;
-      // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B'){
+    } else if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 0;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C'){
+    }
+
+    // Orientation
+    if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 1200;
-      // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B'){
+    } else if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 0;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C'){
+    }
+
+    // Toilette
+    if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 40;
-      // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B'){
+    } else if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 16;
-      // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C'){
+    }
+
+    // Habillage
+    if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 40;
-      // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B'){
+    } else if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 16;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C'){
+    }
+
+    // Alimentation
+    if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 60;
-      // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B'){
+    } else if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 20;
-      // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C'){
+    }
+
+    // Eliminitation
+    if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 100;
-      // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B'){
+    } else if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 16;
-      // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C'){
+    }
+
+    // Transferts
+    if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 800;
-      // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B'){
+    } else if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 120;
-      // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C'){
+    }
+
+    // Déplacements intérieurs
+    if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = 200;
-      // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B'){
+    } else if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = 32;
-      // tslint:disable-next-line:align
     } else {
       this.valeurDepInt = 0;
     }
+
     this.valeurDepExt = 0;
     this.valeurCommDist = 0;
 
@@ -300,63 +310,63 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGB(): number {
-    if (this.resultats.coherence.coherenceModality === 'C'){
+    if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 1500;
       // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B'){
+    } if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 320;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C'){
+    } if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 1200;
       // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B'){
+    } if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 120;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C'){
+    } if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 40;
       // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B'){
+    } if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 16;
       // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C'){
+    } if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 40;
       // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B'){
+    } if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 16;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C'){
+    } if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 60;
       // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B'){
+    } if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 0;
       // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C'){
+    } if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 100;
       // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B'){
+    } if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 16;
       // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C'){
+    } if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 800;
       // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B'){
+    } if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 120;
       // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = -80;
       // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = -40;
       // tslint:disable-next-line:align
     } else {
@@ -372,63 +382,63 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGC(): number {
-    if (this.resultats.coherence.coherenceModality === 'C'){
+    if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 0;
       // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B'){
+    } if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 0;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C'){
+    } if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 0;
       // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B'){
+    } if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 0;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C'){
+    } if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 40;
       // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B'){
+    } if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 16;
       // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C'){
+    } if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 40;
       // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B'){
+    } if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 16;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C'){
+    } if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 60;
       // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B'){
+    } if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 20;
       // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C'){
+    } if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 160;
       // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B'){
+    } if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 20;
       // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C'){
+    } if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 1000;
       // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B'){
+    } if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 200;
       // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = 400;
       // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = 40;
       // tslint:disable-next-line:align
     } else {
@@ -444,63 +454,63 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGD(): number {
-    if (this.resultats.coherence.coherenceModality === 'C'){
+    if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 400;
       // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B'){
+    } if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 0;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C'){
+    } if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 400;
       // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B'){
+    } if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 0;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C'){
+    } if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 400;
       // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B'){
+    } if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 100;
       // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C'){
+    } if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 400;
       // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B'){
+    } if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 100;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C'){
+    } if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 400;
       // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B'){
+    } if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 100;
       // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C'){
+    } if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 800;
       // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B'){
+    } if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 100;
       // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C'){
+    } if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 800;
       // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B'){
+    } if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 100;
       // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = 200;
       // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = 0;
       // tslint:disable-next-line:align
     } else {
@@ -516,63 +526,63 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGE(): number {
-    if (this.resultats.coherence.coherenceModality === 'C'){
+    if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 200;
       // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B'){
+    } if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 0;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C'){
+    } if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 200;
       // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B'){
+    } if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 0;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C'){
+    } if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 500;
       // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B'){
+    } if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 100;
       // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C'){
+    } if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 500;
       // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B'){
+    } if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 100;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C'){
+    } if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 500;
       // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B'){
+    } if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 100;
       // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C'){
+    } if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 500;
       // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B'){
+    } if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 100;
       // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C'){
+    } if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 500;
       // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B'){
+    } if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 100;
       // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = 200;
       // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = 0;
       // tslint:disable-next-line:align
     } else {
@@ -587,63 +597,63 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGF(): number {
-    if (this.resultats.coherence.coherenceModality === 'C'){
+    if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 200;
       // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B'){
+    } if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 100;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C'){
+    } if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 200;
       // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B'){
+    } if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 100;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C'){
+    } if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 500;
       // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B'){
+    } if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 100;
       // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C'){
+    } if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 500;
       // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B'){
+    } if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 100;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C'){
+    } if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 500;
       // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B'){
+    } if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 100;
       // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C'){
+    } if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 500;
       // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B'){
+    } if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 100;
       // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C'){
+    } if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 500;
       // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B'){
+    } if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 100;
       // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = 200;
       // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = 0;
       // tslint:disable-next-line:align
     } else {
@@ -658,63 +668,63 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGG(): number {
-    if (this.resultats.coherence.coherenceModality === 'C'){
+    if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 150;
       // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B'){
+    } if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 0;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C'){
+    } if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 150;
       // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B'){
+    } if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 0;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C'){
+    } if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 300;
       // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B'){
+    } if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 200;
       // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C'){
+    } if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 300;
       // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B'){
+    } if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 200;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C'){
+    } if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 500;
       // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B'){
+    } if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 200;
       // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C'){
+    } if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 500;
       // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B'){
+    } if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 200;
       // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C'){
+    } if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 400;
       // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B'){
+    } if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 200;
       // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = 200;
       // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = 100;
       // tslint:disable-next-line:align
     } else {
@@ -729,63 +739,63 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGH(): number {
-    if (this.resultats.coherence.coherenceModality === 'C'){
+    if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 0;
       // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B'){
+    } if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 0;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C'){
+    } if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 0;
       // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B'){
+    } if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 0;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C'){
+    } if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 3000;
       // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B'){
+    } if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 2000;
       // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C'){
+    } if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 3000;
       // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B'){
+    } if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 2000;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C'){
+    } if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 3000;
       // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B'){
+    } if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 2000;
       // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C'){
+    } if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 3000;
       // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B'){
+    } if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 2000;
       // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C'){
+    } if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 1000;
       // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B'){
+    } if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 2000;
       // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = 1000;
       // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B'){
+    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = 1000;
       // tslint:disable-next-line:align
     } else {
@@ -799,68 +809,80 @@ export class GrilleComponent implements OnInit {
     return this.score;
 
   }
+
   calculRang(): void {
-    // console.log(calculAGGIR.variables);
+
+    // Calcul Score A
     const scoreA = this.calculScoreGA();
+    console.log('scoreA', scoreA);
     if (scoreA >= 4380) {
       this.rang = 1;
-    }
-    if (scoreA < 4380 && scoreA >= 4140) {
+    } else if (scoreA < 4380 && scoreA >= 4140) {
       this.rang = 2;
-    }
-    if (scoreA  < 4140 && scoreA >= 3390) {
+    } else if (scoreA < 4140 && scoreA >= 3390) {
       this.rang = 3;
-    }
-    if (scoreA < 3390) {
+    } else if (scoreA < 3390) {
+
+      // Calcul Score B
       const scoreB = this.calculScoreGB();
+      console.log('scoreB', scoreB);
       if (scoreB >= 2016) {
-          this.rang = 4;
-      }
-      if (this.score < 2016) {
-          const scoreC = this.calculScoreGC();
-          if (scoreC >= 1700) {
-              this.rang = 5;
-          }
-          if (scoreC < 1700 && scoreC >= 1432) {
-              this.rang = 6;
-          }
-          if (scoreC < 1432) {
-              const scoreD = this.calculScoreGD();
-              if (scoreD >= 2400){
-                  this.rang = 7;
-              }
-              if (scoreD < 2400) {
-                  const scoreE = this.calculScoreGD();
-                  if (scoreE >= 1200) {
-                      this.rang = 8;
+        this.rang = 4;
+      } else if (this.score < 2016) {
+
+        // Calcul Score C
+        const scoreC = this.calculScoreGC();
+        console.log('scoreC', scoreC);
+        if (scoreC >= 1700) {
+          this.rang = 5;
+        } else if (scoreC < 1700 && scoreC >= 1432) {
+          this.rang = 6;
+        } else if (scoreC < 1432) {
+
+          // Calcul Score D
+          const scoreD = this.calculScoreGD();
+          console.log('scoreD', scoreD);
+          if (scoreD >= 2400) {
+            this.rang = 7;
+          } else if (scoreD < 2400) {
+
+            // Calcul Score E
+            const scoreE = this.calculScoreGD();
+            console.log('scoreE', scoreE);
+            if (scoreE >= 1200) {
+              this.rang = 8;
+            } else if (scoreE < 1200) {
+
+              // Calcul Score F
+              const scoreF = this.calculScoreGF();
+              console.log('scoreF', scoreF);
+              if (scoreF >= 800) {
+                this.rang = 10;
+              } else if (scoreF < 800) {
+
+                // Calcul Score G
+                const scoreG = this.calculScoreGG();
+                console.log('scoreG', scoreG);
+                if (scoreG >= 650) {
+                  this.rang = 10;
+                } else if (scoreG < 650) {
+
+                  // Calcul Score H
+                  const scoreH = this.calculScoreGH();
+                  console.log('scoreH', scoreH);
+                  if (scoreH >= 4000) {
+                    this.rang = 11;
+                  } else if (scoreH < 4000 && scoreH >= 2000) {
+                    this.rang = 12;
+                  } else if (scoreH < 2000) {
+                    this.rang = 13;
                   }
-                  if (scoreE < 1200) {
-                      const scoreF = this.calculScoreGF();
-                      if (scoreF >= 800) {
-                          this.rang = 10;
-                      }
-                      if (scoreF < 800) {
-                          const scoreG = this.calculScoreGG();
-                          if (scoreG >= 650) {
-                              this.rang = 10;
-                          }
-                          if (scoreG < 650) {
-                              const scoreH = this.calculScoreGH();
-                              if (scoreH >= 4000) {
-                                  this.rang = 11;
-                              }
-                              if (scoreH < 4000 && scoreH >= 2000) {
-                                  this.rang = 12;
-                              }
-                              if (scoreH < 2000) {
-                                  this.rang = 13;
-                                }
-                            }
-                        }
-                    }
                 }
+              }
             }
+          }
         }
+      }
     }
   }
 
@@ -885,13 +907,14 @@ export class GrilleComponent implements OnInit {
     }
   }
 
-  createEvaluation(): any{
+  createEvaluation(): any {
     this.calculRang();
     this.calculGir();
+
     const patientId = this.route.snapshot.paramMap.get('id');
-    const scoreEval =  this.score;
+    const scoreEval = this.score;
     const rangEval = this.rang;
-    const  girEval = this.gir;
+    const girEval = this.gir;
     const resultats = this.resultats;
 
     console.log('score', this.score);
@@ -907,12 +930,11 @@ export class GrilleComponent implements OnInit {
     const evaluation = {
       date: new Date(),
       score: scoreEval,
-      gir: 1,
+      gir: girEval,
       rang: rangEval,
       patient: patientId,
       results: resultats
     };
-
 
     this.evaluationService.create(evaluation).subscribe((data) => {
       this.router.navigate(['historiquePatient', patientId]);
@@ -920,5 +942,4 @@ export class GrilleComponent implements OnInit {
       console.error(err);
     });
   }
-
 }

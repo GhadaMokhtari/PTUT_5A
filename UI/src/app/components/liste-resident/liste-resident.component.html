@@ -13,3 +13,5 @@
       <div mat-line> {{patient.dateNaissance | date: 'dd/MM/yyyy'}} </div>
   </mat-list-item>
 </mat-list>
+
+<div *ngIf="patients.length == 0"> Pas de résidents </div>
