@@ -46,6 +46,10 @@ export class HistoriquePatientComponent implements OnInit {
     this.router.navigate(['newEvaluation', this.patient.id]);
   }
 
+  goToRecap(evaluation): any {
+    this.router.navigate(['recapGrille', this.patient.id, evaluation.id]);
+  }
+
   goToBack(): void {
     this.router.navigate(['']);
   }

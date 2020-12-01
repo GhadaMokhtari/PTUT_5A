@@ -16,10 +16,10 @@
       Pas d'évaluations
     </div>
     <mat-list role="list">
-      <mat-list-item *ngFor="let eval of evaluations; let index = index" routerLink="/recapGrille" role="listitem">
+      <mat-list-item *ngFor="let eval of evaluations; let index = index" (click)="goToRecap(eval)" role="listitem">
         <mat-icon mat-list-icon>report</mat-icon>
         <div mat-line>Date : {{eval.date | date: 'dd/MM/yyyy HH:mm'}}</div>
-        <div mat-line>GIR : xx </div>
+        <div mat-line>GIR : {{eval.gir}} </div>
       </mat-list-item>
     </mat-list>
   </mat-tab>

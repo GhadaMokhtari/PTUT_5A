@@ -55,7 +55,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
-import {ChartsModule} from 'ng2-charts';
+import { GoogleChartsModule } from 'angular-google-charts';
+import { VariableComponent } from './components/recapitulatif-grille/variable/variable.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import {ChartsModule} from 'ng2-charts';
     SuiviTraitementComponent,
     ActivitesLibresComponent,
     GrapheComponent,
+    VariableComponent,
 
   ],
   entryComponents: [ModalOui],
@@ -113,7 +115,7 @@ import {ChartsModule} from 'ng2-charts';
     MatInputModule,
     MatCardModule,
     MatButtonToggleModule,
-    ChartsModule,
+    GoogleChartsModule,
     MatToolbarModule,
     MatIconModule,
     MatSlideToggleModule,

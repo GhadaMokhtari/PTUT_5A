@@ -892,28 +892,33 @@ export class GrilleComponent implements OnInit {
     const scoreEval =  this.score;
     const rangEval = this.rang;
     const  girEval = this.gir;
+    const resultats = this.resultats;
 
     console.log('score', this.score);
     console.log('rang', this.rang);
     console.log('gir', this.gir);
+    console.log('resultats', this.resultats);
 
     console.log('scoreE', scoreEval);
     console.log('rangE', rangEval);
     console.log('girE', girEval);
+    console.log('results', resultats);
 
     const evaluation = {
       date: new Date(),
       score: scoreEval,
       gir: 1,
       rang: rangEval,
-      patient: patientId
+      patient: patientId,
+      results: resultats
     };
 
-    /*this.evaluationService.create(evaluation).subscribe((data) => {
+
+    this.evaluationService.create(evaluation).subscribe((data) => {
       this.router.navigate(['historiquePatient', patientId]);
     }, (err) => {
       console.error(err);
-    });*/
+    });
   }
 
 }

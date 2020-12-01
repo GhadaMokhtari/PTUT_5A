@@ -20,5 +20,8 @@ export class EvaluationService {
   getByPatient(id): any{
     return this.http.get(`${environment.api}/evaluations/patient/` + id);
   }
+  getAll(): any {
+    return this.http.get(`${environment.api}/evaluations`);
+  }
 }
 

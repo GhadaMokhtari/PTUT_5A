@@ -21,7 +21,7 @@ const routes: Routes = [
     component: HistoriquePatientComponent
   },
   {
-    path: 'recapGrille',
+    path: 'recapGrille/:id/:idEval',
     component: RecapitulatifGrilleComponent
   },
   {

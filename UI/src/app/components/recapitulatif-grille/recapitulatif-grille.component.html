@@ -1,1 +1,49 @@
-<p>recapitulatif-grille works!</p>
+<mat-toolbar color="accent">
+  <span (click)="goBackToHistoric()" class="pointer">Historique du patient</span>
+  <span class="separator">></span>
+  <span>Récapitulatif de la grille</span>
+</mat-toolbar>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <span>Variables</span>
+    </div>
+    <div class="col-sm-4">
+      <span>Adverbes</span>
+    </div>
+    <div class="col-sm-4">
+      <span>Modalités</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <span>Activités réalisées par la personne</span>
+    </div>
+    <div class="col-sm-1">
+      <span>S</span>
+    </div>
+    <div class="col-sm-1">
+      <span>H</span>
+    </div>
+    <div class="col-sm-1">
+      <span>T</span>
+    </div>
+    <div class="col-sm-1">
+      <span>C</span>
+    </div>
+    <div class="col-sm-2">
+      <span>Code sous variable</span>
+    </div>
+    <div class="col-sm-2">
+      <span>Codage final</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <app-variable></app-variable>
+    </div>
+  </div>
+</div>
