@@ -43,8 +43,7 @@ export class ToiletteComponent implements OnInit {
   goToTabParent(): void {
     if (this.toiletteValeurs.resultHaut === 'A' && this.toiletteValeurs.resultBas === 'A'){
       this.finalResult = 'A';
-    }
-    if (this.toiletteValeurs.resultHaut === 'C' && this.toiletteValeurs.resultBas === 'C'){
+    } else if (this.toiletteValeurs.resultHaut === 'C' && this.toiletteValeurs.resultBas === 'C'){
       this.finalResult = 'C';
     } else {
       this.finalResult = 'B';

@@ -310,65 +310,74 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGB(): number {
+    // cohérence
     if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 1500;
-      // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B') {
+    } else if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 320;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C') {
+    }
+
+    // orientation
+    if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 1200;
-      // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B') {
+    } else if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 120;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C') {
+    }
+
+    // toilette
+    if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 40;
-      // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B') {
+    } else if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 16;
-      // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C') {
+    }
+
+    // habillage
+    if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 40;
-      // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B') {
+    } else if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 16;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C') {
+    }
+
+    // alimentation
+    if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 60;
-      // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B') {
+    } else if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 0;
-      // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C') {
+    }
+
+    // elimination
+    if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 100;
-      // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B') {
+    } else if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 16;
-      // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C') {
+    }
+
+    // transferts
+    if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 800;
-      // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B') {
+    } else if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 120;
-      // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
+    }
+
+    // deplacements intérieurs
+    if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = -80;
-      // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
+    } else if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = -40;
-      // tslint:disable-next-line:align
     } else {
       this.valeurDepInt = 0;
     }
@@ -382,65 +391,74 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGC(): number {
+    // cohérence
     if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 0;
-      // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B') {
+    } else if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 0;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C') {
+    }
+
+    // orientation
+    if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 0;
-      // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B') {
+    } else if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 0;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C') {
+    }
+
+    // toilette
+    if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 40;
-      // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B') {
+    } else if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 16;
-      // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C') {
+    }
+
+    // habillage
+    if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 40;
-      // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B') {
+    } else if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 16;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C') {
+    }
+
+    // alimentation
+    if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 60;
-      // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B') {
+    } else if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 20;
-      // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C') {
+    }
+
+    // elimination
+    if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 160;
-      // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B') {
+    } else if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 20;
-      // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C') {
+    }
+
+    // transferts
+    if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 1000;
-      // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B') {
+    } else if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 200;
-      // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
+    }
+
+    // déplacements intérieurs
+    if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = 400;
-      // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
+    } else if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = 40;
-      // tslint:disable-next-line:align
     } else {
       this.valeurDepInt = 0;
     }
@@ -454,65 +472,74 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGD(): number {
+    // cohérence
     if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 400;
-      // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B') {
+    } else if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 0;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C') {
+    }
+
+    // orientation
+    if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 400;
-      // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B') {
+    } else if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 0;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C') {
+    }
+
+    // toilette
+    if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 400;
-      // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B') {
+    } else if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 100;
-      // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C') {
+    }
+
+    // habillage
+    if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 400;
-      // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B') {
+    } else if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 100;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C') {
+    }
+
+    // alimentation
+    if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 400;
-      // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B') {
+    } else if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 100;
-      // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C') {
+    }
+
+    // elimination
+    if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 800;
-      // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B') {
+    } else if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 100;
-      // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C') {
+    }
+
+    // transferts
+    if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 800;
-      // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B') {
+    } else if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 100;
-      // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
+    }
+
+    // deplacements intérieurs
+    if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = 200;
-      // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
+    } else if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = 0;
-      // tslint:disable-next-line:align
     } else {
       this.valeurDepInt = 0;
     }
@@ -526,65 +553,74 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGE(): number {
+    // cohérence
     if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 200;
-      // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B') {
+    } else if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 0;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C') {
+    }
+
+    // orientation
+    if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 200;
-      // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B') {
+    } else if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 0;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C') {
+    }
+
+    // toilette
+    if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 500;
-      // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B') {
+    } else if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 100;
-      // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C') {
+    }
+
+    // habillage
+    if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 500;
-      // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B') {
+    } else if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 100;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C') {
+    }
+
+    // alimentation
+    if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 500;
-      // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B') {
+    } else if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 100;
-      // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C') {
+    }
+
+    // elimination
+    if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 500;
-      // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B') {
+    } else if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 100;
-      // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C') {
+    }
+
+    // transferts
+    if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 500;
-      // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B') {
+    } else if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 100;
-      // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
+    }
+
+    // déplacements intérieurs
+    if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = 200;
-      // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
+    } else if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = 0;
-      // tslint:disable-next-line:align
     } else {
       this.valeurDepInt = 0;
     }
@@ -597,65 +633,74 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGF(): number {
+    // cohérence
     if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 200;
-      // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B') {
+    } else if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 100;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C') {
+    }
+
+    // orientation
+    if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 200;
-      // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B') {
+    } else if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 100;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C') {
+    }
+
+    // toilette
+    if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 500;
-      // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B') {
+    } else if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 100;
-      // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C') {
+    }
+
+    // habillage
+    if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 500;
-      // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B') {
+    } else if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 100;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C') {
+    }
+
+    // alimentation
+    if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 500;
-      // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B') {
+    } else if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 100;
-      // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C') {
+    }
+
+    // elimination
+    if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 500;
-      // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B') {
+    } else if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 100;
-      // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C') {
+    }
+
+    // transferts
+    if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 500;
-      // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B') {
+    } else if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 100;
-      // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
+    }
+
+    // déplacements intérieurs
+    if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = 200;
-      // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
+    } else if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = 0;
-      // tslint:disable-next-line:align
     } else {
       this.valeurDepInt = 0;
     }
@@ -668,65 +713,74 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGG(): number {
+    // cohérence
     if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 150;
-      // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B') {
+    } else if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 0;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C') {
+    }
+
+    // orientation
+    if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 150;
-      // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B') {
+    } else if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 0;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C') {
+    }
+
+    // toilette
+    if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 300;
-      // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B') {
+    } else if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 200;
-      // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C') {
+    }
+
+    // habillage
+    if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 300;
-      // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B') {
+    } else if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 200;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C') {
+    }
+
+    // alimentation
+    if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 500;
-      // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B') {
+    } else if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 200;
-      // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C') {
+    }
+
+    // elimination
+    if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 500;
-      // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B') {
+    } else if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 200;
-      // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C') {
+    }
+
+    // transferts
+    if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 400;
-      // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B') {
+    } else if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 200;
-      // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
+    }
+
+    // déplacements intérieurs
+    if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = 200;
-      // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
+    } else if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = 100;
-      // tslint:disable-next-line:align
     } else {
       this.valeurDepInt = 0;
     }
@@ -739,65 +793,74 @@ export class GrilleComponent implements OnInit {
   }
 
   calculScoreGH(): number {
+    // cohérence
     if (this.resultats.coherence.coherenceModality === 'C') {
       this.valeurCoherence = 0;
-      // tslint:disable-next-line:align
-    } if (this.resultats.coherence.coherenceModality === 'B') {
+    } else if (this.resultats.coherence.coherenceModality === 'B') {
       this.valeurCoherence = 0;
     } else {
       this.valeurCoherence = 0;
-    } if (this.resultats.orientationV.orientationModality === 'C') {
+    }
+
+    // orientation
+    if (this.resultats.orientationV.orientationModality === 'C') {
       this.valeurOrientation = 0;
-      // tslint:disable-next-line:align
-    } if (this.resultats.orientationV.orientationModality === 'B') {
+    } else if (this.resultats.orientationV.orientationModality === 'B') {
       this.valeurOrientation = 0;
     } else {
       this.valeurOrientation = 0;
-    } if (this.resultats.toilette.toiletteModality === 'C') {
+    }
+
+    // toilette
+    if (this.resultats.toilette.toiletteModality === 'C') {
       this.valeurToilette = 3000;
-      // tslint:disable-next-line:align
-    } if (this.resultats.toilette.toiletteModality === 'B') {
+    } else if (this.resultats.toilette.toiletteModality === 'B') {
       this.valeurToilette = 2000;
-      // tslint:disable-next-line:align
     } else {
       this.valeurToilette = 0;
-    } if (this.resultats.habillage.habillageModality === 'C') {
+    }
+
+    // habillage
+    if (this.resultats.habillage.habillageModality === 'C') {
       this.valeurHabillage = 3000;
-      // tslint:disable-next-line:align
-    } if (this.resultats.habillage.habillageModality === 'B') {
+    } else if (this.resultats.habillage.habillageModality === 'B') {
       this.valeurHabillage = 2000;
     } else {
       this.valeurHabillage = 0;
-    } if (this.resultats.alimentation.alimentationModality === 'C') {
+    }
+
+    // alimentation
+    if (this.resultats.alimentation.alimentationModality === 'C') {
       this.valeurAlimentation = 3000;
-      // tslint:disable-next-line:align
-    } if (this.resultats.alimentation.alimentationModality === 'B') {
+    } else if (this.resultats.alimentation.alimentationModality === 'B') {
       this.valeurAlimentation = 2000;
-      // tslint:disable-next-line:align
     } else {
       this.valeurAlimentation = 0;
-    } if (this.resultats.elimination.eliminationModality === 'C') {
+    }
+
+    // elimination
+    if (this.resultats.elimination.eliminationModality === 'C') {
       this.valeurElimination = 3000;
-      // tslint:disable-next-line:align
-    } if (this.resultats.elimination.eliminationModality === 'B') {
+    } else if (this.resultats.elimination.eliminationModality === 'B') {
       this.valeurElimination = 2000;
-      // tslint:disable-next-line:align
     } else {
       this.valeurElimination = 0;
-    } if (this.resultats.tranferts.transfertsModality === 'C') {
+    }
+
+    // transferts
+    if (this.resultats.tranferts.transfertsModality === 'C') {
       this.valeurTransferts = 1000;
-      // tslint:disable-next-line:align
-    } if (this.resultats.tranferts.transfertsModality === 'B') {
+    } else if (this.resultats.tranferts.transfertsModality === 'B') {
       this.valeurTransferts = 2000;
-      // tslint:disable-next-line:align
     } else {
       this.valeurTransferts = 0;
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
+    }
+
+    // déplacements intérieurs
+    if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'C') {
       this.valeurDepInt = 1000;
-      // tslint:disable-next-line:align
-    } if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
+    } else if (this.resultats.deplacementsInterieurs.deplacementsInterieursModality === 'B') {
       this.valeurDepInt = 1000;
-      // tslint:disable-next-line:align
     } else {
       this.valeurDepInt = 0;
     }

@@ -46,36 +46,28 @@ export class CoherenceComponent implements OnInit {
     if (this.coherenceValeurs.resultCommunication === 'A' && this.coherenceValeurs.resultComportment === 'A'){
       this.finalModalite = 'A';
       console.log('cohérence modalité', this.finalModalite);
-    }
-    if (this.coherenceValeurs.resultCommunication === 'A' && this.coherenceValeurs.resultComportment === 'B'){
+    } else if (this.coherenceValeurs.resultCommunication === 'A' && this.coherenceValeurs.resultComportment === 'B'){
       this.finalModalite = 'B';
       console.log('cohérence modalité', this.finalModalite);
-    }
-    if (this.coherenceValeurs.resultCommunication === 'B' && this.coherenceValeurs.resultComportment === 'A'){
+    } else if (this.coherenceValeurs.resultCommunication === 'B' && this.coherenceValeurs.resultComportment === 'A'){
       this.finalModalite = 'B';
       console.log('cohérence modalité', this.finalModalite);
-    }
-    if (this.coherenceValeurs.resultCommunication === 'B' && this.coherenceValeurs.resultComportment === 'B'){
+    } else if (this.coherenceValeurs.resultCommunication === 'B' && this.coherenceValeurs.resultComportment === 'B'){
       this.finalModalite = 'B';
       console.log('cohérence modalité', this.finalModalite);
-    }
-    if (this.coherenceValeurs.resultCommunication === 'C' && this.coherenceValeurs.resultComportment === 'C'){
+    } else if (this.coherenceValeurs.resultCommunication === 'C' && this.coherenceValeurs.resultComportment === 'C'){
       this.finalModalite = 'C';
       console.log('cohérence modalité', this.finalModalite);
-    }
-    if (this.coherenceValeurs.resultCommunication === 'B' && this.coherenceValeurs.resultComportment === 'C'){
+    } else if (this.coherenceValeurs.resultCommunication === 'B' && this.coherenceValeurs.resultComportment === 'C'){
       this.finalModalite = 'C';
       console.log('cohérence modalité', this.finalModalite);
-    }
-    if (this.coherenceValeurs.resultCommunication === 'C' && this.coherenceValeurs.resultComportment === 'B'){
+    } else if (this.coherenceValeurs.resultCommunication === 'C' && this.coherenceValeurs.resultComportment === 'B'){
       this.finalModalite = 'C';
       console.log('cohérence modalité', this.finalModalite);
-    }
-    if (this.coherenceValeurs.resultCommunication === 'A' && this.coherenceValeurs.resultComportment === 'C'){
+    } else if (this.coherenceValeurs.resultCommunication === 'A' && this.coherenceValeurs.resultComportment === 'C'){
       this.finalModalite = 'C';
       console.log('cohérence modalité', this.finalModalite);
-    }
-    if (this.coherenceValeurs.resultCommunication === 'C' && this.coherenceValeurs.resultComportment === 'A'){
+    } else if (this.coherenceValeurs.resultCommunication === 'C' && this.coherenceValeurs.resultComportment === 'A'){
       this.finalModalite = 'C';
       console.log('cohérence modalité', this.finalModalite);
     }

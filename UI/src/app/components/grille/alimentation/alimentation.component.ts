@@ -45,20 +45,21 @@ export class AlimentationComponent implements OnInit {
   goToTabParent(): void {
     if (this.alimentationValeurs.resultServir === 'A' && this.alimentationValeurs.resultManger === 'A'){
       this.finalModality = 'A';
-    }
-    if (this.alimentationValeurs.resultServir === 'C' && this.alimentationValeurs.resultManger === 'C'){
+    } else if (this.alimentationValeurs.resultServir === 'C' && this.alimentationValeurs.resultManger === 'C'){
       this.finalModality = 'C';
-    }
-    if (this.alimentationValeurs.resultServir === 'B' && this.alimentationValeurs.resultManger === 'C'){
+    } else if (this.alimentationValeurs.resultServir === 'B' && this.alimentationValeurs.resultManger === 'C'){
       this.finalModality = 'C';
-    }
-    if (this.alimentationValeurs.resultServir === 'C' && this.alimentationValeurs.resultManger === 'B'){
+    } else if (this.alimentationValeurs.resultServir === 'C' && this.alimentationValeurs.resultManger === 'B'){
       this.finalModality = 'C';
     } else {
       this.finalModality = 'B';
     }
+    console.log('alimentation servir', this.alimentationValeurs.resultServir);
+    console.log('alimentation servir', typeof this.alimentationValeurs.resultServir);
+    console.log('alimentation manger', this.alimentationValeurs.resultManger);
+    console.log('alimentation ', this.finalModality);
     this.finalResultEvent.emit(this.finalModality);
-    this.alimentationValeursToGrille.emit(this.alimentationValeurs)
+    this.alimentationValeursToGrille.emit(this.alimentationValeurs);
     this.alimentationToGrilleEvent.emit(true);
   }
 

@@ -55,7 +55,7 @@ export class HabillageComponent implements OnInit {
       this.finalResult = 'A';
     }
     // tslint:disable-next-line:max-line-length
-    if (this.habillageValeurs.resultHabHaut === 'C' && this.habillageValeurs.resultHabMoyen === 'C' && this.habillageValeurs.resultHabBas === 'C'){
+    else if (this.habillageValeurs.resultHabHaut === 'C' && this.habillageValeurs.resultHabMoyen === 'C' && this.habillageValeurs.resultHabBas === 'C'){
       this.finalResult = 'C';
     } else {
       this.finalResult = 'B';

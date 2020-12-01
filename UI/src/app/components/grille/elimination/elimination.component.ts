@@ -45,20 +45,15 @@ export class EliminationComponent implements OnInit {
   goToTabParent(): void {
     if (this.eliminationValeurs.resultUrine === 'A' && this.eliminationValeurs.resultFecale === 'A'){
       this.finalResult = 'A';
-    }
-    if (this.eliminationValeurs.resultUrine === 'C' && this.eliminationValeurs.resultFecale === 'C'){
+    } else if (this.eliminationValeurs.resultUrine === 'C' && this.eliminationValeurs.resultFecale === 'C'){
       this.finalResult = 'C';
-    }
-    if (this.eliminationValeurs.resultUrine === 'A' && this.eliminationValeurs.resultFecale === 'C'){
+    } else if (this.eliminationValeurs.resultUrine === 'A' && this.eliminationValeurs.resultFecale === 'C'){
       this.finalResult = 'C';
-    }
-    if (this.eliminationValeurs.resultUrine === 'C' && this.eliminationValeurs.resultFecale === 'A'){
+    } else if (this.eliminationValeurs.resultUrine === 'C' && this.eliminationValeurs.resultFecale === 'A'){
       this.finalResult = 'C';
-    }
-    if (this.eliminationValeurs.resultUrine === 'C' && this.eliminationValeurs.resultFecale === 'B'){
+    } else if (this.eliminationValeurs.resultUrine === 'C' && this.eliminationValeurs.resultFecale === 'B'){
       this.finalResult = 'C';
-    }
-    if (this.eliminationValeurs.resultUrine === 'B' && this.eliminationValeurs.resultFecale === 'C'){
+    } else if (this.eliminationValeurs.resultUrine === 'B' && this.eliminationValeurs.resultFecale === 'C'){
       this.finalResult = 'C';
     } else {
       this.finalResult = 'B';

@@ -46,29 +46,21 @@ export class OrientationComponent implements OnInit {
   goToTabParent(): void {
     if (this.orientationValeurs.resultTemps === 'A' && this.orientationValeurs.resultEspace === 'A'){
       this.finalResult = 'A';
-    }
-    if (this.orientationValeurs.resultTemps === 'A' && this.orientationValeurs.resultEspace === 'B'){
+    } else if (this.orientationValeurs.resultTemps === 'A' && this.orientationValeurs.resultEspace === 'B'){
       this.finalResult = 'B';
-    }
-    if (this.orientationValeurs.resultTemps === 'B' && this.orientationValeurs.resultEspace === 'A'){
+    } else if (this.orientationValeurs.resultTemps === 'B' && this.orientationValeurs.resultEspace === 'A'){
       this.finalResult = 'B';
-    }
-    if (this.orientationValeurs.resultTemps === 'B' && this.orientationValeurs.resultEspace === 'B'){
+    } else if (this.orientationValeurs.resultTemps === 'B' && this.orientationValeurs.resultEspace === 'B'){
       this.finalResult = 'B';
-    }
-    if (this.orientationValeurs.resultEspace === 'C' && this.orientationValeurs.resultTemps === 'C'){
+    } else if (this.orientationValeurs.resultEspace === 'C' && this.orientationValeurs.resultTemps === 'C'){
       this.finalResult = 'C';
-    }
-    if (this.orientationValeurs.resultTemps === 'B' && this.orientationValeurs.resultEspace === 'C'){
+    } else if (this.orientationValeurs.resultTemps === 'B' && this.orientationValeurs.resultEspace === 'C'){
       this.finalResult = 'C';
-    }
-    if (this.orientationValeurs.resultTemps === 'C' && this.orientationValeurs.resultEspace === 'B'){
+    } else if (this.orientationValeurs.resultTemps === 'C' && this.orientationValeurs.resultEspace === 'B'){
       this.finalResult = 'C';
-    }
-    if (this.orientationValeurs.resultEspace === 'A' && this.orientationValeurs.resultTemps === 'C'){
+    } else if (this.orientationValeurs.resultEspace === 'A' && this.orientationValeurs.resultTemps === 'C'){
       this.finalResult = 'C';
-    }
-    if (this.orientationValeurs.resultTemps === 'C' && this.orientationValeurs.resultEspace === 'A'){
+    } else if (this.orientationValeurs.resultTemps === 'C' && this.orientationValeurs.resultEspace === 'A'){
       this.finalResult = 'C';
     }
     this.finalResultEvent.emit(this.finalResult);
