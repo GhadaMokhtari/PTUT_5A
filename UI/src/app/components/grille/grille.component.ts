@@ -98,6 +98,8 @@ export class GrilleComponent implements OnInit {
   rang: number;
   gir: number;
 
+  enable = false;
+
 
   constructor(
     public dialog: MatDialog,
@@ -166,6 +168,7 @@ export class GrilleComponent implements OnInit {
   }
   recupResultActivitesLibres(event: string): void {
     this.resultats.activitesLibres.activitesLibresModality = event;
+    this.enable = true;
     console.log('actLibres', this.resultats.activitesLibres.activitesLibresModality);
   }
 

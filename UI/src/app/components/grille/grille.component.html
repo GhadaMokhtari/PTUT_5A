@@ -57,4 +57,4 @@
     <app-activites-libres (adverbesEmitEvent)="recupActLibresValeurs($event)" (finalResultEvent)="recupResultActivitesLibres($event)"></app-activites-libres>
   </mat-tab>
 </mat-tab-group>
-<button mat-raised-button color="primary" (click)="createEvaluation()">Créer l'évaluation</button>
+<button mat-raised-button color="primary" [disabled]="!enable" (click)="createEvaluation()">Créer l'évaluation</button>

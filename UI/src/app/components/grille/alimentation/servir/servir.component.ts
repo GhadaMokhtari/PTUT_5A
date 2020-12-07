@@ -34,6 +34,9 @@ export class ServirComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
       adverbesSubscribe.unsubscribe();
+      if (result === 'close-for-validation'){
+        this.goToTabs();
+      }
     });
   }
 

@@ -36,7 +36,7 @@ export class SuiviTraitementComponent implements OnInit {
       adverbesSubscribe.unsubscribe();
 
       console.log(result);
-      if(result === 'close-for-validation'){
+      if (result === 'close-for-validation'){
         this.goToTabs();
       }
     });

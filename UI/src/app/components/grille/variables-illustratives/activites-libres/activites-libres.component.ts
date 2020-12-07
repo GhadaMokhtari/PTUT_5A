@@ -34,7 +34,9 @@ export class ActivitesLibresComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
       adverbesSubscribe.unsubscribe();
-      this.emitValeurs();
+      if (result === 'close-for-validation'){
+        this.emitValeurs();
+      }
     });
   }
   emitValeurs(): void{
