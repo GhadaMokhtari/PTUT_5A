@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {EvaluationService} from '../../../services/evaluation.service';
-import {element} from 'protractor';
+import { Component, OnInit } from '@angular/core';
+import { EvaluationService } from '../../../services/evaluation.service';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-graphe',
@@ -13,16 +13,24 @@ export class GrapheComponent implements OnInit {
   evaluations = [];
 
   chart = {
-    title : 'Evolution de la dépendance du résident',
-    type : 'LineChart',
-    data : [
+    title: 'Evolution de la dépendance du résident',
+    type: 'LineChart',
+    data: [
     ],
-    columnNames : ['Date', 'GIR'],
-    options : {
-      colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'], is3D: true
+    columnNames: ['Date', 'GIR'],
+    options: {
+      colors: ['#e0440e'],
+      is3D: true,
+      hAxis: {
+        title: 'Date',
+        type: 'date',
+      },
+      vAxis: {
+        title: 'GIR'
+      },
     },
-    width : 600,
-    height : 400
+    width: 600,
+    height: 400
   };
 
 
@@ -33,14 +41,15 @@ export class GrapheComponent implements OnInit {
     this.evaluationService.getAll().subscribe((res: any) => {
       this.evaluations = res;
       console.log('evaluations', res);
-       // tslint:disable-next-line:no-shadowed-variable
+      // tslint:disable-next-line:no-shadowed-variable
       res.forEach(element => {
-        const date = new Date();
-        const dd = date.getDay() + '-' + date.getMonth() + '-' + date.getFullYear();
-        this.data.push([date, element.gir]);
+        let date = new Date(element.date);
+        console.log(date);
+        let chartDate = date.getDate()+"-"+ date.getMonth()+"-"+ date.getFullYear();
+        this.data.push([chartDate, element.gir]);
       });
-      console.log('data', this.data);
       this.chart.data = [this.data];
+      console.log(this.chart.data);
     }, (err) => {
       console.error(err);
     });

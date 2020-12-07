@@ -9,6 +9,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class RecapitulatifGrilleComponent implements OnInit {
 
+  evaluation;
+  results;
+
   constructor(
     public evaluationService: EvaluationService,
     public router: Router,
@@ -16,6 +19,11 @@ export class RecapitulatifGrilleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    const evaluationId = this.route.snapshot.paramMap.get('idEval');
+    this.evaluationService.get(evaluationId).subscribe(data => {
+      this.evaluation = data;
+      this.results = data.results;
+    });
   }
 
   goBackToHistoric(): void {

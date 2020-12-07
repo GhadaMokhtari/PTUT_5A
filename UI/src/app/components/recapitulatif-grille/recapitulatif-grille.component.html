@@ -4,8 +4,8 @@
   <span>Récapitulatif de la grille</span>
 </mat-toolbar>
 
-<div class="container">
-  <div class="row">
+<div class="container" *ngIf="results">
+  <div class="row title">
     <div class="col-sm-4">
       <span>Variables</span>
     </div>
@@ -17,9 +17,9 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row subtitle">
     <div class="col-sm-4">
-      <span>Activités réalisées par la personne</span>
+      <span></span>
     </div>
     <div class="col-sm-1">
       <span>S</span>
@@ -42,8 +42,81 @@
   </div>
 
   <div class="row">
-    <div class="col">
-      <app-variable></app-variable>
+    <div class="col-sm-4">
+      <span>1 - Transferts</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.tranferts.transfertsValeurs?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.tranferts.transfertsValeurs?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.tranferts.transfertsValeurs?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.tranferts.transfertsValeurs?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.tranferts.transfertsModality }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.tranferts.transfertsModality }}</span>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-sm-2">
+      <span>3 - Toilettes </span>
+    </div>
+    <div class="col-sm-2">
+      <span> haut</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.toilette.toiletteValeurs.resultAdverbesHaut?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.toilette.toiletteValeurs.resultAdverbesHaut?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.toilette.toiletteValeurs.resultAdverbesHaut?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.toilette.toiletteValeurs.resultAdverbesHaut?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.toilette.toiletteValeurs.resultHaut }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span></span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2">
+      <span></span>
+    </div>
+    <div class="col-sm-2">
+      <span>bas</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.toilette.toiletteValeurs.resultAdverbesBas?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.toilette.toiletteValeurs.resultAdverbesBas?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.toilette.toiletteValeurs.resultAdverbesBas?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.toilette.toiletteValeurs.resultAdverbesBas?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.toilette.toiletteValeurs.resultBas }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.toilette.toiletteModality }}</span>
+    </div>
+  </div>
+
 </div>
