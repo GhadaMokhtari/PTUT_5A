@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { EvaluationService } from '../../../services/evaluation.service';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Color, BaseChartDirective, Label } from 'ng2-charts';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-graphe',
@@ -62,14 +64,18 @@ export class GrapheComponent implements OnInit {
 
   @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
-  constructor(public evaluationService: EvaluationService) { }
+  constructor(
+    public evaluationService: EvaluationService,
+    public route: ActivatedRoute,
+  ) { }
 
   ngOnInit(): void {
     this.initChart();
   }
 
   initChart(): void {
-    this.evaluationService.getAll().subscribe((evaluations: any) => {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.evaluationService.getByPatient(id).subscribe((evaluations: any) => {
       // tslint:disable-next-line:no-shadowed-variable
       evaluations.forEach(element => {
         let date = new Date(element.date);
