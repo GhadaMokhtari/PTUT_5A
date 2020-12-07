@@ -55,7 +55,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
-import { GoogleChartsModule } from 'angular-google-charts';
+import { ChartsModule } from 'ng2-charts';
 import { VariableComponent } from './components/recapitulatif-grille/variable/variable.component';
 
 @NgModule({
@@ -115,7 +115,7 @@ import { VariableComponent } from './components/recapitulatif-grille/variable/va
     MatInputModule,
     MatCardModule,
     MatButtonToggleModule,
-    GoogleChartsModule,
+    ChartsModule,
     MatToolbarModule,
     MatIconModule,
     MatSlideToggleModule,

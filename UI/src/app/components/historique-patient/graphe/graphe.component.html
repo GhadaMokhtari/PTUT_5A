@@ -1,7 +1,9 @@
 <div class="flex">
   <div class="flex-item">
     <div style="display: block;">
-      <google-chart style="width: 100%" [title]="chart.title" [type]="chart.type" [data]="chart.data" [columns]="chart.columnNames" [options]="chart.options"> </google-chart>
+      <canvas baseChart width="1000" height="400" [datasets]="lineChartData" [labels]="lineChartLabels"
+        [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+        [chartType]="lineChartType"></canvas>
     </div>
   </div>
 </div>

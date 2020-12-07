@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { EvaluationService } from '../../../services/evaluation.service';
-import { element } from 'protractor';
+import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
+import { Color, BaseChartDirective, Label } from 'ng2-charts';
 
 @Component({
   selector: 'app-graphe',
@@ -9,47 +10,76 @@ import { element } from 'protractor';
 })
 export class GrapheComponent implements OnInit {
 
-  data = [];
-  evaluations = [];
 
-  chart = {
-    title: 'Evolution de la dépendance du résident',
-    type: 'LineChart',
-    data: [
-    ],
-    columnNames: ['Date', 'GIR'],
-    options: {
-      colors: ['#e0440e'],
-      is3D: true,
-      hAxis: {
-        title: 'Date',
-        type: 'date',
-      },
-      vAxis: {
-        title: 'GIR'
-      },
+  public lineChartData: ChartDataSets[] = [
+    { data: [], label: 'GIR' },
+  ];
+  public lineChartLabels: Label[] = [];
+  public lineChartOptions: (ChartOptions & { annotation: any }) = {
+    responsive: false,
+    scales: {
+      // We use this empty structure as a placeholder for dynamic theming.
+      xAxes: [
+        {
+          scaleLabel: {
+            display: true,
+            labelString: 'Date'
+          }
+        }
+      ],
+      yAxes: [
+        {
+          id: 'y-axis-1',
+          position: 'left',
+          ticks: {
+            beginAtZero: true,
+            max: 6,
+            min: 0,
+            stepSize: 1
+          },
+          scaleLabel: {
+            display: true,
+            labelString: 'GIR'
+          }
+        }
+      ]
     },
-    width: 600,
-    height: 400
+    annotation: {},
   };
 
+  public lineChartColors: Color[] = [
+    { // red
+      backgroundColor: 'rgba(255,0,0,0.3)',
+      borderColor: 'red',
+      pointBackgroundColor: 'rgba(148,159,177,1)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+    }
+  ];
+  public lineChartLegend = true;
+  public lineChartType: ChartType = 'line';
+
+  @ViewChild(BaseChartDirective, { static: true }) chart: BaseChartDirective;
 
   constructor(public evaluationService: EvaluationService) { }
 
-
   ngOnInit(): void {
-    this.evaluationService.getAll().subscribe((res: any) => {
-      this.evaluations = res;
-      console.log('evaluations', res);
+    this.initChart();
+  }
+
+  initChart(): void {
+    this.evaluationService.getAll().subscribe((evaluations: any) => {
       // tslint:disable-next-line:no-shadowed-variable
-      res.forEach(element => {
+      evaluations.forEach(element => {
         let date = new Date(element.date);
-        console.log(date);
-        let chartDate = date.getDate()+"-"+ date.getMonth()+"-"+ date.getFullYear();
-        this.data.push([chartDate, element.gir]);
+        let chartDate = date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear();
+        this.lineChartData[0].data.push(element.gir);
+        this.lineChartLabels.push(chartDate);
       });
-      this.chart.data = [this.data];
-      console.log(this.chart.data);
+      // this.chart.data = [this.data];
+      // console.log(this.chart.data);
+      this.chart.update()
     }, (err) => {
       console.error(err);
     });
