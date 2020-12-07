@@ -43,6 +43,7 @@ export class HabBasComponent implements OnInit {
     }
     console.log('habBas modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
+    this.adverbesEmitEvent.emit(this.habBasAdverbes);
     this.habillageBasToHabillageEvent.emit(true);
   }
 }

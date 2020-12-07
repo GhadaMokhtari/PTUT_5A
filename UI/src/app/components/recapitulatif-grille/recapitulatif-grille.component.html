@@ -41,6 +41,7 @@
     </div>
   </div>
 
+  <!--Transferts-->
   <div class="row">
     <div class="col-sm-4">
       <span>1 - Transferts</span>
@@ -65,12 +66,38 @@
     </div>
   </div>
 
+  <!--Déplacements intérieurs-->
+  <div class="row">
+    <div class="col-sm-4">
+      <span>2 - Déplacements intérieurs</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.deplacementsInterieurs.depInterValeurs?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.deplacementsInterieurs.depInterValeurs?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.deplacementsInterieurs.depInterValeurs?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.deplacementsInterieurs.depInterValeurs?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.deplacementsInterieurs.deplacementsInterieursModality }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.deplacementsInterieurs.deplacementsInterieursModality }}</span>
+    </div>
+  </div>
+
+  <!--Toilette-->
   <div class="row">
     <div class="col-sm-2">
       <span>3 - Toilettes </span>
     </div>
     <div class="col-sm-2">
-      <span> haut</span>
+      <span> Haut</span>
     </div>
     <div class="col-sm-1">
       <span>{{ results.toilette.toiletteValeurs.resultAdverbesHaut?.spontanement }}</span>
@@ -97,7 +124,7 @@
       <span></span>
     </div>
     <div class="col-sm-2">
-      <span>bas</span>
+      <span>Bas</span>
     </div>
     <div class="col-sm-1">
       <span>{{ results.toilette.toiletteValeurs.resultAdverbesBas?.spontanement }}</span>
@@ -116,6 +143,527 @@
     </div>
     <div class="col-sm-2">
       <span>{{ results.toilette.toiletteModality }}</span>
+    </div>
+  </div>
+
+  <!--Elimination-->
+  <div class="row">
+    <div class="col-sm-2">
+      <span>4 - Elimination </span>
+    </div>
+    <div class="col-sm-2">
+      <span> Fécale</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.elimination.eliminationValeurs.resultAdverbesFecale?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.elimination.eliminationValeurs.resultAdverbesFecale?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.elimination.eliminationValeurs.resultAdverbesFecale?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.elimination.eliminationValeurs.resultAdverbesFecale?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.elimination.eliminationValeurs.resultFecale }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <span></span>
+    </div>
+    <div class="col-sm-2">
+      <span> Urinaire</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.elimination.eliminationValeurs.resultAdverbesUrinaire?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.elimination.eliminationValeurs.resultAdverbesUrinaire?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.elimination.eliminationValeurs.resultAdverbesUrinaire?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.elimination.eliminationValeurs.resultAdverbesUrinaire?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.elimination.eliminationValeurs.resultUrinaire }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{results.elimination.eliminationModality}}</span>
+    </div>
+  </div>
+
+  <!--Habillage-->
+  <div class="row">
+    <div class="col-sm-2">
+      <span>5 - Habillage </span>
+    </div>
+    <div class="col-sm-2">
+      <span> Haut</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.habillage.habillageValeurs.resultAdverbesHaut?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.habillage.habillageValeurs.resultAdverbesHaut?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.habillage.habillageValeurs.resultAdverbesHaut?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.habillage.habillageValeurs.resultAdverbesHaut?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.habillage.habillageValeurs.resultHabHaut }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <span> </span>
+    </div>
+    <div class="col-sm-2">
+      <span> Moyen</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.habillage.habillageValeurs.resultAdverbesMoyen?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.habillage.habillageValeurs.resultAdverbesMoyen?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.habillage.habillageValeurs.resultAdverbesMoyen?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.habillage.habillageValeurs.resultAdverbesMoyen?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.habillage.habillageValeurs.resultHabMoyen }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <span> </span>
+    </div>
+    <div class="col-sm-2">
+      <span>Bas</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.habillage.habillageValeurs.resultAdverbesBas?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.habillage.habillageValeurs.resultAdverbesBas?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.habillage.habillageValeurs.resultAdverbesBas?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.habillage.habillageValeurs.resultAdverbesBas?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.habillage.habillageValeurs.resultHabBas }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.habillage.habillageModality}}</span>
+    </div>
+  </div>
+
+  <!--Cuisine-->
+  <div class="row">
+    <div class="col-sm-4">
+      <span>6 - Cuisine</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.cuisine.cuisineValeurs?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.cuisine.cuisineValeurs?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.cuisine.cuisineValeurs?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.cuisine.cuisineValeurs?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.cuisine.cuisineModality }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.cuisine.cuisineModality }}</span>
+    </div>
+  </div>
+
+  <!--Alimentation-->
+  <div class="row">
+    <div class="col-sm-2">
+      <span>7 - Alimentation </span>
+    </div>
+    <div class="col-sm-2">
+      <span> Se servir</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.alimentation.alimentationValeurs.resultAdverbesServir?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.alimentation.alimentationValeurs.resultAdverbesServir?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.alimentation.alimentationValeurs.resultAdverbesServir?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.alimentation.alimentationValeurs.resultAdverbesServir?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.alimentation.alimentationValeurs.resultServir }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <span></span>
+    </div>
+    <div class="col-sm-2">
+      <span> Manger</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.alimentation.alimentationValeurs.resultAdverbesManger?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.alimentation.alimentationValeurs.resultAdverbesManger?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.alimentation.alimentationValeurs.resultAdverbesManger?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.alimentation.alimentationValeurs.resultAdverbesManger?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.alimentation.alimentationValeurs.resultManger }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{results.alimentation.alimentationModality}}</span>
+    </div>
+  </div>
+
+  <!-- Suivi du traitement-->
+  <div class="row">
+    <div class="col-sm-4">
+      <span>8 - Suivi du traitement</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.suiviTraitement.suiviMedValeurs?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.suiviTraitement.suiviMedValeurs?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.suiviTraitement.suiviMedValeurs?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.suiviTraitement.suiviMedValeurs?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.suiviTraitement.suiviMedModality }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.suiviTraitement.suiviMedModality }}</span>
+    </div>
+  </div>
+
+  <!--Ménage-->
+  <div class="row">
+    <div class="col-sm-4">
+      <span>9 - Ménage</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.menage.menageValeurs?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.menage.menageValeurs?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.menage.menageValeurs?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.menage.menageValeurs?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.menage.menageModality }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.menage.menageModality }}</span>
+    </div>
+  </div>
+
+  <!--Communication à distance-->
+  <div class="row">
+    <div class="col-sm-4">
+      <span>10 - Communication à distance</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.communicationDistance.commDistValeurs?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.communicationDistance.commDistValeurs?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.communicationDistance.commDistValeurs?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.communicationDistance.commDistValeurs?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.communicationDistance.communicationDistanceModality }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.communicationDistance.communicationDistanceModality }}</span>
+    </div>
+  </div>
+
+  <!--Déplacements extérieurs-->
+  <div class="row">
+    <div class="col-sm-4">
+      <span>11 - Déplacements extérieurs</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.deplacementsExterieurs.depExtValeurs?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.deplacementsExterieurs.depExtValeurs?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.deplacementsExterieurs.depExtValeurs?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.deplacementsExterieurs.depExtValeurs?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.deplacementsExterieurs.deplacementsExterieursModality }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.deplacementsExterieurs.deplacementsExterieursModality }}</span>
+    </div>
+  </div>
+
+  <!--Transports-->
+  <div class="row">
+    <div class="col-sm-4">
+      <span>12 - Transports</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.transportsV.transportsValeurs?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.transportsV.transportsValeurs?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.transportsV.transportsValeurs?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.transportsV.transportsValeurs?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.transportsV.transportsModality }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.transportsV.transportsModality }}</span>
+    </div>
+  </div>
+
+  <!--Activités temps libre-->
+  <div class="row">
+    <div class="col-sm-4">
+      <span>13 - Activités temps libre</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.activitesLibres.actLibValeurs?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.activitesLibres.actLibValeurs?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.activitesLibres.actLibValeurs?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.activitesLibres.actLibValeurs?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.activitesLibres.activitesLibresModality }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.activitesLibres.activitesLibresModality }}</span>
+    </div>
+  </div>
+
+  <!--Achats-->
+  <div class="row">
+    <div class="col-sm-4">
+      <span>14 - Achats</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.achats.achatsValeurs?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.achats.achatsValeurs?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.achats.achatsValeurs?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.achats.achatsValeurs?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.achats.achatsModality }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.achats.achatsModality }}</span>
+    </div>
+  </div>
+
+  <!--Gestion-->
+  <div class="row">
+    <div class="col-sm-4">
+      <span>15 - Gestion</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.gestion.gestionValeurs?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.gestion.gestionValeurs?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.gestion.gestionValeurs?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.gestion.gestionValeurs?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.gestion.gestionModality}}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.gestion.gestionModality}}</span>
+    </div>
+  </div>
+
+  <!--Orientation-->
+  <div class="row">
+    <div class="col-sm-2">
+      <span>16 - Orientation </span>
+    </div>
+    <div class="col-sm-2">
+      <span> Espace</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.orientationV.orientationValeurs.resultAdverbesEspace?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.orientationV.orientationValeurs.resultAdverbesEspace?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.orientationV.orientationValeurs.resultAdverbesEspace?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.orientationV.orientationValeurs.resultAdverbesEspace?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.orientationV.orientationValeurs.resultEspace }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <span></span>
+    </div>
+    <div class="col-sm-2">
+      <span> Temps</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.orientationV.orientationValeurs.resultAdverbesTemps?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.orientationV.orientationValeurs.resultAdverbesTemps?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.orientationV.orientationValeurs.resultAdverbesTemps?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.orientationV.orientationValeurs.resultAdverbesTemps?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.orientationV.orientationValeurs.resultTemps }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.orientationV.orientationModality }}</span>
+    </div>
+  </div>
+
+  <!--Cohérence-->
+  <div class="row">
+    <div class="col-sm-2">
+      <span>17 - Cohérence </span>
+    </div>
+    <div class="col-sm-2">
+      <span> Communication</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.coherence.coherenceValeurs.resultAdverbesComm?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.coherence.coherenceValeurs.resultAdverbesComm?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.coherence.coherenceValeurs.resultAdverbesComm?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.coherence.coherenceValeurs.resultAdverbesComm?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.coherence.coherenceValeurs.resultCommunication }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      <span></span>
+    </div>
+    <div class="col-sm-2">
+      <span> Comportement</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.coherence.coherenceValeurs.resultAdverbesComp?.spontanement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.coherence.coherenceValeurs.resultAdverbesComp?.habituellement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.coherence.coherenceValeurs.resultAdverbesComp?.totalement }}</span>
+    </div>
+    <div class="col-sm-1">
+      <span>{{ results.coherence.coherenceValeurs.resultAdverbesComp?.correctement }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.coherence.coherenceValeurs.resultComportment }}</span>
+    </div>
+    <div class="col-sm-2">
+      <span>{{ results.coherence.coherenceModality }}</span>
     </div>
   </div>
 

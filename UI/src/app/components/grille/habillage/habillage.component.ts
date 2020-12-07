@@ -14,7 +14,7 @@ export class HabillageComponent implements OnInit {
     resultHabMoyen: '',
     resultAdverbesHaut : '',
     resultAdverbesMoyen : '',
-    resultAdverbesBas : ''
+    resultAdverbesBas : '',
   };
   finalResult: string;
   @Output() habillageToGrilleEvent = new EventEmitter<boolean>();
