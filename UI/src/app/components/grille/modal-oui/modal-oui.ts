@@ -61,14 +61,12 @@ export class ModalOui implements OnInit {
     // @ts-ignore
     if (this.S === true && this.H === true && this.T === true && this.C === true ){
       this.modaliteEvent.emit('A');
-      // console.log('A');
-    }/* // @ts-ignore
-    if (this.S === 'true' && this.H === 'false' && this.T === 'false' && this.C === 'false'){
-      this.modaliteEvent.emit('C');
-    }*/
-    else {
+    } else {
       this.modaliteEvent.emit('B');
     }
+
+    // WARNING : How to manage the case when the patient can do the action 'spontanement', 'habituellement' and 'totalement' but not 'correctement', and in fact, it is not a B but a C because we have to do the action again from the beginning. Exemple : 'toilette'.
+
     this.tabsChangeEvent.emit(true);
     this.dialogRef.close('close-for-validation');
   }
