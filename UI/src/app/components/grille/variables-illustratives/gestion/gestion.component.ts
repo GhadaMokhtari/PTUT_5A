@@ -13,7 +13,6 @@ export class GestionComponent implements OnInit {
   @Output() finalResultEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   gestionAdverbes: any;
 
@@ -40,14 +39,12 @@ export class GestionComponent implements OnInit {
     });
   }
   goToTabs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('gestion modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.gestionAdverbes);
     this.gestionToGrilleEvent.emit(true);
   }
-
+  goToTabsC(): void{
+    this.finalResultEvent.emit('C');
+    this.gestionToGrilleEvent.emit(true);
+  }
 }

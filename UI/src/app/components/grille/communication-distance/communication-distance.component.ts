@@ -13,7 +13,6 @@ export class CommunicationDistanceComponent implements OnInit {
   @Output() commDistToGrilleEvent = new EventEmitter<boolean>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   commDistAdverbes: any;
 
@@ -40,13 +39,13 @@ export class CommunicationDistanceComponent implements OnInit {
     });
   }
   goToTabs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('comm dist modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.commDistAdverbes);
+    this.commDistToGrilleEvent.emit(true);
+  }
+
+  goToTabsC(): void{
+    this.finalResultEvent.emit('C');
     this.commDistToGrilleEvent.emit(true);
   }
 }

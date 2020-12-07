@@ -13,7 +13,6 @@ export class ServirComponent implements OnInit {
   @Output() resultEmitEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   servirAdverbes: any;
 
@@ -41,13 +40,13 @@ export class ServirComponent implements OnInit {
   }
 
   goToTabs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('servir modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.servirAdverbes);
+    this.servirToMangerEvent.emit(true);
+  }
+
+  goToTabsC(): void{
+    this.resultEmitEvent.emit('C');
     this.servirToMangerEvent.emit(true);
   }
 }

@@ -13,7 +13,6 @@ export class AchatComponent implements OnInit {
   @Output() finalResultEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   achatAdverbes: any;
 
@@ -40,13 +39,12 @@ export class AchatComponent implements OnInit {
     });
   }
   goToTabs(): void {
-    // @ts-ignore
-    if (this.Non === 'true') {
-      this.modalite = 'C';
-    }
-    console.log('achat modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.achatAdverbes);
+    this.achatToGrilleEvent.emit(true);
+  }
+  goToTabsC(): void{
+    this.finalResultEvent.emit('C');
     this.achatToGrilleEvent.emit(true);
   }
 }

@@ -1,6 +1,6 @@
 <mat-tab-group class="groupe" [selectedIndex]="selected" (selectedIndexChange)="goToTab($event)" dynamicHeight>
   <mat-tab label="Elimination urinaire"  >
-    <app-urinaire (adverbesEmitEvent)="adverbesResultUrinaire($event)" (resultEmitEvent)="urineResult($event)" (urinaireToFecaleEvent)="goToTab(1)"></app-urinaire>
+    <app-urinaire (adverbesEmitEvent)="adverbesResultUrinaire($event)" (resultEmitEvent)="urineResult($event)" (urinaireToEliminationEvent)="goToTab(1)"></app-urinaire>
   </mat-tab>
   <mat-tab label="Elimination fécale">
     <app-fecale (adverbesEmitEvent)="adverbesResultFecale($event)" (resultEmitEvent)="fecaleResult($event)" (fecaleToEliminationEvent)="goToTabParent()"></app-fecale>

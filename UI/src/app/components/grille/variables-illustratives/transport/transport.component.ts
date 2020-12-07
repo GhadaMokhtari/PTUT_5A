@@ -13,7 +13,6 @@ export class TransportComponent implements OnInit {
   @Output() finalResultEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   transportAdverbes: any;
 
@@ -40,14 +39,12 @@ export class TransportComponent implements OnInit {
     });
   }
   goToTabs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('transports modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.transportAdverbes);
     this.transportToGrilleEvent.emit(true);
   }
-
+  goToTabsC(): void{
+    this.finalResultEvent.emit('C');
+    this.transportToGrilleEvent.emit(true);
+  }
 }

@@ -97,7 +97,6 @@ export class GrilleComponent implements OnInit {
   score: number;
   rang: number;
   gir: number;
-
   enable = false;
 
 
@@ -118,7 +117,6 @@ export class GrilleComponent implements OnInit {
 
   recupResultCoherence(event: string): void {
     this.resultats.coherence.coherenceModality = event;
-    console.log('grille coherence', this.resultats.coherence.coherenceModality);
   }
   recupResultOrientation(event: string): void {
     this.resultats.orientationV.orientationModality = event;
@@ -128,7 +126,6 @@ export class GrilleComponent implements OnInit {
   }
   recupResultHabillage(event: string): void {
     this.resultats.habillage.habillageModality = event;
-    console.log('grille habillage', this.resultats.habillage.habillageModality);
   }
   recupResultAlimentation(event: string): void {
     this.resultats.alimentation.alimentationModality = event;
@@ -169,12 +166,10 @@ export class GrilleComponent implements OnInit {
   recupResultActivitesLibres(event: string): void {
     this.resultats.activitesLibres.activitesLibresModality = event;
     this.enable = true;
-    console.log('actLibres', this.resultats.activitesLibres.activitesLibresModality);
   }
 
   recupCoherenceValeurs(event: string): void {
     this.resultats.coherence.coherenceValeurs = event;
-    console.log('Cohérence valeurs', this.resultats.coherence.coherenceValeurs);
   }
   recuOrientationValeurs(event: string): void {
     this.resultats.orientationV.orientationValeurs = event;
@@ -224,7 +219,6 @@ export class GrilleComponent implements OnInit {
   recupActLibresValeurs(event: string): void {
     this.resultats.activitesLibres.actLibValeurs = event;
   }
-
 
   goBackToHistoric(): void {
     const patientId = this.route.snapshot.paramMap.get('id');
@@ -880,7 +874,6 @@ export class GrilleComponent implements OnInit {
 
     // Calcul Score A
     const scoreA = this.calculScoreGA();
-    console.log('scoreA', scoreA);
     if (scoreA >= 4380) {
       this.rang = 1;
     } else if (scoreA < 4380 && scoreA >= 4140) {
@@ -891,14 +884,12 @@ export class GrilleComponent implements OnInit {
 
       // Calcul Score B
       const scoreB = this.calculScoreGB();
-      console.log('scoreB', scoreB);
       if (scoreB >= 2016) {
         this.rang = 4;
       } else if (this.score < 2016) {
 
         // Calcul Score C
         const scoreC = this.calculScoreGC();
-        console.log('scoreC', scoreC);
         if (scoreC >= 1700) {
           this.rang = 5;
         } else if (scoreC < 1700 && scoreC >= 1432) {
@@ -907,35 +898,30 @@ export class GrilleComponent implements OnInit {
 
           // Calcul Score D
           const scoreD = this.calculScoreGD();
-          console.log('scoreD', scoreD);
           if (scoreD >= 2400) {
             this.rang = 7;
           } else if (scoreD < 2400) {
 
             // Calcul Score E
             const scoreE = this.calculScoreGD();
-            console.log('scoreE', scoreE);
             if (scoreE >= 1200) {
               this.rang = 8;
             } else if (scoreE < 1200) {
 
               // Calcul Score F
               const scoreF = this.calculScoreGF();
-              console.log('scoreF', scoreF);
               if (scoreF >= 800) {
                 this.rang = 10;
               } else if (scoreF < 800) {
 
                 // Calcul Score G
                 const scoreG = this.calculScoreGG();
-                console.log('scoreG', scoreG);
                 if (scoreG >= 650) {
                   this.rang = 10;
                 } else if (scoreG < 650) {
 
                   // Calcul Score H
                   const scoreH = this.calculScoreGH();
-                  console.log('scoreH', scoreH);
                   if (scoreH >= 4000) {
                     this.rang = 11;
                   } else if (scoreH < 4000 && scoreH >= 2000) {
@@ -982,16 +968,6 @@ export class GrilleComponent implements OnInit {
     const rangEval = this.rang;
     const girEval = this.gir;
     const resultats = this.resultats;
-
-    console.log('score', this.score);
-    console.log('rang', this.rang);
-    console.log('gir', this.gir);
-    console.log('resultats', this.resultats);
-
-    console.log('scoreE', scoreEval);
-    console.log('rangE', rangEval);
-    console.log('girE', girEval);
-    console.log('results', resultats);
 
     const evaluation = {
       date: new Date(),

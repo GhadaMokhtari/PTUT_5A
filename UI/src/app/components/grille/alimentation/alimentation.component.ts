@@ -54,10 +54,6 @@ export class AlimentationComponent implements OnInit {
     } else {
       this.finalModality = 'B';
     }
-    console.log('alimentation servir', this.alimentationValeurs.resultServir);
-    console.log('alimentation servir', typeof this.alimentationValeurs.resultServir);
-    console.log('alimentation manger', this.alimentationValeurs.resultManger);
-    console.log('alimentation ', this.finalModality);
     this.finalResultEvent.emit(this.finalModality);
     this.alimentationValeursToGrille.emit(this.alimentationValeurs);
     this.alimentationToGrilleEvent.emit(true);

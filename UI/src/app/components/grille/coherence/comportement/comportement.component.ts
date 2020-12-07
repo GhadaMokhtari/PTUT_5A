@@ -13,7 +13,6 @@ export class ComportementComponent implements OnInit {
   @Output() resultEventEmitter = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   compAdverbes: any;
 
@@ -40,14 +39,13 @@ export class ComportementComponent implements OnInit {
     });
   }
   goToTabs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('comportement modalité', this.modalite);
     this.resultEventEmitter.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.compAdverbes);
     this.comportementToCoherenceEvent.emit(true);
   }
 
+  goToTabsC(): void{
+    this.resultEventEmitter.emit('C');
+    this.comportementToCoherenceEvent.emit(true);
+  }
 }

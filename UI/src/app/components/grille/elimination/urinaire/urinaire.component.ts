@@ -9,11 +9,10 @@ import {ModalOui} from '../../modal-oui/modal-oui';
 })
 export class UrinaireComponent implements OnInit {
 
-  @Output() urinaireToFecaleEvent = new EventEmitter<boolean>();
+  @Output() urinaireToEliminationEvent = new EventEmitter<boolean>();
   @Output() resultEmitEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   urinaireAdverbes: any;
 
@@ -40,14 +39,14 @@ export class UrinaireComponent implements OnInit {
     });
   }
   goToTabs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('elimi urinaire modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.urinaireAdverbes);
-    this.urinaireToFecaleEvent.emit(true);
+    this.urinaireToEliminationEvent.emit(true);
+  }
+
+  goToTabsC(): void{
+    this.resultEmitEvent.emit('C');
+    this.urinaireToEliminationEvent.emit(true);
   }
 
 }

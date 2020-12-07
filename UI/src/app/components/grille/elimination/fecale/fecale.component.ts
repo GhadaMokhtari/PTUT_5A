@@ -13,7 +13,6 @@ export class FecaleComponent implements OnInit {
   @Output() resultEmitEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   fecaleAdverbes: any;
 
@@ -40,14 +39,13 @@ export class FecaleComponent implements OnInit {
     });
   }
   goToTabs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('elimi fecale modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.fecaleAdverbes);
     this.fecaleToEliminationEvent.emit(true);
   }
 
+  goToTabsC(): void{
+    this.resultEmitEvent.emit('C');
+    this.fecaleToEliminationEvent.emit(true);
+  }
 }

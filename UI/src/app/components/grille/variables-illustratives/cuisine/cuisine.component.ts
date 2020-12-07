@@ -13,7 +13,6 @@ export class CuisineComponent implements OnInit {
   @Output() finalResultEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   cuisineAdverbes: any;
 
@@ -40,15 +39,12 @@ export class CuisineComponent implements OnInit {
     });
   }
   goToTabs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('cuisine modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.cuisineAdverbes);
     this.cuisineToGrilleEvent.emit(true);
   }
-
-
+  goToTabsC(): void{
+    this.finalResultEvent.emit('C');
+    this.cuisineToGrilleEvent.emit(true);
+  }
 }

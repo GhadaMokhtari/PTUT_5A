@@ -7,9 +7,8 @@
       <label for="oui">Oui</label>
     </div>
     <div>
-      <input type="radio" id="non" name="suivi"  [(ngModel)]="Non" value="true" >
+      <input type="radio" id="non" name="suivi" (change)="goToTabsC()" >
       <label for="non">Non</label>
     </div>
   </div>
-  <button mat-button color="primary" (click)="goToTabs()"> Suivant </button>
 </div>

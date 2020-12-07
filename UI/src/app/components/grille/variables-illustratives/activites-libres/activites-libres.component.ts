@@ -13,7 +13,6 @@ export class ActivitesLibresComponent implements OnInit {
   @Output() adverbesEmitEvent = new EventEmitter<any>();
   @Output() actLibToGrilleEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   actLibAdverbes: any;
 
@@ -40,13 +39,13 @@ export class ActivitesLibresComponent implements OnInit {
     });
   }
   emitValeurs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('actLibres modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.actLibAdverbes);
+    this.actLibToGrilleEvent.emit(true);
+  }
+
+  emitValeursC(): void{
+    this.finalResultEvent.emit('C');
     this.actLibToGrilleEvent.emit(true);
   }
 }

@@ -13,7 +13,6 @@ export class CommunicationComponent implements OnInit {
   @Output() resultEmitEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   commAdverbes: any;
 
@@ -40,14 +39,12 @@ export class CommunicationComponent implements OnInit {
     });
   }
   goToTabs(): void{
-    console.log(this.commAdverbes);
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('communication modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.commAdverbes);
+    this.communicationToCoherenceEvent.emit(true);
+  }
+  goToTabsC(): void{
+    this.resultEmitEvent.emit('C');
     this.communicationToCoherenceEvent.emit(true);
   }
 }

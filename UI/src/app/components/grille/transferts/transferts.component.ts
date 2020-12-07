@@ -13,7 +13,6 @@ export class TransfertsComponent implements OnInit {
   @Output() finalResultEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   transfertsAdverbes: any;
 
@@ -40,14 +39,13 @@ export class TransfertsComponent implements OnInit {
     });
   }
   goToTabs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('transferts modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.transfertsAdverbes);
     this.transfertsToGrilleEvent.emit(true);
   }
 
+  goToTabsC(): void{
+    this.finalResultEvent.emit('C');
+    this.transfertsToGrilleEvent.emit(true);
+  }
 }

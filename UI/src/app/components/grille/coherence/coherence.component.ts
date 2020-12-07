@@ -42,34 +42,24 @@ export class CoherenceComponent implements OnInit {
     this.selected = tab;
   }
   goToTabParent(): void {
-    console.log(typeof this.coherenceValeurs.resultComportment);
     if (this.coherenceValeurs.resultCommunication === 'A' && this.coherenceValeurs.resultComportment === 'A'){
       this.finalModalite = 'A';
-      console.log('cohérence modalité', this.finalModalite);
     } else if (this.coherenceValeurs.resultCommunication === 'A' && this.coherenceValeurs.resultComportment === 'B'){
       this.finalModalite = 'B';
-      console.log('cohérence modalité', this.finalModalite);
     } else if (this.coherenceValeurs.resultCommunication === 'B' && this.coherenceValeurs.resultComportment === 'A'){
       this.finalModalite = 'B';
-      console.log('cohérence modalité', this.finalModalite);
     } else if (this.coherenceValeurs.resultCommunication === 'B' && this.coherenceValeurs.resultComportment === 'B'){
       this.finalModalite = 'B';
-      console.log('cohérence modalité', this.finalModalite);
     } else if (this.coherenceValeurs.resultCommunication === 'C' && this.coherenceValeurs.resultComportment === 'C'){
       this.finalModalite = 'C';
-      console.log('cohérence modalité', this.finalModalite);
     } else if (this.coherenceValeurs.resultCommunication === 'B' && this.coherenceValeurs.resultComportment === 'C'){
       this.finalModalite = 'C';
-      console.log('cohérence modalité', this.finalModalite);
     } else if (this.coherenceValeurs.resultCommunication === 'C' && this.coherenceValeurs.resultComportment === 'B'){
       this.finalModalite = 'C';
-      console.log('cohérence modalité', this.finalModalite);
     } else if (this.coherenceValeurs.resultCommunication === 'A' && this.coherenceValeurs.resultComportment === 'C'){
       this.finalModalite = 'C';
-      console.log('cohérence modalité', this.finalModalite);
     } else if (this.coherenceValeurs.resultCommunication === 'C' && this.coherenceValeurs.resultComportment === 'A'){
       this.finalModalite = 'C';
-      console.log('cohérence modalité', this.finalModalite);
     }
 
     this.finalResultEvent.emit(this.finalModalite);

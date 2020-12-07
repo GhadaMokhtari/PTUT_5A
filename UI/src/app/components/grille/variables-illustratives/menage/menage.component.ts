@@ -13,7 +13,6 @@ export class MenageComponent implements OnInit {
   @Output() finalResultEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   menageAdverbes: any;
 
@@ -40,15 +39,12 @@ export class MenageComponent implements OnInit {
     });
   }
   goToTabs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('menage modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.menageAdverbes);
     this.menageToGrilleEvent.emit(true);
   }
-
-
+  goToTabsC(): void{
+    this.finalResultEvent.emit('C');
+    this.menageToGrilleEvent.emit(true);
+  }
 }

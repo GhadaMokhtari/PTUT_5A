@@ -13,7 +13,6 @@ export class DeplacementsExterieursComponent implements OnInit {
   @Output() finalResultEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   depExtAdverbes: any;
 
@@ -40,13 +39,13 @@ export class DeplacementsExterieursComponent implements OnInit {
     });
   }
   goToTabs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('deplacements externes modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.depExtAdverbes);
+    this.exterieursToGrilleEvent.emit(true);
+  }
+
+  goToTabsC(): void{
+    this.finalResultEvent.emit('C');
     this.exterieursToGrilleEvent.emit(true);
   }
 }

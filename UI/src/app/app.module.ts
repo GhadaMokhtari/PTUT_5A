@@ -56,7 +56,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { ChartsModule } from 'ng2-charts';
-import { VariableComponent } from './components/recapitulatif-grille/variable/variable.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +97,6 @@ import { VariableComponent } from './components/recapitulatif-grille/variable/va
     SuiviTraitementComponent,
     ActivitesLibresComponent,
     GrapheComponent,
-    VariableComponent,
 
   ],
   entryComponents: [ModalOui],

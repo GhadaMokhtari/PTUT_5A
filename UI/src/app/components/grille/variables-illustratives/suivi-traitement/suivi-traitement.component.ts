@@ -13,7 +13,6 @@ export class SuiviTraitementComponent implements OnInit {
   @Output() finalResultEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   suiviTraitAdverbes: any;
 
@@ -43,19 +42,12 @@ export class SuiviTraitementComponent implements OnInit {
   }
 
   goToTabs(): void{
-
-    console.log('modalite', this.modalite);
-    console.log('non', this.Non);
-
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('suivi traitement modalité', this.modalite);
     this.finalResultEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.suiviTraitAdverbes);
     this.suiviToGrilleEvent.emit(true);
   }
-
-
+  goToTabsC(): void{
+    this.finalResultEvent.emit('C');
+    this.suiviToGrilleEvent.emit(true);
+  }
 }

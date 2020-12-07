@@ -13,7 +13,6 @@ export class EspaceComponent implements OnInit {
   @Output() resultEmitEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   espaceAdverbes: any;
 
@@ -40,13 +39,13 @@ export class EspaceComponent implements OnInit {
     });
   }
   goToTabs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('orientation espace modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.espaceAdverbes);
+    this.espaceToOrientationEvent.emit(true);
+  }
+
+  goToTabsC(): void{
+    this.resultEmitEvent.emit('C');
     this.espaceToOrientationEvent.emit(true);
   }
 }

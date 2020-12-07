@@ -13,7 +13,6 @@ export class HabMoyenComponent implements OnInit {
   @Output() resultEmitEvent = new EventEmitter<string>();
   @Output() adverbesEmitEvent = new EventEmitter<any>();
 
-  Non: boolean;
   modalite: string;
   habMoyenAdverbes: any;
 
@@ -40,13 +39,13 @@ export class HabMoyenComponent implements OnInit {
     });
   }
   goToTabs(): void{
-    // @ts-ignore
-    if (this.Non === 'true'){
-      this.modalite = 'C';
-    }
-    console.log('habMoyen modalité', this.modalite);
     this.resultEmitEvent.emit(this.modalite);
     this.adverbesEmitEvent.emit(this.habMoyenAdverbes);
+    this.habillageMoyenToBasEvent.emit(true);
+  }
+
+  goToTabsC(): void{
+    this.resultEmitEvent.emit('C');
     this.habillageMoyenToBasEvent.emit(true);
   }
 }
