@@ -70,6 +70,6 @@ export class ModalOui implements OnInit {
       this.modaliteEvent.emit('B');
     }
     this.tabsChangeEvent.emit(true);
-    this.dialogRef.close();
+    this.dialogRef.close('close-for-validation');
   }
 }

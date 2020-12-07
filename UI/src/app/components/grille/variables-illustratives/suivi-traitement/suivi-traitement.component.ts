@@ -34,10 +34,19 @@ export class SuiviTraitementComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       subscribeDialog.unsubscribe();
       adverbesSubscribe.unsubscribe();
+
+      console.log(result);
+      if(result === 'close-for-validation'){
+        this.goToTabs();
+      }
     });
   }
 
   goToTabs(): void{
+
+    console.log('modalite', this.modalite);
+    console.log('non', this.Non);
+
     // @ts-ignore
     if (this.Non === 'true'){
       this.modalite = 'C';
